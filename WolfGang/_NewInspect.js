@@ -41,7 +41,9 @@
   
   var startPosition, startOrientation, startTime, easedIn;
   var currentPosition, currentOrientation;
+  var nextPosition, nextOrientation;
   
+  var easeInDivider = 0.01;
   
   var RayPickID = Picks.createPick(PickType.Ray, {
     joint: 'Mouse',
@@ -94,7 +96,8 @@
         offset: offset,
         position: position,
         type: pickRay.type,
-        distance: Vec3.distance(startPosition,position)
+        distance: Vec3.distance(startPosition,position),
+        direction: {x:0,y:0,z:0},
       }
     }
   }
@@ -102,6 +105,7 @@
   function mouseReleaseEvent(event){
     calculateModeFromEvent(event);
     if(controlActive){
+      console.log("Inspect Camera: Control loss");
       controlActive = false;
     }
   }
@@ -123,28 +127,34 @@
   
   function easeIn(){
     if(easedIn)return;
-    var delta = 1;
+    var delta = (Date.now() - startTime) * easeInDivider;
     if(delta >= 1){
-      setCamera(currentPosition, currentOrientation);
+      setCamera(nextPosition, nextOrientation);
       easedIn = true;
     } else {
-      setCamera( vLerp(startPosition,currentPosition,delta) , qLerp(startOrientation,currentOrientation,delta));
+      setCamera( vLerp(startPosition,nextPosition,delta) , qLerp(startOrientation,nextOrientation,delta));
     }
   }
   
   function setCamera(position,orientation){
     if(!cameraActive)return;
-    Camera.setPosition(position);
-    Camera.setOrientation(orientation);
+    currentPosition = position;
+    currentOrientation = orientation;
+    Camera.setPosition(currentPosition);
+    Camera.setOrientation(currentOrientation);
   }
   
   function activate(){
     if(cameraActive)return;
     console.log("Inspect Camera: Activate");
+    console.log("Inspect Camera: Control gain");
     cameraActive = true;
     controlActive = true;
     saveCameraState();
     Camera.mode = "independent";
+    nextPosition = oldCameraState.position;
+    nextOrientation = oldCameraState.orientation;
+    setCamera(nextPosition, nextOrientation);
   }
   
   function deactivate(){
