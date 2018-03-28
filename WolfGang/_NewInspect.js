@@ -10,165 +10,354 @@
 //
 //
 //
-
-/* globals Script, Controller, Picks, PickType, Camera, Entities, AvatarList, Vec3, Quat */
-
+/* globals Script, Controller, Picks, PickType, Camera, Entities, AvatarList, Vec3, Quat, Reticle, Overlays */
 (function() {
 
   Controller.mousePressEvent.connect(mousePressEvent);
   Controller.mouseReleaseEvent.connect(mouseReleaseEvent);
   Controller.mouseMoveEvent.connect(mouseMoveEvent);
-  
+
   Controller.keyPressEvent.connect(keyPressEvent);
   //Controller.keyReleaseEvent.connect(keyReleaseEvent);
 
   Script.update.connect(update);
   Script.scriptEnding.connect(scriptEnding);
-  
+
+  //Constants
   var MODE_PAN = "pan";
   var MODE_ORBIT = "orbit";
   var MODE_RADIAL = "radial";
   var MODE_NONE = "none";
-  
+
+  var PI = Math.PI;
+  var HALF_PI = PI / 2.0;
+  var RAD_TO_DEG = 180.0 / PI;
+
+  var AZIMUTH_RATE = 90.0;
+  var ALTITUDE_RATE = 200.0;
+  var RADIUS_RATE = 1.0 / 100.0;
+  var PAN_RATE = 250.0;
+  var AVATAR_POSITION_SLOP = 0.1;
+  var AVATAR_ROTATION_SLOP = 0.09;
+
+  var Y_AXIS = {
+    x: 0,
+    y: 1,
+    z: 0
+  };
+  var X_AXIS = {
+    x: 1,
+    y: 0,
+    z: 0
+  };
+
+
   var mode = MODE_NONE;
-  
+
   var cameraActive = false;
   var controlActive = false;
-  
+
   var oldCameraState = null;
-  
+
   var cameraTarget = null;
-  
+
   var startPosition, startOrientation, startTime, easedIn;
-  var currentPosition, currentOrientation;
-  var nextPosition, nextOrientation;
-  
+  var currentCameraState = null;//Position, currentOrientation;
+  var nextCameraState = null;//Position, nextOrientation;
+
   var easeInDivider = 0.01;
+
+  var markerID = null;
   
+  var cursorHidden = false;
+  
+  var oldCursorPosition = null;
+
   var RayPickID = Picks.createPick(PickType.Ray, {
     joint: 'Mouse',
     filter: Picks.PICK_ENTITIES | Picks.PICK_AVATARS | Picks.PICK_INCLUDE_NONCOLLIDABLE,
     enabled: true,
   });
-  
-  function scriptEnding(){
+
+  function scriptEnding() {
     Picks.removePick(RayPickID);
     
-    
+    showCursor();
+    clearMarker();
+
     Controller.keyPressEvent.disconnect(keyPressEvent);
 
     Controller.mousePressEvent.disconnect(mousePressEvent);
     Controller.mouseReleaseEvent.disconnect(mouseReleaseEvent);
     Controller.mouseMoveEvent.disconnect(mouseMoveEvent);
   }
-  
-  
-  function mousePressEvent(event){
+
+
+  function mousePressEvent(event) {
     calculateModeFromEvent(event);
-    if(mode !== MODE_NONE && !cameraActive){
-      activate();
+    if(!cameraActive){
+       if (mode !== MODE_NONE) {
+        activate();
+       } else {
+         return;
+       }
     }
-    if(!cameraActive)return;
+    
     easedIn = false;
     startPosition = Camera.getPosition();
     startOrientation = Camera.getOrientation();
     startTime = Date.now();
     var pickRay = Picks.getPrevPickResult(RayPickID);
-    if(pickRay.intersects){
-      var offset = {x:0,y:0,z:0};
-      var position = pickRay.intersection;
-      switch(pickRay.type){
+    if (pickRay.intersects) {
+      var offset = {
+        x: 0,
+        y: 0,
+        z: 0
+      };
+      var center = pickRay.intersection;
+      switch (pickRay.type) {
         case Picks.INTERSECTED_ENTITY:
           var entity = Entities.getEntityProperties(pickRay.objectID);
-          offset = Vec3.subtract(pickRay.intersection,entity.position);
+          offset = Vec3.subtract(pickRay.intersection, entity.position);
           break;
         case Picks.INTERSECTED_AVATAR:
           var avatar = AvatarList.getAvatar(pickRay.objectID);
-          if(avatar.sessionID === pickRay.objectID){
-            offset = {x:0,y:0.5,z:0};
-            position = avatar.position;
-            position.y += offset.y;
+          if (avatar.sessionID === pickRay.objectID) {
+            offset = {
+              x: 0,
+              y: 0.5,
+              z: 0
+            };
+            center = avatar.position;
+            center.y += offset.y;
           }
           break;
       }
+      var direction = Vec3.subtract(startPosition, center);
+      var radius = Vec3.length(direction);
       cameraTarget = {
         id: pickRay.objectID,
         offset: offset,
-        position: position,
+        center: center,
         type: pickRay.type,
-        distance: Vec3.distance(startPosition,position),
-        direction: {x:0,y:0,z:0},
+        radius: radius,
+        direction: direction,
+        azimuth: Math.atan2(direction.z, direction.x),
+        altitude: Math.asin(direction.y / radius)
       }
+      setMarker(center);
+      hideCursor();
+      nextCameraState = calculateNextCameraState(oldCursorPosition);
+      currentCameraState = nextCameraState;
     }
   }
-  
-  function mouseReleaseEvent(event){
+
+  function mouseReleaseEvent(event) {
     calculateModeFromEvent(event);
-    if(controlActive){
+    if (controlActive) {
+      Reticle.setPosition(Vec3.multiply(0.5, {
+        x: Window.innerWidth,
+        y: Window.innerHeight
+      }));
+      showCursor();
       console.log("Inspect Camera: Control loss");
       controlActive = false;
     }
   }
-  
-  function mouseMoveEvent(event){
-    if(!controlActive) return;
+
+  function mouseMoveEvent(event) {
+    if (!controlActive) return;
     calculateModeFromEvent(event);
+    nextCameraState = calculateNextCameraState({x:event.x,y:event.y});
   }
-  
-  function keyPressEvent(event){
+
+  function keyPressEvent(event) {
     if (/^ESC|LEFT|RIGHT|UP|DOWN|[wasdWASD]$/.test(event.text)) {
       deactivate();
-    } 
-  }
-  
-  function update(){
-    easeIn();
-  }
-  
-  function easeIn(){
-    if(easedIn)return;
-    var delta = (Date.now() - startTime) * easeInDivider;
-    if(delta >= 1){
-      setCamera(nextPosition, nextOrientation);
-      easedIn = true;
-    } else {
-      setCamera( vLerp(startPosition,nextPosition,delta) , qLerp(startOrientation,nextOrientation,delta));
     }
   }
   
-  function setCamera(position,orientation){
-    if(!cameraActive)return;
-    currentPosition = position;
-    currentOrientation = orientation;
-    Camera.setPosition(currentPosition);
-    Camera.setOrientation(currentOrientation);
+  function calculateNextCameraState(newCursorPosition){
+    var diff = {
+      x: newCursorPosition.x - oldCursorPosition.x,
+      y: newCursorPosition.y - oldCursorPosition.y,
+    };
+    oldCursorPosition = newCursorPosition;
+    var state = currentCameraState;
+    switch(mode){
+      case MODE_PAN:
+        state = calculatePanMovement(diff,currentCameraState);
+        break;
+      case MODE_ORBIT:
+        state = calculateOrbitMovement(diff,currentCameraState);
+        break;
+      case MODE_RADIAL:
+        state = calculateRadialMovement(diff,currentCameraState);
+        break;
+    }
+    return state;
   }
   
-  function activate(){
-    if(cameraActive)return;
+  function clampCameraTarget(){
+    if(cameraTarget.radius < 1){
+      cameraTarget.radius = 1;
+    }
+    if(cameraTarget.altitude > HALF_PI){
+      cameraTarget.altitude = HALF_PI;
+    }else if(cameraTarget.altitude < -HALF_PI){
+      cameraTarget.altitude = -HALF_PI;
+    }
+  }
+  
+  function calculateRadialMovement(move,state,target){
+    cameraTarget.azimuth += move.x / AZIMUTH_RATE;
+    cameraTarget.radius += cameraTarget.radius * move.y * RADIUS_RATE;
+    
+    clampCameraTarget();
+    
+    cameraTarget.direction = {
+      x: (Math.cos(cameraTarget.altitude) * Math.cos(cameraTarget.azimuth)) * cameraTarget.radius,
+      y: Math.sin(cameraTarget.altitude) * cameraTarget.radius,
+      z: (Math.cos(cameraTarget.altitude) * Math.sin(cameraTarget.azimuth)) * cameraTarget.radius
+    };
+    
+    return {
+      position: Vec3.sum(cameraTarget.center,cameraTarget.direction),
+      orientation: orientationOf(cameraTarget.direction)
+    };
+  }
+  
+  function calculateOrbitMovement(move,state,target){
+    cameraTarget.azimuth += move.x / AZIMUTH_RATE;
+    cameraTarget.altitude += move.y / ALTITUDE_RATE;
+    
+    clampCameraTarget();
+    
+    cameraTarget.direction = {
+      x: (Math.cos(cameraTarget.altitude) * Math.cos(cameraTarget.azimuth)) * cameraTarget.radius,
+      y: Math.sin(cameraTarget.altitude) * cameraTarget.radius,
+      z: (Math.cos(cameraTarget.altitude) * Math.sin(cameraTarget.azimuth)) * cameraTarget.radius
+    };
+    
+    return {
+      position: Vec3.sum(cameraTarget.center,cameraTarget.direction),
+      orientation: orientationOf(cameraTarget.direction)
+    };
+  }
+  
+  function calculatePanMovement(move,state,target){
+    var up = Quat.getUp(currentCameraState.orientation);
+    var right = Quat.getRight(currentCameraState.orientation);
+    //var distance = Vec3.length(vector);
+
+    var dv = Vec3.sum(
+      Vec3.multiply(up, cameraTarget.radius * move.y / PAN_RATE), 
+      Vec3.multiply(right, -cameraTarget.radius * move.x / PAN_RATE)
+    );
+
+    cameraTarget.center = Vec3.sum(cameraTarget.center, dv);
+    
+    return {
+      position: Vec3.sum(cameraTarget.center,dv),
+      orientation: currentCameraState.orientation
+    };
+  }
+  
+
+  function update() {
+    if(!easeIn()){
+      setCameraState(nextCameraState);
+      currentCameraState = nextCameraState;
+    }
+  }
+
+  function easeIn() {
+    if (easedIn) return;
+    var delta = (Date.now() - startTime) * easeInDivider;
+    if (delta >= 1) {
+      setCameraState({position: nextCameraState.position, orientation: nextCameraState.orientation});
+      easedIn = true;
+    } else {
+      setCameraState({position: vLerp(startPosition, nextCameraState.position, delta),  orientation: qLerp(startOrientation, nextCameraState.orientation, delta)});
+    }
+  }
+
+  function hideCursor() {
+    if (!cursorHidden){
+      Reticle.scale = 0;
+    }
+  }
+
+  function showCursor() {
+    if (cursorHidden){
+      Reticle.scale = 1;
+    }
+  }
+
+  function setMarker(position, radius) {
+    if (markerID == null) {
+      markerID = Overlays.addOverlay("sphere", {
+        position: position,
+        dimensions: Vec3.multiply(radius, {
+          x: 0.1,
+          y: 0.1,
+          z: 0.1
+        })
+      });
+    } else {
+      Overlays.editOverlay(markerID, {
+        position: position,
+        dimensions: Vec3.multiply(radius, {
+          x: 0.01,
+          y: 0.01,
+          z: 0.01
+        })
+      });
+    }
+  }
+  
+  function clearMarker(){
+    if(markerID != null){
+      Overlays.deleteOverlay(markerID);
+      markerID = null;
+    }
+  }
+
+  function setCameraState(state) {
+    if (!cameraActive) return;
+    Camera.setPosition(state.position);
+    Camera.setOrientation(state.orientation);
+  }
+
+  function activate() {
+    if (cameraActive) return;
     console.log("Inspect Camera: Activate");
     console.log("Inspect Camera: Control gain");
     cameraActive = true;
     controlActive = true;
     saveCameraState();
+    oldCursorPosition = {x:0,y:0};
     Camera.mode = "independent";
-    nextPosition = oldCameraState.position;
-    nextOrientation = oldCameraState.orientation;
-    setCamera(nextPosition, nextOrientation);
+    nextCameraState = {
+      positon: oldCameraState.position,
+      orientation: oldCameraState.orientation
+    };
+    setCameraState(nextCameraState.position, nextCameraState.orientation);
   }
-  
-  function deactivate(){
-    if(!cameraActive)return;
+
+  function deactivate() {
+    if (!cameraActive) return;
     console.log("Inspect Camera: Deactivate");
     cameraActive = false;
     controlActive = false;
     restoreCameraState();
   }
-  
-  function calculateModeFromEvent(event){
-    calculateMode(event.isControl, event.isAlt, event.isShifted,event);
+
+  function calculateModeFromEvent(event) {
+    calculateMode(event.isControl, event.isAlt, event.isShifted, event);
   }
-  function calculateMode(ctrl,alt,shift,e){
+
+  function calculateMode(ctrl, alt, shift, e) {
     var newMode = MODE_NONE;
     if (alt) {
       if (ctrl) {
@@ -183,7 +372,7 @@
     }
     mode = newMode;
   }
-  
+
   function saveCameraState() {
     oldCameraState = {
       mode: Camera.mode,
@@ -197,7 +386,7 @@
     Camera.setPosition(oldCameraState.position);
     Camera.setOrientation(oldCameraState.orientation);
   }
-  
+
   function vLerp(vecA, vecB, delta) {
     if (delta > 1) return vecB;
     return Vec3.mix(vecA, vecB, delta);
@@ -207,5 +396,16 @@
     if (delta > 1) return quatB;
     return Quat.mix(quatA, quatB, delta);
   }
-  
+
+  function orientationOf(vector) {
+    var direction,
+      yaw,
+      pitch;
+
+    direction = Vec3.normalize(vector);
+    yaw = Quat.angleAxis(Math.atan2(direction.x, direction.z) * RAD_TO_DEG, Y_AXIS);
+    pitch = Quat.angleAxis(Math.asin(-direction.y) * RAD_TO_DEG, X_AXIS);
+    return Quat.multiply(yaw, pitch);
+  }
+
 })();
