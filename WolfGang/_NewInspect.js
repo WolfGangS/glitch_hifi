@@ -76,19 +76,12 @@
 
   var EntityRayPickID = Picks.createPick(PickType.Ray, {
     joint: 'Mouse',
-    filter: Picks.PICK_ENTITIES | Picks.PICK_AVATARS | Picks.PICK_INCLUDE_NONCOLLIDABLE,
-    enabled: true,
-  });
-  
-  var AvatarRayPickID = Picks.createPick(PickType.Ray, {
-    joint: 'Mouse',
-    filter: Picks.PICK_AVATARS | Picks.PICK_COARSE,
+    filter: Picks.PICK_ENTITIES | Picks.PICK_AVATARS | Picks.PICK_INCLUDE_NONCOLLIDABLE | Picks.PICK_OVERLAYS,
     enabled: true,
   });
 
   function scriptEnding() {
     Picks.removePick(EntityRayPickID);
-    Picks.removePick(AvatarRayPickID);
     
     restoreCameraState();
     
@@ -102,9 +95,14 @@
     Controller.mouseMoveEvent.disconnect(mouseMoveEvent);
   }
 
-
+var intersects = ["INTERSECTED_NONE","INTERSECTED_ENTITY","INTERSECTED_OVERLAY","INTERSECTED_AVATAR","INTERSECTED_HUD"];
+function getIntersectType(t){return intersects[t];}
+  
+  
   function mousePressEvent(event) {
     calculateModeFromEvent(event);
+    var pickRay = Picks.getPrevPickResult(EntityRayPickID);
+    if(pickRay.type == Picks.INTERSECTED_OVERLAY)return;
     if(mode !== MODE_NONE) {
         if(!cameraActive){
           activate();
@@ -120,7 +118,6 @@
       orientation: Camera.getOrientation()
     };
     startTime = Date.now();
-    var pickRay = Picks.getPrevPickResult(EntityRayPickID);
     if (pickRay.intersects) {
       var offset = {
         x: 0,
@@ -281,7 +278,6 @@
 
   function update() {
     if(!cameraActive)return;
-    console.log(mode);
     if(!easeIn() && controlActive){
       setCameraState(nextCameraState);
       currentCameraState = nextCameraState;
@@ -292,7 +288,6 @@
   function easeIn() {
     if (easedIn) return false;
     var delta = (Date.now() - startTime) * easeInDivider;
-    //console.log(delta);
     if (delta >= 1) {
       return false;
       easedIn = true;
@@ -341,7 +336,6 @@
 
   function setCameraState(state) {
     if (!cameraActive) return;
-    console.log(".\n" + JSON.stringify(state) + "\n" + JSON.stringify(nextCameraState));
     Camera.setPosition(state.position);
     Camera.setOrientation(state.orientation);
   }
