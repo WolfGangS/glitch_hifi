@@ -1,0 +1,1 @@
+Object.keys(Picks).forEach(function(a,b){console.log(a, typeof Picks[a], JSON.stringify(Picks[a]))});

@@ -1,4550 +1,4404 @@
-
-
-function Account(){
-    return {
+var HiFi = {
+    Account:
+    {
+        checkAndSignalForAccessToken: function(){ return null; },
+        connected: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disconnected: function(QString){ return null; },
+        downloadInfoChanged: function(DownloadInfoResult){ return null; },
+        findableBy: "all",
+        findableByChanged: function(QString){ return null; },
+        getDownloadInfo: function(){ return null; },
+        isLoggedIn: function(){ return null; },
+        logOut: function(){ return null; },
         loggedIn: true,
-        checkAndSignalForAccessToken: function(){},
-        connected: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disconnected: function(QString){},
-        downloadInfoChanged: function(DownloadInfoResult){},
-        findableByChanged: function(QString){},
-        getDownloadInfo: function(){},
-        isLoggedIn: function(){},
-        logOut: function(){},
-        loggedInChanged: function(bool){},
-        myUsernameChanged: function(QString){},
-        objectNameChanged: function(QString){},
-        updateDownloadInfo: function(){},
-        findableBy: '',
-        metaverseServerURL: '',
-        objectName: '',
-        username: ''
-        };
-    }
-
-function AccountServices(){
-    return {
+        loggedInChanged: function(bool){ return null; },
+        metaverseServerURL: "https://metaverse.highfidelity.com",
+        myUsernameChanged: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        updateDownloadInfo: function(){ return null; },
+        username: "WolfGang"
+    },
+    AccountServices:
+    {
+        checkAndSignalForAccessToken: function(){ return null; },
+        connected: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disconnected: function(QString){ return null; },
+        downloadInfoChanged: function(DownloadInfoResult){ return null; },
+        findableBy: "all",
+        findableByChanged: function(QString){ return null; },
+        getDownloadInfo: function(){ return null; },
+        isLoggedIn: function(){ return null; },
+        logOut: function(){ return null; },
         loggedIn: true,
-        checkAndSignalForAccessToken: function(){},
-        connected: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disconnected: function(QString){},
-        downloadInfoChanged: function(DownloadInfoResult){},
-        findableByChanged: function(QString){},
-        getDownloadInfo: function(){},
-        isLoggedIn: function(){},
-        logOut: function(){},
-        loggedInChanged: function(bool){},
-        myUsernameChanged: function(QString){},
-        objectNameChanged: function(QString){},
-        updateDownloadInfo: function(){},
-        findableBy: '',
-        metaverseServerURL: '',
-        objectName: '',
-        username: ''
-        };
-    }
-
-function AnimationCache(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        dirty: function(){},
-        getAnimation: function(QString){},
-        getAnimation: function(QUrl){},
-        getResource: function(QUrl){},
-        getResource: function(QUrl,QUrl){},
-        getResource: function(QUrl,QUrl,void*){},
-        getResourceList: function(){},
-        objectNameChanged: function(QString){},
-        prefetch: function(QUrl){},
-        prefetch: function(QUrl,void*){},
-        updateTotalSize: function(qlonglong){},
+        loggedInChanged: function(bool){ return null; },
+        metaverseServerURL: "https://metaverse.highfidelity.com",
+        myUsernameChanged: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        updateDownloadInfo: function(){ return null; },
+        username: "WolfGang"
+    },
+    AnimationCache:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        dirty: function(){ return null; },
+        getAnimation: function(QString){ return null; },
+        getAnimation__dupe: function(QUrl){ return null; },
+        getResource: function(QUrl){ return null; },
+        getResource__dupe: function(QUrl, QUrl){ return null; },
+        getResource__dupe__dupe: function(QUrl, QUrl, void_){ return null; },
+        getResourceList: function(){ return null; },
         numCached: 0,
-        numTotal: 0,
+        numTotal: 41,
+        objectName: "AnimationCache",
+        objectNameChanged: function(QString){ return null; },
+        prefetch: function(QUrl){ return null; },
+        prefetch__dupe: function(QUrl, void_){ return null; },
         sizeCached: 0,
-        sizeTotal: 0,
-        objectName: ''
-        };
-    }
-
-function Assets(){
-    return {
-        canWriteCacheValue: function(QUrl){},
-        compressData: function(QScriptValue,QScriptValue){},
-        compressData: function(QScriptValue,QScriptValue,QScriptValue){},
-        decompressData: function(QScriptValue,QScriptValue){},
-        decompressData: function(QScriptValue,QScriptValue,QScriptValue){},
-        deleteAsset: function(QScriptValue,QScriptValue){},
-        deleteAsset: function(QScriptValue,QScriptValue,QScriptValue){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        downloadData: function(QString,QScriptValue){},
-        extractAssetHash: function(QString){},
-        getATPUrl: function(QString){},
-        getAsset: function(QScriptValue,QScriptValue){},
-        getAsset: function(QScriptValue,QScriptValue,QScriptValue){},
-        getCacheStatus: function(QScriptValue){},
-        getCacheStatus: function(QScriptValue,QScriptValue){},
-        getMapping: function(QString,QScriptValue){},
-        hashData: function(QByteArray){},
-        hashDataHex: function(QByteArray){},
-        initializeCache: function(){},
-        isValidFilePath: function(QString){},
-        isValidHash: function(QString){},
-        isValidPath: function(QString){},
-        loadFromCache: function(QScriptValue,QScriptValue){},
-        loadFromCache: function(QScriptValue,QScriptValue,QScriptValue){},
-        objectNameChanged: function(QString){},
-        putAsset: function(QScriptValue,QScriptValue){},
-        putAsset: function(QScriptValue,QScriptValue,QScriptValue){},
-        queryCacheMeta: function(QScriptValue,QScriptValue){},
-        queryCacheMeta: function(QScriptValue,QScriptValue,QScriptValue){},
-        resolveAsset: function(QScriptValue,QScriptValue){},
-        resolveAsset: function(QScriptValue,QScriptValue,QScriptValue){},
-        saveToCache: function(QScriptValue,QScriptValue){},
-        saveToCache: function(QScriptValue,QScriptValue,QScriptValue){},
-        saveToCache: function(QUrl,QByteArray,QVariantMap,QScriptValue){},
-        saveToCache: function(QUrl,QByteArray,QVariantMap,QScriptValue,QScriptValue){},
-        setBakingEnabled: function(QString,bool,QScriptValue){},
-        setMapping: function(QString,QString,QScriptValue){},
-        uploadData: function(QString,QScriptValue){},
-        objectName: ''
-        };
-    }
-
-function Audio(){
-    return {
-        muted: true,
-        noiseReduction: true,
-        contextChanged: function(QString){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disconnected: function(){},
-        environmentMuted: function(){},
-        getRecording: function(){},
-        inputLevelChanged: function(float){},
-        inputReceived: function(QByteArray){},
-        inputVolumeChanged: function(float){},
-        mutedByMixer: function(){},
-        mutedChanged: function(bool){},
-        noiseGateClosed: function(){},
-        noiseGateOpened: function(){},
-        noiseReductionChanged: function(bool){},
-        nop: function(){},
-        objectNameChanged: function(QString){},
-        onContextChanged: function(){},
-        playSound: function(SharedSoundPointer){},
-        playSound: function(SharedSoundPointer,AudioInjectorOptions){},
-        playSystemSound: function(SharedSoundPointer,QVector3D){},
-        receivedFirstPacket: function(){},
-        setInputDevice: function(QAudioDeviceInfo,bool){},
-        setOutputDevice: function(QAudioDeviceInfo,bool){},
-        setReverb: function(bool){},
-        setReverbOptions: function(const AudioEffectOptions*){},
-        setStereoInput: function(bool){},
-        startRecording: function(QString){},
-        stopRecording: function(){},
+        sizeTotal: 668400,
+        updateTotalSize: function(qlonglong)
+        {
+            return null;
+        }
+    },
+    ArrayBuffe: function(){ return null; },
+    Assets:
+    {
+        canWriteCacheValue: function(QUrl){ return null; },
+        compressData: function(QScriptValue, QScriptValue){ return null; },
+        compressData__dupe: function(QScriptValue, QScriptValue, QScriptValue){ return null; },
+        decompressData: function(QScriptValue, QScriptValue){ return null; },
+        decompressData__dupe: function(QScriptValue, QScriptValue, QScriptValue){ return null; },
+        deleteAsset: function(QScriptValue, QScriptValue){ return null; },
+        deleteAsset__dupe: function(QScriptValue, QScriptValue, QScriptValue){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        downloadData: function(QString, QScriptValue){ return null; },
+        extractAssetHash: function(QString){ return null; },
+        getATPUrl: function(QString){ return null; },
+        getAsset: function(QScriptValue, QScriptValue){ return null; },
+        getAsset__dupe: function(QScriptValue, QScriptValue, QScriptValue){ return null; },
+        getCacheStatus: function(QScriptValue){ return null; },
+        getCacheStatus__dupe: function(QScriptValue, QScriptValue){ return null; },
+        getMapping: function(QString, QScriptValue){ return null; },
+        hashData: function(QByteArray){ return null; },
+        hashDataHex: function(QByteArray){ return null; },
+        initializeCache: function(){ return null; },
+        isValidFilePath: function(QString){ return null; },
+        isValidHash: function(QString){ return null; },
+        isValidPath: function(QString){ return null; },
+        loadFromCache: function(QScriptValue, QScriptValue){ return null; },
+        loadFromCache__dupe: function(QScriptValue, QScriptValue, QScriptValue){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        putAsset: function(QScriptValue, QScriptValue){ return null; },
+        putAsset__dupe: function(QScriptValue, QScriptValue, QScriptValue){ return null; },
+        queryCacheMeta: function(QScriptValue, QScriptValue){ return null; },
+        queryCacheMeta__dupe: function(QScriptValue, QScriptValue, QScriptValue){ return null; },
+        resolveAsset: function(QScriptValue, QScriptValue){ return null; },
+        resolveAsset__dupe: function(QScriptValue, QScriptValue, QScriptValue){ return null; },
+        saveToCache: function(QScriptValue, QScriptValue){ return null; },
+        saveToCache__dupe: function(QScriptValue, QScriptValue, QScriptValue){ return null; },
+        saveToCache__dupe__dupe: function(QUrl, QByteArray, QVariantMap, QScriptValue){ return null; },
+        saveToCache__dupe__dupe__dupe: function(QUrl, QByteArray, QVariantMap, QScriptValue, QScriptValue){ return null; },
+        setBakingEnabled: function(QString, bool, QScriptValue){ return null; },
+        setMapping: function(QString, QString, QScriptValue){ return null; },
+        uploadData: function(QString, QScriptValue)
+        {
+            return null;
+        }
+    },
+    Audio:
+    {
+        context: "Desktop",
+        contextChanged: function(QString){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        devices:
+        {
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            input:
+            {
+                canFetchMore: function(QModelIndex){ return null; },
+                columnCount: function(){ return null; },
+                columnCount__dupe: function(QModelIndex){ return null; },
+                columnsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+                columnsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                columnsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+                columnsInserted: function(QModelIndex, int, int){ return null; },
+                columnsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                columnsRemoved: function(QModelIndex, int, int){ return null; },
+                data: function(QModelIndex){ return null; },
+                data__dupe: function(QModelIndex, int){ return null; },
+                dataChanged: function(QModelIndex, QModelIndex){ return null; },
+                dataChanged__dupe: function(QModelIndex, QModelIndex, QVector_int_){ return null; },
+                deleteLater: function(){ return null; },
+                destroyed: function(){ return null; },
+                destroyed__dupe: function(QObject_){ return null; },
+                deviceChanged: function(QAudioDeviceInfo){ return null; },
+                fetchMore: function(QModelIndex){ return null; },
+                flags: function(QModelIndex){ return null; },
+                hasChildren: function(){ return null; },
+                hasChildren__dupe: function(QModelIndex){ return null; },
+                hasIndex: function(int, int){ return null; },
+                hasIndex__dupe: function(int, int, QModelIndex){ return null; },
+                headerData: function(int, Qt__Orientation){ return null; },
+                headerData__dupe: function(int, Qt__Orientation, int){ return null; },
+                headerDataChanged: function(Qt__Orientation, int, int){ return null; },
+                index: function(int, int){ return null; },
+                index__dupe: function(int, int, QModelIndex){ return null; },
+                layoutAboutToBeChanged: function(){ return null; },
+                layoutAboutToBeChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+                layoutAboutToBeChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+                layoutChanged: function(){ return null; },
+                layoutChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+                layoutChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+                match: function(QModelIndex, int, QVariant){ return null; },
+                match__dupe: function(QModelIndex, int, QVariant, int){ return null; },
+                match__dupe__dupe: function(QModelIndex, int, QVariant, int, Qt__MatchFlags){ return null; },
+                modelAboutToBeReset: function(){ return null; },
+                modelReset: function(){ return null; },
+                objectName: "",
+                objectNameChanged: function(QString){ return null; },
+                onDeviceChanged: function(QAudioDeviceInfo, bool){ return null; },
+                onDevicesChanged: function(QList_QAudioDeviceInfo_, bool){ return null; },
+                onPeakValueListChanged: function(QList_float_){ return null; },
+                peakValuesAvailable: true,
+                peakValuesEnabled: false,
+                peakValuesEnabledChanged: function(bool){ return null; },
+                resetInternalData: function(){ return null; },
+                revert: function(){ return null; },
+                rowCount: function(){ return null; },
+                rowCount__dupe: function(QModelIndex){ return null; },
+                rowsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+                rowsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                rowsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+                rowsInserted: function(QModelIndex, int, int){ return null; },
+                rowsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                rowsRemoved: function(QModelIndex, int, int){ return null; },
+                setData: function(QModelIndex, QVariant){ return null; },
+                setData__dupe: function(QModelIndex, QVariant, int){ return null; },
+                sibling: function(int, int, QModelIndex){ return null; },
+                submit: function()
+                {
+                    return null;
+                }
+            },
+            nop: function(){ return null; },
+            objectName: "",
+            objectNameChanged: function(QString){ return null; },
+            output:
+            {
+                canFetchMore: function(QModelIndex){ return null; },
+                columnCount: function(){ return null; },
+                columnCount__dupe: function(QModelIndex){ return null; },
+                columnsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+                columnsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                columnsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+                columnsInserted: function(QModelIndex, int, int){ return null; },
+                columnsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                columnsRemoved: function(QModelIndex, int, int){ return null; },
+                data: function(QModelIndex){ return null; },
+                data__dupe: function(QModelIndex, int){ return null; },
+                dataChanged: function(QModelIndex, QModelIndex){ return null; },
+                dataChanged__dupe: function(QModelIndex, QModelIndex, QVector_int_){ return null; },
+                deleteLater: function(){ return null; },
+                destroyed: function(){ return null; },
+                destroyed__dupe: function(QObject_){ return null; },
+                deviceChanged: function(QAudioDeviceInfo){ return null; },
+                fetchMore: function(QModelIndex){ return null; },
+                flags: function(QModelIndex){ return null; },
+                hasChildren: function(){ return null; },
+                hasChildren__dupe: function(QModelIndex){ return null; },
+                hasIndex: function(int, int){ return null; },
+                hasIndex__dupe: function(int, int, QModelIndex){ return null; },
+                headerData: function(int, Qt__Orientation){ return null; },
+                headerData__dupe: function(int, Qt__Orientation, int){ return null; },
+                headerDataChanged: function(Qt__Orientation, int, int){ return null; },
+                index: function(int, int){ return null; },
+                index__dupe: function(int, int, QModelIndex){ return null; },
+                layoutAboutToBeChanged: function(){ return null; },
+                layoutAboutToBeChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+                layoutAboutToBeChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+                layoutChanged: function(){ return null; },
+                layoutChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+                layoutChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+                match: function(QModelIndex, int, QVariant){ return null; },
+                match__dupe: function(QModelIndex, int, QVariant, int){ return null; },
+                match__dupe__dupe: function(QModelIndex, int, QVariant, int, Qt__MatchFlags){ return null; },
+                modelAboutToBeReset: function(){ return null; },
+                modelReset: function(){ return null; },
+                objectName: "",
+                objectNameChanged: function(QString){ return null; },
+                onDeviceChanged: function(QAudioDeviceInfo, bool){ return null; },
+                onDevicesChanged: function(QList_QAudioDeviceInfo_, bool){ return null; },
+                resetInternalData: function(){ return null; },
+                revert: function(){ return null; },
+                rowCount: function(){ return null; },
+                rowCount__dupe: function(QModelIndex){ return null; },
+                rowsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+                rowsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                rowsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+                rowsInserted: function(QModelIndex, int, int){ return null; },
+                rowsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                rowsRemoved: function(QModelIndex, int, int){ return null; },
+                setData: function(QModelIndex, QVariant){ return null; },
+                setData__dupe: function(QModelIndex, QVariant, int){ return null; },
+                sibling: function(int, int, QModelIndex){ return null; },
+                submit: function()
+                {
+                    return null;
+                }
+            }
+        },
+        disconnected: function(){ return null; },
+        environmentMuted: function(){ return null; },
+        getRecording: function(){ return null; },
         inputLevel: 0,
-        inputVolume: 0,
-        devices: function(){
-            return {
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                nop: function(){},
-                objectNameChanged: function(QString){},
-                input: function(){
-                    return {
-                        peakValuesAvailable: true,
-                        peakValuesEnabled: true,
-                        canFetchMore: function(QModelIndex){},
-                        columnCount: function(){},
-                        columnCount: function(QModelIndex){},
-                        columnsAboutToBeInserted: function(QModelIndex,int,int){},
-                        columnsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        columnsAboutToBeRemoved: function(QModelIndex,int,int){},
-                        columnsInserted: function(QModelIndex,int,int){},
-                        columnsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        columnsRemoved: function(QModelIndex,int,int){},
-                        data: function(QModelIndex){},
-                        data: function(QModelIndex,int){},
-                        dataChanged: function(QModelIndex,QModelIndex){},
-                        dataChanged: function(QModelIndex,QModelIndex,QVector<int>){},
-                        deleteLater: function(){},
-                        destroyed: function(){},
-                        destroyed: function(QObject*){},
-                        deviceChanged: function(QAudioDeviceInfo){},
-                        fetchMore: function(QModelIndex){},
-                        flags: function(QModelIndex){},
-                        hasChildren: function(){},
-                        hasChildren: function(QModelIndex){},
-                        hasIndex: function(int,int){},
-                        hasIndex: function(int,int,QModelIndex){},
-                        headerData: function(int,Qt::Orientation){},
-                        headerData: function(int,Qt::Orientation,int){},
-                        headerDataChanged: function(Qt::Orientation,int,int){},
-                        index: function(int,int){},
-                        index: function(int,int,QModelIndex){},
-                        layoutAboutToBeChanged: function(){},
-                        layoutAboutToBeChanged: function(QList<QPersistentModelIndex>){},
-                        layoutAboutToBeChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                        layoutChanged: function(){},
-                        layoutChanged: function(QList<QPersistentModelIndex>){},
-                        layoutChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                        match: function(QModelIndex,int,QVariant){},
-                        match: function(QModelIndex,int,QVariant,int){},
-                        match: function(QModelIndex,int,QVariant,int,Qt::MatchFlags){},
-                        modelAboutToBeReset: function(){},
-                        modelReset: function(){},
-                        objectNameChanged: function(QString){},
-                        onDeviceChanged: function(QAudioDeviceInfo,bool){},
-                        onDevicesChanged: function(QList<QAudioDeviceInfo>,bool){},
-                        onPeakValueListChanged: function(QList<float>){},
-                        parent: function(QModelIndex){},
-                        peakValuesEnabledChanged: function(bool){},
-                        resetInternalData: function(){},
-                        revert: function(){},
-                        rowCount: function(){},
-                        rowCount: function(QModelIndex){},
-                        rowsAboutToBeInserted: function(QModelIndex,int,int){},
-                        rowsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        rowsAboutToBeRemoved: function(QModelIndex,int,int){},
-                        rowsInserted: function(QModelIndex,int,int){},
-                        rowsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        rowsRemoved: function(QModelIndex,int,int){},
-                        setData: function(QModelIndex,QVariant){},
-                        setData: function(QModelIndex,QVariant,int){},
-                        sibling: function(int,int,QModelIndex){},
-                        submit: function(){},
-                        objectName: ''
-                    };
-                },
-                output: function(){
-                    return {
-                        canFetchMore: function(QModelIndex){},
-                        columnCount: function(){},
-                        columnCount: function(QModelIndex){},
-                        columnsAboutToBeInserted: function(QModelIndex,int,int){},
-                        columnsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        columnsAboutToBeRemoved: function(QModelIndex,int,int){},
-                        columnsInserted: function(QModelIndex,int,int){},
-                        columnsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        columnsRemoved: function(QModelIndex,int,int){},
-                        data: function(QModelIndex){},
-                        data: function(QModelIndex,int){},
-                        dataChanged: function(QModelIndex,QModelIndex){},
-                        dataChanged: function(QModelIndex,QModelIndex,QVector<int>){},
-                        deleteLater: function(){},
-                        destroyed: function(){},
-                        destroyed: function(QObject*){},
-                        deviceChanged: function(QAudioDeviceInfo){},
-                        fetchMore: function(QModelIndex){},
-                        flags: function(QModelIndex){},
-                        hasChildren: function(){},
-                        hasChildren: function(QModelIndex){},
-                        hasIndex: function(int,int){},
-                        hasIndex: function(int,int,QModelIndex){},
-                        headerData: function(int,Qt::Orientation){},
-                        headerData: function(int,Qt::Orientation,int){},
-                        headerDataChanged: function(Qt::Orientation,int,int){},
-                        index: function(int,int){},
-                        index: function(int,int,QModelIndex){},
-                        layoutAboutToBeChanged: function(){},
-                        layoutAboutToBeChanged: function(QList<QPersistentModelIndex>){},
-                        layoutAboutToBeChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                        layoutChanged: function(){},
-                        layoutChanged: function(QList<QPersistentModelIndex>){},
-                        layoutChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                        match: function(QModelIndex,int,QVariant){},
-                        match: function(QModelIndex,int,QVariant,int){},
-                        match: function(QModelIndex,int,QVariant,int,Qt::MatchFlags){},
-                        modelAboutToBeReset: function(){},
-                        modelReset: function(){},
-                        objectNameChanged: function(QString){},
-                        onDeviceChanged: function(QAudioDeviceInfo,bool){},
-                        onDevicesChanged: function(QList<QAudioDeviceInfo>,bool){},
-                        parent: function(QModelIndex){},
-                        resetInternalData: function(){},
-                        revert: function(){},
-                        rowCount: function(){},
-                        rowCount: function(QModelIndex){},
-                        rowsAboutToBeInserted: function(QModelIndex,int,int){},
-                        rowsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        rowsAboutToBeRemoved: function(QModelIndex,int,int){},
-                        rowsInserted: function(QModelIndex,int,int){},
-                        rowsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        rowsRemoved: function(QModelIndex,int,int){},
-                        setData: function(QModelIndex,QVariant){},
-                        setData: function(QModelIndex,QVariant,int){},
-                        sibling: function(int,int,QModelIndex){},
-                        submit: function(){},
-                        objectName: ''
-                    };
-                },
-                objectName: ''
-            };
+        inputLevelChanged: function(float){ return null; },
+        inputReceived: function(QByteArray){ return null; },
+        inputVolume: 1,
+        inputVolumeChanged: function(float){ return null; },
+        muted: true,
+        mutedByMixer: function(){ return null; },
+        mutedChanged: function(bool){ return null; },
+        noiseGateClosed: function(){ return null; },
+        noiseGateOpened: function(){ return null; },
+        noiseReduction: true,
+        noiseReductionChanged: function(bool){ return null; },
+        nop: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        onContextChanged: function(){ return null; },
+        playSound: function(SharedSoundPointer){ return null; },
+        playSound__dupe: function(SharedSoundPointer, AudioInjectorOptions){ return null; },
+        playSystemSound: function(SharedSoundPointer, QVector3D){ return null; },
+        receivedFirstPacket: function(){ return null; },
+        setInputDevice: function(QAudioDeviceInfo, bool){ return null; },
+        setOutputDevice: function(QAudioDeviceInfo, bool){ return null; },
+        setReverb: function(bool){ return null; },
+        setReverbOptions: function(const_AudioEffectOptions_){ return null; },
+        setStereoInput: function(bool){ return null; },
+        startRecording: function(QString){ return null; },
+        stopRecording: function()
+        {
+            return null;
+        }
+    },
+    AudioEffectOption: function(){ return null; },
+    AudioScope:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getAutoTrigger: function(){ return null; },
+        getFramesPerScope: function(){ return null; },
+        getFramesPerSecond: function(){ return null; },
+        getPause: function(){ return null; },
+        getScopeInput: function(){ return null; },
+        getScopeOutputLeft: function(){ return null; },
+        getScopeOutputRight: function(){ return null; },
+        getTriggerInput: function(){ return null; },
+        getTriggerOutputLeft: function(){ return null; },
+        getTriggerOutputRight: function(){ return null; },
+        getTriggered: function(){ return null; },
+        getVisible: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        pauseChanged: function(){ return null; },
+        scopeInput:
+        {},
+        scopeOutputLeft:
+        {},
+        scopeOutputRight:
+        {},
+        selectAudioScopeFiftyFrames: function(){ return null; },
+        selectAudioScopeFiveFrames: function(){ return null; },
+        selectAudioScopeTwentyFrames: function(){ return null; },
+        setAutoTrigger: function(bool){ return null; },
+        setLocalEcho: function(bool){ return null; },
+        setPause: function(bool){ return null; },
+        setServerEcho: function(bool){ return null; },
+        setTriggerValues: function(int, int){ return null; },
+        setTriggered: function(bool){ return null; },
+        setVisible: function(bool){ return null; },
+        toggle: function(){ return null; },
+        togglePause: function(){ return null; },
+        toggleTrigger: function(){ return null; },
+        triggerInput:
+        {},
+        triggerOutputLeft:
+        {},
+        triggerOutputRight:
+        {},
+        triggered: function()
+        {
+            return null;
+        }
+    },
+    AudioStats:
+    {
+        clientStream:
+        {
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            dropCount: 144100,
+            dropCountChanged: function(int){ return null; },
+            framesAvailable: 8,
+            framesAvailableAvg: 4,
+            framesAvailableAvgChanged: function(int){ return null; },
+            framesAvailableChanged: function(int){ return null; },
+            framesDesired: 2,
+            framesDesiredChanged: function(int){ return null; },
+            lastStarveDurationCount: 1,
+            lastStarveDurationCountChanged: function(int){ return null; },
+            lossCount: 0,
+            lossCountChanged: function(float){ return null; },
+            lossCountWindow: 0,
+            lossCountWindowChanged: function(float){ return null; },
+            lossRate: 0,
+            lossRateChanged: function(float){ return null; },
+            lossRateWindow: 0,
+            lossRateWindowChanged: function(float){ return null; },
+            objectName: "",
+            objectNameChanged: function(QString){ return null; },
+            overflowCount: 0,
+            overflowCountChanged: function(int){ return null; },
+            starveCount: 3,
+            starveCountChanged: function(int){ return null; },
+            timegapMsAvg: 10,
+            timegapMsAvgChanged: function(qulonglong){ return null; },
+            timegapMsAvgWindow: 9,
+            timegapMsAvgWindowChanged: function(qulonglong){ return null; },
+            timegapMsMax: 56,
+            timegapMsMaxChanged: function(qulonglong){ return null; },
+            timegapMsMaxWindow: 14,
+            timegapMsMaxWindowChanged: function(qulonglong){ return null; },
+            unplayedMsMax: 120,
+            unplayedMsMaxChanged: function(float)
+            {
+                return null;
+            }
         },
-        context: '',
-        objectName: ''
-        };
-    }
-
-function AudioScope(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getAutoTrigger: function(){},
-        getFramesPerScope: function(){},
-        getFramesPerSecond: function(){},
-        getPause: function(){},
-        getScopeInput: function(){},
-        getScopeOutputLeft: function(){},
-        getScopeOutputRight: function(){},
-        getTriggerInput: function(){},
-        getTriggerOutputLeft: function(){},
-        getTriggerOutputRight: function(){},
-        getTriggered: function(){},
-        getVisible: function(){},
-        objectNameChanged: function(QString){},
-        pauseChanged: function(){},
-        selectAudioScopeFiftyFrames: function(){},
-        selectAudioScopeFiveFrames: function(){},
-        selectAudioScopeTwentyFrames: function(){},
-        setAutoTrigger: function(bool){},
-        setLocalEcho: function(bool){},
-        setPause: function(bool){},
-        setServerEcho: function(bool){},
-        setTriggerValues: function(int,int){},
-        setTriggered: function(bool){},
-        setVisible: function(bool){},
-        toggle: function(){},
-        togglePause: function(){},
-        toggleTrigger: function(){},
-        triggered: function(){},
-        scopeInput: function(){
-            return {
-            };
+        clientStreamChanged: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        injectorStreams:
+        {
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            objectName: "",
+            objectNameChanged: function(QString)
+            {
+                return null;
+            }
         },
-        scopeOutputLeft: function(){
-            return {
-            };
+        injectorStreamsChanged: function(){ return null; },
+        inputReadMsMax: 10.022727012634277,
+        inputReadMsMaxChanged: function(float){ return null; },
+        inputUnplayedMsMax: 4,
+        inputUnplayedMsMaxChanged: function(float){ return null; },
+        mixerStream:
+        {
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            dropCount: 51,
+            dropCountChanged: function(int){ return null; },
+            framesAvailable: 0,
+            framesAvailableAvg: 1,
+            framesAvailableAvgChanged: function(int){ return null; },
+            framesAvailableChanged: function(int){ return null; },
+            framesDesired: 1,
+            framesDesiredChanged: function(int){ return null; },
+            lastStarveDurationCount: 1,
+            lastStarveDurationCountChanged: function(int){ return null; },
+            lossCount: 0,
+            lossCountChanged: function(float){ return null; },
+            lossCountWindow: 0,
+            lossCountWindowChanged: function(float){ return null; },
+            lossRate: 0,
+            lossRateChanged: function(float){ return null; },
+            lossRateWindow: 0,
+            lossRateWindowChanged: function(float){ return null; },
+            objectName: "",
+            objectNameChanged: function(QString){ return null; },
+            overflowCount: 0,
+            overflowCountChanged: function(int){ return null; },
+            starveCount: 1,
+            starveCountChanged: function(int){ return null; },
+            timegapMsAvg: 10,
+            timegapMsAvgChanged: function(qulonglong){ return null; },
+            timegapMsAvgWindow: 10,
+            timegapMsAvgWindowChanged: function(qulonglong){ return null; },
+            timegapMsMax: 49,
+            timegapMsMaxChanged: function(qulonglong){ return null; },
+            timegapMsMaxWindow: 21,
+            timegapMsMaxWindowChanged: function(qulonglong){ return null; },
+            unplayedMsMax: 20,
+            unplayedMsMaxChanged: function(float)
+            {
+                return null;
+            }
         },
-        scopeOutputRight: function(){
-            return {
-            };
-        },
-        triggerInput: function(){
-            return {
-            };
-        },
-        triggerOutputLeft: function(){
-            return {
-            };
-        },
-        triggerOutputRight: function(){
-            return {
-            };
-        },
-        objectName: ''
-        };
-    }
-
-function AudioStats(){
-    return {
-        clientStreamChanged: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        injectorStreamsChanged: function(){},
-        inputReadMsMaxChanged: function(float){},
-        inputUnplayedMsMaxChanged: function(float){},
-        mixerStreamChanged: function(){},
-        objectNameChanged: function(QString){},
-        outputUnplayedMsMaxChanged: function(float){},
-        pingMsChanged: function(float){},
-        sentTimegapMsAvgChanged: function(qulonglong){},
-        sentTimegapMsAvgWindowChanged: function(qulonglong){},
-        sentTimegapMsMaxChanged: function(qulonglong){},
-        sentTimegapMsMaxWindowChanged: function(qulonglong){},
-        inputReadMsMax: 0,
-        inputUnplayedMsMax: 0,
-        outputUnplayedMsMax: 0,
+        mixerStreamChanged: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        outputUnplayedMsMax: 12,
+        outputUnplayedMsMaxChanged: function(float){ return null; },
         pingMs: 0,
-        sentTimegapMsAvg: 0,
-        sentTimegapMsAvgWindow: 0,
-        sentTimegapMsMax: 0,
-        sentTimegapMsMaxWindow: 0,
-        clientStream: function(){
-            return {
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                dropCountChanged: function(int){},
-                framesAvailableAvgChanged: function(int){},
-                framesAvailableChanged: function(int){},
-                framesDesiredChanged: function(int){},
-                lastStarveDurationCountChanged: function(int){},
-                lossCountChanged: function(float){},
-                lossCountWindowChanged: function(float){},
-                lossRateChanged: function(float){},
-                lossRateWindowChanged: function(float){},
-                objectNameChanged: function(QString){},
-                overflowCountChanged: function(int){},
-                starveCountChanged: function(int){},
-                timegapMsAvgChanged: function(qulonglong){},
-                timegapMsAvgWindowChanged: function(qulonglong){},
-                timegapMsMaxChanged: function(qulonglong){},
-                timegapMsMaxWindowChanged: function(qulonglong){},
-                unplayedMsMaxChanged: function(float){},
-                dropCount: 0,
-                framesAvailable: 0,
-                framesAvailableAvg: 0,
-                framesDesired: 0,
-                lastStarveDurationCount: 0,
-                lossCount: 0,
-                lossCountWindow: 0,
-                lossRate: 0,
-                lossRateWindow: 0,
-                overflowCount: 0,
-                starveCount: 0,
-                timegapMsAvg: 0,
-                timegapMsAvgWindow: 0,
-                timegapMsMax: 0,
-                timegapMsMaxWindow: 0,
-                unplayedMsMax: 0,
-                objectName: ''
-            };
-        },
-        injectorStreams: function(){
-            return {
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                objectNameChanged: function(QString){},
-                objectName: ''
-            };
-        },
-        mixerStream: function(){
-            return {
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                dropCountChanged: function(int){},
-                framesAvailableAvgChanged: function(int){},
-                framesAvailableChanged: function(int){},
-                framesDesiredChanged: function(int){},
-                lastStarveDurationCountChanged: function(int){},
-                lossCountChanged: function(float){},
-                lossCountWindowChanged: function(float){},
-                lossRateChanged: function(float){},
-                lossRateWindowChanged: function(float){},
-                objectNameChanged: function(QString){},
-                overflowCountChanged: function(int){},
-                starveCountChanged: function(int){},
-                timegapMsAvgChanged: function(qulonglong){},
-                timegapMsAvgWindowChanged: function(qulonglong){},
-                timegapMsMaxChanged: function(qulonglong){},
-                timegapMsMaxWindowChanged: function(qulonglong){},
-                unplayedMsMaxChanged: function(float){},
-                dropCount: 0,
-                framesAvailable: 0,
-                framesAvailableAvg: 0,
-                framesDesired: 0,
-                lastStarveDurationCount: 0,
-                lossCount: 0,
-                lossCountWindow: 0,
-                lossRate: 0,
-                lossRateWindow: 0,
-                overflowCount: 0,
-                starveCount: 0,
-                timegapMsAvg: 0,
-                timegapMsAvgWindow: 0,
-                timegapMsMax: 0,
-                timegapMsMaxWindow: 0,
-                unplayedMsMax: 0,
-                objectName: ''
-            };
-        },
-        objectName: ''
-        };
-    }
-
-function AvatarBookmarks(){
-    return {
-        addBookmark: function(){},
-        deleteBookmark: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        objectName: ''
-        };
-    }
-
-function AvatarInputs(){
-    return {
-        cameraEnabled: true,
-        cameraMuted: true,
-        isHMD: true,
+        pingMsChanged: function(float){ return null; },
+        sentTimegapMsAvg: 10,
+        sentTimegapMsAvgChanged: function(qulonglong){ return null; },
+        sentTimegapMsAvgWindow: 9,
+        sentTimegapMsAvgWindowChanged: function(qulonglong){ return null; },
+        sentTimegapMsMax: 994,
+        sentTimegapMsMaxChanged: function(qulonglong){ return null; },
+        sentTimegapMsMaxWindow: 12,
+        sentTimegapMsMaxWindowChanged: function(qulonglong)
+        {
+            return null;
+        }
+    },
+    AvatarBookmarks:
+    {
+        addBookmark: function(){ return null; },
+        deleteBookmark: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString)
+        {
+            return null;
+        }
+    },
+    AvatarInputs:
+    {
+        cameraEnabled: false,
+        cameraEnabledChanged: function(){ return null; },
+        cameraMuted: false,
+        cameraMutedChanged: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        isHMD: false,
+        isHMDChanged: function(){ return null; },
+        loudnessToAudioLevel: function(float){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        resetSensors: function(){ return null; },
+        setShowAudioTools: function(bool){ return null; },
         showAudioTools: true,
-        cameraEnabledChanged: function(){},
-        cameraMutedChanged: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        isHMDChanged: function(){},
-        loudnessToAudioLevel: function(float){},
-        objectNameChanged: function(QString){},
-        resetSensors: function(){},
-        setShowAudioTools: function(bool){},
-        showAudioToolsChanged: function(bool){},
-        toggleCameraMute: function(){},
-        objectName: ''
-        };
-    }
-
-function AvatarList(){
-    return {
-        avatarAddedEvent: function(QUuid){},
-        avatarRemovedEvent: function(QUuid){},
-        avatarSessionChangedEvent: function(QUuid,QUuid){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        findRayIntersection: function(PickRay){},
-        findRayIntersection: function(PickRay,QScriptValue){},
-        findRayIntersection: function(PickRay,QScriptValue,QScriptValue){},
-        findRayIntersectionVector: function(PickRay,QVector<EntityItemID>,QVector<EntityItemID>){},
-        getAvatar: function(QUuid){},
-        getAvatarDataRate: function(QUuid){},
-        getAvatarDataRate: function(QUuid,QString){},
-        getAvatarIdentifiers: function(){},
-        getAvatarSimulationRate: function(QUuid){},
-        getAvatarSimulationRate: function(QUuid,QString){},
-        getAvatarSortCoefficient: function(QString){},
-        getAvatarUpdateRate: function(QUuid){},
-        getAvatarUpdateRate: function(QUuid,QString){},
-        getAvatarsInRange: function(glm::vec3,float){},
-        isAvatarInRange: function(glm::vec3,float){},
-        objectNameChanged: function(QString){},
-        processAvatarDataPacket: function(QSharedPointer<ReceivedMessage>,SharedNodePointer){},
-        processAvatarIdentityPacket: function(QSharedPointer<ReceivedMessage>,SharedNodePointer){},
-        processKillAvatar: function(QSharedPointer<ReceivedMessage>,SharedNodePointer){},
-        sessionUUIDChanged: function(QUuid,QUuid){},
-        setAvatarSortCoefficient: function(QString,QScriptValue){},
-        updateAvatarRenderStatus: function(bool){},
-        objectName: ''
-        };
-    }
-
-function AvatarManager(){
-    return {
-        avatarAddedEvent: function(QUuid){},
-        avatarRemovedEvent: function(QUuid){},
-        avatarSessionChangedEvent: function(QUuid,QUuid){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        findRayIntersection: function(PickRay){},
-        findRayIntersection: function(PickRay,QScriptValue){},
-        findRayIntersection: function(PickRay,QScriptValue,QScriptValue){},
-        findRayIntersectionVector: function(PickRay,QVector<EntityItemID>,QVector<EntityItemID>){},
-        getAvatar: function(QUuid){},
-        getAvatarDataRate: function(QUuid){},
-        getAvatarDataRate: function(QUuid,QString){},
-        getAvatarIdentifiers: function(){},
-        getAvatarSimulationRate: function(QUuid){},
-        getAvatarSimulationRate: function(QUuid,QString){},
-        getAvatarSortCoefficient: function(QString){},
-        getAvatarUpdateRate: function(QUuid){},
-        getAvatarUpdateRate: function(QUuid,QString){},
-        getAvatarsInRange: function(glm::vec3,float){},
-        isAvatarInRange: function(glm::vec3,float){},
-        objectNameChanged: function(QString){},
-        processAvatarDataPacket: function(QSharedPointer<ReceivedMessage>,SharedNodePointer){},
-        processAvatarIdentityPacket: function(QSharedPointer<ReceivedMessage>,SharedNodePointer){},
-        processKillAvatar: function(QSharedPointer<ReceivedMessage>,SharedNodePointer){},
-        sessionUUIDChanged: function(QUuid,QUuid){},
-        setAvatarSortCoefficient: function(QString,QScriptValue){},
-        updateAvatarRenderStatus: function(bool){},
-        objectName: ''
-        };
-    }
-
-function Camera(){
-    return {
-        computePickRay: function(float,float){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getCameraEntity: function(){},
-        getModeString: function(){},
-        getOrientation: function(){},
-        getPosition: function(){},
-        keepLookingAt: function(glm::vec3){},
-        lookAt: function(glm::vec3){},
-        modeUpdated: function(QString){},
-        objectNameChanged: function(QString){},
-        setCameraEntity: function(QUuid){},
-        setModeString: function(QString){},
-        setOrientation: function(glm::quat){},
-        setPosition: function(glm::vec3){},
-        stopLooking: function(){},
+        showAudioToolsChanged: function(bool){ return null; },
+        toggleCameraMute: function()
+        {
+            return null;
+        }
+    },
+    AvatarList:
+    {
+        avatarAddedEvent: function(QUuid){ return null; },
+        avatarRemovedEvent: function(QUuid){ return null; },
+        avatarSessionChangedEvent: function(QUuid, QUuid){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        findRayIntersection: function(PickRay){ return null; },
+        findRayIntersection__dupe: function(PickRay, QScriptValue){ return null; },
+        findRayIntersection__dupe__dupe: function(PickRay, QScriptValue, QScriptValue){ return null; },
+        findRayIntersectionVector: function(PickRay, QVector_EntityItemID_, QVector_EntityItemID_){ return null; },
+        getAvatar: function(QUuid){ return null; },
+        getAvatarDataRate: function(QUuid){ return null; },
+        getAvatarDataRate__dupe: function(QUuid, QString){ return null; },
+        getAvatarIdentifiers: function(){ return null; },
+        getAvatarSimulationRate: function(QUuid){ return null; },
+        getAvatarSimulationRate__dupe: function(QUuid, QString){ return null; },
+        getAvatarSortCoefficient: function(QString){ return null; },
+        getAvatarUpdateRate: function(QUuid){ return null; },
+        getAvatarUpdateRate__dupe: function(QUuid, QString){ return null; },
+        getAvatarsInRange: function(glm__vec3, float){ return null; },
+        isAvatarInRange: function(glm__vec3, float){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        processAvatarDataPacket: function(QSharedPointer_ReceivedMessage_, SharedNodePointer){ return null; },
+        processAvatarIdentityPacket: function(QSharedPointer_ReceivedMessage_, SharedNodePointer){ return null; },
+        processKillAvatar: function(QSharedPointer_ReceivedMessage_, SharedNodePointer){ return null; },
+        sessionUUIDChanged: function(QUuid, QUuid){ return null; },
+        setAvatarSortCoefficient: function(QString, QScriptValue){ return null; },
+        updateAvatarRenderStatus: function(bool)
+        {
+            return null;
+        }
+    },
+    AvatarManager:
+    {
+        avatarAddedEvent: function(QUuid){ return null; },
+        avatarRemovedEvent: function(QUuid){ return null; },
+        avatarSessionChangedEvent: function(QUuid, QUuid){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        findRayIntersection: function(PickRay){ return null; },
+        findRayIntersection__dupe: function(PickRay, QScriptValue){ return null; },
+        findRayIntersection__dupe__dupe: function(PickRay, QScriptValue, QScriptValue){ return null; },
+        findRayIntersectionVector: function(PickRay, QVector_EntityItemID_, QVector_EntityItemID_){ return null; },
+        getAvatar: function(QUuid){ return null; },
+        getAvatarDataRate: function(QUuid){ return null; },
+        getAvatarDataRate__dupe: function(QUuid, QString){ return null; },
+        getAvatarIdentifiers: function(){ return null; },
+        getAvatarSimulationRate: function(QUuid){ return null; },
+        getAvatarSimulationRate__dupe: function(QUuid, QString){ return null; },
+        getAvatarSortCoefficient: function(QString){ return null; },
+        getAvatarUpdateRate: function(QUuid){ return null; },
+        getAvatarUpdateRate__dupe: function(QUuid, QString){ return null; },
+        getAvatarsInRange: function(glm__vec3, float){ return null; },
+        isAvatarInRange: function(glm__vec3, float){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        processAvatarDataPacket: function(QSharedPointer_ReceivedMessage_, SharedNodePointer){ return null; },
+        processAvatarIdentityPacket: function(QSharedPointer_ReceivedMessage_, SharedNodePointer){ return null; },
+        processKillAvatar: function(QSharedPointer_ReceivedMessage_, SharedNodePointer){ return null; },
+        sessionUUIDChanged: function(QUuid, QUuid){ return null; },
+        setAvatarSortCoefficient: function(QString, QScriptValue){ return null; },
+        updateAvatarRenderStatus: function(bool)
+        {
+            return null;
+        }
+    },
+    Camera:
+    {
         cameraEntity: null,
-        frustum: function(){
-            return {
-                aspectRatio: 0,
-                centerRadius: 0,
-                fieldOfView: 0,
-                orientation: function(){
-                    return {
-                        w: 0,
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                position: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                projection: function(){
-                    return {
-                        r0c0: 0,
-                        r0c1: 0,
-                        r0c2: 0,
-                        r0c3: 0,
-                        r1c0: 0,
-                        r1c1: 0,
-                        r1c2: 0,
-                        r1c3: 0,
-                        r2c0: 0,
-                        r2c1: 0,
-                        r2c2: 0,
-                        r2c3: 0,
-                        r3c0: 0,
-                        r3c1: 0,
-                        r3c2: 0,
-                        r3c3: 0
-                    };
-                }
-            };
+        computePickRay: function(float, float){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        frustum:
+        {
+            aspectRatio: 1.9277106523513794,
+            centerRadius: 3,
+            fieldOfView: 45.00000762939453,
+            orientation:
+            {
+                w: 0.46201616525650024,
+                x: -0.1145789697766304,
+                y: 0.8535816669464111,
+                z: 0.21168632805347443
+            },
+            position:
+            {
+                x: 505.2832946777344,
+                y: 2.2923970222473145,
+                z: -490.9794616699219
+            },
+            projection:
+            {
+                r0c0: 1.252373218536377,
+                r0c1: 0,
+                r0c2: 0,
+                r0c3: 0,
+                r1c0: 0,
+                r1c1: 2.4142134189605713,
+                r1c2: 0,
+                r1c3: 0,
+                r2c0: 0,
+                r2c1: 0,
+                r2c2: -1.0000097751617432,
+                r2c3: -0.1600007712841034,
+                r3c0: 0,
+                r3c1: 0,
+                r3c2: -1,
+                r3c3: 0
+            }
         },
-        orientation: function(){
-            return {
-                w: 0,
-                x: 0,
-                y: 0,
-                z: 0
-            };
+        getCameraEntity: function(){ return null; },
+        getModeString: function(){ return null; },
+        getOrientation: function(){ return null; },
+        getPosition: function(){ return null; },
+        keepLookingAt: function(glm__vec3){ return null; },
+        lookAt: function(glm__vec3){ return null; },
+        mode: "third person",
+        modeUpdated: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        orientation:
+        {
+            w: 0.46201616525650024,
+            x: -0.1145789697766304,
+            y: 0.8535816669464111,
+            z: 0.21168632805347443
         },
-        position: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
+        position:
+        {
+            x: 505.2832946777344,
+            y: 2.2923970222473145,
+            z: -490.9794616699219
         },
-        mode: '',
-        objectName: ''
-        };
-    }
-
-function Clipboard(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        exportEntities: function(QString,QVector<EntityItemID>){},
-        exportEntities: function(QString,float,float,float,float){},
-        getClipboardContentsLargestDimension: function(){},
-        getContentsDimensions: function(){},
-        importEntities: function(QString){},
-        objectNameChanged: function(QString){},
-        pasteEntities: function(glm::vec3){},
-        objectName: ''
-        };
-    }
-
-function console(){
-    return {
-        assert: function(){
-            return {
-            };
-        },
-        debug: function(){
-            return {
-            };
-        },
-        error: function(){
-            return {
-            };
-        },
-        exception: function(){
-            return {
-            };
-        },
-        group: function(){
-            return {
-            };
-        },
-        groupCollapsed: function(){
-            return {
-            };
-        },
-        groupEnd: function(){
-            return {
-            };
-        },
-        info: function(){
-            return {
-            };
-        },
-        log: function(){
-            return {
-            };
-        },
-        warn: function(){
-            return {
-            };
-        },
-        clear: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        time: function(QString){},
-        timeEnd: function(QString){},
-        trace: function(){},
-        objectName: ''
-        };
-    }
-
-function ContextOverlay(){
-    return {
+        setCameraEntity: function(QUuid){ return null; },
+        setModeString: function(QString){ return null; },
+        setOrientation: function(glm__quat){ return null; },
+        setPosition: function(glm__vec3){ return null; },
+        stopLooking: function()
+        {
+            return null;
+        }
+    },
+    Clipboard:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        exportEntities: function(QString, QVector_EntityItemID_){ return null; },
+        exportEntities__dupe: function(QString, float, float, float, float){ return null; },
+        getClipboardContentsLargestDimension: function(){ return null; },
+        getContentsDimensions: function(){ return null; },
+        importEntities: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        pasteEntities: function(glm__vec3)
+        {
+            return null;
+        }
+    },
+    ContextOverlay:
+    {
+        contextOverlayClicked: function(QUuid){ return null; },
+        contextOverlayFilterPassed: function(EntityItemID){ return null; },
+        contextOverlays_hoverEnterEntity: function(EntityItemID, PointerEvent){ return null; },
+        contextOverlays_hoverEnterOverlay: function(OverlayID, PointerEvent){ return null; },
+        contextOverlays_hoverLeaveEntity: function(EntityItemID, PointerEvent){ return null; },
+        contextOverlays_hoverLeaveOverlay: function(OverlayID, PointerEvent){ return null; },
+        contextOverlays_mousePressOnOverlay: function(OverlayID, PointerEvent){ return null; },
+        createOrDestroyContextOverlay: function(EntityItemID, PointerEvent){ return null; },
+        destroyContextOverlay: function(EntityItemID){ return null; },
+        destroyContextOverlay__dupe: function(EntityItemID, PointerEvent){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
         enabled: true,
-        isInMarketplaceInspectionMode: true,
-        contextOverlayClicked: function(QUuid){},
-        contextOverlayFilterPassed: function(EntityItemID){},
-        contextOverlays_hoverEnterEntity: function(EntityItemID,PointerEvent){},
-        contextOverlays_hoverEnterOverlay: function(OverlayID,PointerEvent){},
-        contextOverlays_hoverLeaveEntity: function(EntityItemID,PointerEvent){},
-        contextOverlays_hoverLeaveOverlay: function(OverlayID,PointerEvent){},
-        contextOverlays_mousePressOnOverlay: function(OverlayID,PointerEvent){},
-        createOrDestroyContextOverlay: function(EntityItemID,PointerEvent){},
-        destroyContextOverlay: function(EntityItemID){},
-        destroyContextOverlay: function(EntityItemID,PointerEvent){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getCurrentEntityWithContextOverlay: function(){},
-        objectNameChanged: function(QString){},
-        requestOwnershipVerification: function(QUuid){},
         entityWithContextOverlay: null,
-        objectName: ''
-        };
-    }
-
-function Controller(){
-    return {
-        actionEvent: function(int,float){},
-        captureActionEvents: function(){},
-        captureEntityClickEvents: function(){},
-        captureJoystick: function(int){},
-        captureKeyEvents: function(KeyEvent){},
-        captureMouseEvents: function(){},
-        captureTouchEvents: function(){},
-        captureWheelEvents: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disableMapping: function(QString){},
-        enableMapping: function(QString){},
-        enableMapping: function(QString,bool){},
-        findAction: function(QString){},
-        findDevice: function(QString){},
-        getActionNames: function(){},
-        getActionValue: function(int){},
-        getActions: function(){},
-        getAllActions: function(){},
-        getAvailableInputs: function(uint){},
-        getAxisValue: function(StandardAxisChannel){},
-        getAxisValue: function(StandardAxisChannel,uint16_t){},
-        getAxisValue: function(int){},
-        getButtonValue: function(StandardButtonChannel){},
-        getButtonValue: function(StandardButtonChannel,uint16_t){},
-        getDeviceName: function(uint){},
-        getDeviceNames: function(){},
-        getHardware: function(){},
-        getInputRecorderSaveDirectory: function(){},
-        getPoseValue: function(StandardPoseChannel){},
-        getPoseValue: function(StandardPoseChannel,uint16_t){},
-        getPoseValue: function(int){},
-        getRecommendedHUDRect: function(){},
-        getStandard: function(){},
-        getValue: function(int){},
-        getViewportDimensions: function(){},
-        hardwareChanged: function(){},
-        inputEvent: function(int,float){},
-        keyPressEvent: function(KeyEvent){},
-        keyReleaseEvent: function(KeyEvent){},
-        loadInputRecording: function(QString){},
-        loadMapping: function(QString){},
-        mouseDoublePressEvent: function(MouseEvent){},
-        mouseMoveEvent: function(MouseEvent){},
-        mousePressEvent: function(MouseEvent){},
-        mouseReleaseEvent: function(MouseEvent){},
-        newMapping: function(){},
-        newMapping: function(QString){},
-        objectNameChanged: function(QString){},
-        parseMapping: function(QString){},
-        releaseActionEvents: function(){},
-        releaseEntityClickEvents: function(){},
-        releaseJoystick: function(int){},
-        releaseKeyEvents: function(KeyEvent){},
-        releaseMouseEvents: function(){},
-        releaseTouchEvents: function(){},
-        releaseWheelEvents: function(){},
-        saveInputRecording: function(){},
-        startInputPlayback: function(){},
-        startInputRecording: function(){},
-        stopInputPlayback: function(){},
-        stopInputRecording: function(){},
-        touchBeginEvent: function(TouchEvent){},
-        touchEndEvent: function(TouchEvent){},
-        touchUpdateEvent: function(TouchEvent){},
-        triggerHapticPulse: function(float,float){},
-        triggerHapticPulse: function(float,float,controller::Hand){},
-        triggerHapticPulseOnDevice: function(uint,float,float){},
-        triggerHapticPulseOnDevice: function(uint,float,float,controller::Hand){},
-        triggerShortHapticPulse: function(float){},
-        triggerShortHapticPulse: function(float,controller::Hand){},
-        triggerShortHapticPulseOnDevice: function(uint,float){},
-        triggerShortHapticPulseOnDevice: function(uint,float,controller::Hand){},
-        wheelEvent: function(WheelEvent){},
-        Actions: function(){
-            return {
-                ACTION1: 0,
-                ACTION2: 0,
-                BOOM_IN: 0,
-                BOOM_OUT: 0,
-                Backward: 0,
-                BoomIn: 0,
-                BoomOut: 0,
-                CONTEXT_MENU: 0,
-                ContextMenu: 0,
-                CycleCamera: 0,
-                Down: 0,
-                Forward: 0,
-                Head: 0,
-                Hips: 0,
-                LATERAL_LEFT: 0,
-                LATERAL_RIGHT: 0,
-                LEFT_HAND: 0,
-                LEFT_HAND_CLICK: 0,
-                LONGITUDINAL_BACKWARD: 0,
-                LONGITUDINAL_FORWARD: 0,
-                LeftArm: 0,
-                LeftFoot: 0,
-                LeftHand: 0,
-                LeftHandClick: 0,
-                LeftHandIndex1: 0,
-                LeftHandIndex2: 0,
-                LeftHandIndex3: 0,
-                LeftHandIndex4: 0,
-                LeftHandMiddle1: 0,
-                LeftHandMiddle2: 0,
-                LeftHandMiddle3: 0,
-                LeftHandMiddle4: 0,
-                LeftHandPinky1: 0,
-                LeftHandPinky2: 0,
-                LeftHandPinky3: 0,
-                LeftHandPinky4: 0,
-                LeftHandRing1: 0,
-                LeftHandRing2: 0,
-                LeftHandRing3: 0,
-                LeftHandRing4: 0,
-                LeftHandThumb1: 0,
-                LeftHandThumb2: 0,
-                LeftHandThumb3: 0,
-                LeftHandThumb4: 0,
-                PITCH_DOWN: 0,
-                PITCH_UP: 0,
-                Pitch: 0,
-                PitchDown: 0,
-                PitchUp: 0,
-                PrimaryAction: 0,
-                RIGHT_HAND: 0,
-                RIGHT_HAND_CLICK: 0,
-                ReticleClick: 0,
-                ReticleDown: 0,
-                ReticleLeft: 0,
-                ReticleRight: 0,
-                ReticleUp: 0,
-                ReticleX: 0,
-                ReticleY: 0,
-                RightArm: 0,
-                RightFoot: 0,
-                RightHand: 0,
-                RightHandClick: 0,
-                RightHandIndex1: 0,
-                RightHandIndex2: 0,
-                RightHandIndex3: 0,
-                RightHandIndex4: 0,
-                RightHandMiddle1: 0,
-                RightHandMiddle2: 0,
-                RightHandMiddle3: 0,
-                RightHandMiddle4: 0,
-                RightHandPinky1: 0,
-                RightHandPinky2: 0,
-                RightHandPinky3: 0,
-                RightHandPinky4: 0,
-                RightHandRing1: 0,
-                RightHandRing2: 0,
-                RightHandRing3: 0,
-                RightHandRing4: 0,
-                RightHandThumb1: 0,
-                RightHandThumb2: 0,
-                RightHandThumb3: 0,
-                RightHandThumb4: 0,
-                Roll: 0,
-                SHIFT: 0,
-                SecondaryAction: 0,
-                Shift: 0,
-                Spine2: 0,
-                StepPitch: 0,
-                StepRoll: 0,
-                StepTranslateX: 0,
-                StepTranslateY: 0,
-                StepTranslateZ: 0,
-                StepYaw: 0,
-                StrafeLeft: 0,
-                StrafeRight: 0,
-                TOGGLE_MUTE: 0,
-                ToggleMute: 0,
-                ToggleOverlay: 0,
-                TrackedObject00: 0,
-                TrackedObject01: 0,
-                TrackedObject02: 0,
-                TrackedObject03: 0,
-                TrackedObject04: 0,
-                TrackedObject05: 0,
-                TrackedObject06: 0,
-                TrackedObject07: 0,
-                TrackedObject08: 0,
-                TrackedObject09: 0,
-                TrackedObject10: 0,
-                TrackedObject11: 0,
-                TrackedObject12: 0,
-                TrackedObject13: 0,
-                TrackedObject14: 0,
-                TrackedObject15: 0,
-                TranslateX: 0,
-                TranslateY: 0,
-                TranslateZ: 0,
-                UiNavBack: 0,
-                UiNavGroup: 0,
-                UiNavLateral: 0,
-                UiNavSelect: 0,
-                UiNavVertical: 0,
-                Up: 0,
-                VERTICAL_DOWN: 0,
-                VERTICAL_UP: 0,
-                YAW_LEFT: 0,
-                YAW_RIGHT: 0,
-                Yaw: 0,
-                YawLeft: 0,
-                YawRight: 0
-            };
+        getCurrentEntityWithContextOverlay: function(){ return null; },
+        isInMarketplaceInspectionMode: false,
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        requestOwnershipVerification: function(QUuid)
+        {
+            return null;
+        }
+    },
+    Controller:
+    {
+        Actions:
+        {
+            ACTION1: 269942528,
+            ACTION2: 270008064,
+            BOOM_IN: 540278528,
+            BOOM_OUT: 540344064,
+            Backward: 539623168,
+            BoomIn: 540278528,
+            BoomOut: 540344064,
+            CONTEXT_MENU: 270073600,
+            ContextMenu: 270073600,
+            CycleCamera: 270204672,
+            Down: 539885312,
+            Forward: 539688704,
+            Head: 806616832,
+            Hips: 806485760,
+            LATERAL_LEFT: 539754240,
+            LATERAL_RIGHT: 539819776,
+            LEFT_HAND: 806223616,
+            LEFT_HAND_CLICK: 269811456,
+            LONGITUDINAL_BACKWARD: 539623168,
+            LONGITUDINAL_FORWARD: 539688704,
+            LeftArm: 808845056,
+            LeftFoot: 806354688,
+            LeftHand: 806223616,
+            LeftHandClick: 269811456,
+            LeftHandIndex1: 809238272,
+            LeftHandIndex2: 809303808,
+            LeftHandIndex3: 809369344,
+            LeftHandIndex4: 809434880,
+            LeftHandMiddle1: 809500416,
+            LeftHandMiddle2: 809565952,
+            LeftHandMiddle3: 809631488,
+            LeftHandMiddle4: 809697024,
+            LeftHandPinky1: 810024704,
+            LeftHandPinky2: 810090240,
+            LeftHandPinky3: 810155776,
+            LeftHandPinky4: 810221312,
+            LeftHandRing1: 809762560,
+            LeftHandRing2: 809828096,
+            LeftHandRing3: 809893632,
+            LeftHandRing4: 809959168,
+            LeftHandThumb1: 808976128,
+            LeftHandThumb2: 809041664,
+            LeftHandThumb3: 809107200,
+            LeftHandThumb4: 809172736,
+            PITCH_DOWN: 540147456,
+            PITCH_UP: 540212992,
+            Pitch: 537132800,
+            PitchDown: 540147456,
+            PitchUp: 540212992,
+            PrimaryAction: 269942528,
+            RIGHT_HAND: 806289152,
+            RIGHT_HAND_CLICK: 269876992,
+            ReticleClick: 539164416,
+            ReticleDown: 539557632,
+            ReticleLeft: 539361024,
+            ReticleRight: 539426560,
+            ReticleUp: 539492096,
+            ReticleX: 539229952,
+            ReticleY: 539295488,
+            RightArm: 808910592,
+            RightFoot: 806420224,
+            RightHand: 806289152,
+            RightHandClick: 269876992,
+            RightHandIndex1: 810548992,
+            RightHandIndex2: 810614528,
+            RightHandIndex3: 810680064,
+            RightHandIndex4: 810745600,
+            RightHandMiddle1: 810811136,
+            RightHandMiddle2: 810876672,
+            RightHandMiddle3: 810942208,
+            RightHandMiddle4: 811007744,
+            RightHandPinky1: 811335424,
+            RightHandPinky2: 811400960,
+            RightHandPinky3: 811466496,
+            RightHandPinky4: 811532032,
+            RightHandRing1: 811073280,
+            RightHandRing2: 811138816,
+            RightHandRing3: 811204352,
+            RightHandRing4: 811269888,
+            RightHandThumb1: 810286848,
+            RightHandThumb2: 810352384,
+            RightHandThumb3: 810417920,
+            RightHandThumb4: 810483456,
+            Roll: 537263872,
+            SHIFT: 270335744,
+            SecondaryAction: 270008064,
+            Shift: 270335744,
+            Spine2: 806551296,
+            StepPitch: 537394944,
+            StepRoll: 537460480,
+            StepTranslateX: 537526016,
+            StepTranslateY: 537526016,
+            StepTranslateZ: 537526016,
+            StepYaw: 537329408,
+            StrafeLeft: 539754240,
+            StrafeRight: 539819776,
+            TOGGLE_MUTE: 270139136,
+            ToggleMute: 270139136,
+            ToggleOverlay: 270270208,
+            TrackedObject00: 812252928,
+            TrackedObject01: 812318464,
+            TrackedObject02: 812384000,
+            TrackedObject03: 812449536,
+            TrackedObject04: 812515072,
+            TrackedObject05: 812580608,
+            TrackedObject06: 812646144,
+            TrackedObject07: 812711680,
+            TrackedObject08: 812777216,
+            TrackedObject09: 812842752,
+            TrackedObject10: 812908288,
+            TrackedObject11: 812973824,
+            TrackedObject12: 813039360,
+            TrackedObject13: 813104896,
+            TrackedObject14: 813170432,
+            TrackedObject15: 813235968,
+            TranslateX: 536936192,
+            TranslateY: 537001728,
+            TranslateZ: 537067264,
+            UiNavBack: 539098880,
+            UiNavGroup: 538967808,
+            UiNavLateral: 538836736,
+            UiNavSelect: 539033344,
+            UiNavVertical: 538902272,
+            Up: 539950848,
+            VERTICAL_DOWN: 539885312,
+            VERTICAL_UP: 539950848,
+            YAW_LEFT: 540016384,
+            YAW_RIGHT: 540081920,
+            Yaw: 537198336,
+            YawLeft: 540016384,
+            YawRight: 540081920
         },
-        Hardware: function(){
-            return {
-                Actions: function(){
-                    return {
-                        ACTION1: 0,
-                        ACTION2: 0,
-                        BOOM_IN: 0,
-                        BOOM_OUT: 0,
-                        Backward: 0,
-                        BoomIn: 0,
-                        BoomOut: 0,
-                        CONTEXT_MENU: 0,
-                        ContextMenu: 0,
-                        CycleCamera: 0,
-                        Down: 0,
-                        Forward: 0,
-                        Head: 0,
-                        Hips: 0,
-                        LATERAL_LEFT: 0,
-                        LATERAL_RIGHT: 0,
-                        LEFT_HAND: 0,
-                        LEFT_HAND_CLICK: 0,
-                        LONGITUDINAL_BACKWARD: 0,
-                        LONGITUDINAL_FORWARD: 0,
-                        LeftArm: 0,
-                        LeftFoot: 0,
-                        LeftHand: 0,
-                        LeftHandClick: 0,
-                        LeftHandIndex1: 0,
-                        LeftHandIndex2: 0,
-                        LeftHandIndex3: 0,
-                        LeftHandIndex4: 0,
-                        LeftHandMiddle1: 0,
-                        LeftHandMiddle2: 0,
-                        LeftHandMiddle3: 0,
-                        LeftHandMiddle4: 0,
-                        LeftHandPinky1: 0,
-                        LeftHandPinky2: 0,
-                        LeftHandPinky3: 0,
-                        LeftHandPinky4: 0,
-                        LeftHandRing1: 0,
-                        LeftHandRing2: 0,
-                        LeftHandRing3: 0,
-                        LeftHandRing4: 0,
-                        LeftHandThumb1: 0,
-                        LeftHandThumb2: 0,
-                        LeftHandThumb3: 0,
-                        LeftHandThumb4: 0,
-                        PITCH_DOWN: 0,
-                        PITCH_UP: 0,
-                        Pitch: 0,
-                        PitchDown: 0,
-                        PitchUp: 0,
-                        PrimaryAction: 0,
-                        RIGHT_HAND: 0,
-                        RIGHT_HAND_CLICK: 0,
-                        ReticleClick: 0,
-                        ReticleDown: 0,
-                        ReticleLeft: 0,
-                        ReticleRight: 0,
-                        ReticleUp: 0,
-                        ReticleX: 0,
-                        ReticleY: 0,
-                        RightArm: 0,
-                        RightFoot: 0,
-                        RightHand: 0,
-                        RightHandClick: 0,
-                        RightHandIndex1: 0,
-                        RightHandIndex2: 0,
-                        RightHandIndex3: 0,
-                        RightHandIndex4: 0,
-                        RightHandMiddle1: 0,
-                        RightHandMiddle2: 0,
-                        RightHandMiddle3: 0,
-                        RightHandMiddle4: 0,
-                        RightHandPinky1: 0,
-                        RightHandPinky2: 0,
-                        RightHandPinky3: 0,
-                        RightHandPinky4: 0,
-                        RightHandRing1: 0,
-                        RightHandRing2: 0,
-                        RightHandRing3: 0,
-                        RightHandRing4: 0,
-                        RightHandThumb1: 0,
-                        RightHandThumb2: 0,
-                        RightHandThumb3: 0,
-                        RightHandThumb4: 0,
-                        Roll: 0,
-                        SHIFT: 0,
-                        SecondaryAction: 0,
-                        Shift: 0,
-                        Spine2: 0,
-                        StepPitch: 0,
-                        StepRoll: 0,
-                        StepTranslateX: 0,
-                        StepTranslateY: 0,
-                        StepTranslateZ: 0,
-                        StepYaw: 0,
-                        StrafeLeft: 0,
-                        StrafeRight: 0,
-                        TOGGLE_MUTE: 0,
-                        ToggleMute: 0,
-                        ToggleOverlay: 0,
-                        TrackedObject00: 0,
-                        TrackedObject01: 0,
-                        TrackedObject02: 0,
-                        TrackedObject03: 0,
-                        TrackedObject04: 0,
-                        TrackedObject05: 0,
-                        TrackedObject06: 0,
-                        TrackedObject07: 0,
-                        TrackedObject08: 0,
-                        TrackedObject09: 0,
-                        TrackedObject10: 0,
-                        TrackedObject11: 0,
-                        TrackedObject12: 0,
-                        TrackedObject13: 0,
-                        TrackedObject14: 0,
-                        TrackedObject15: 0,
-                        TranslateX: 0,
-                        TranslateY: 0,
-                        TranslateZ: 0,
-                        UiNavBack: 0,
-                        UiNavGroup: 0,
-                        UiNavLateral: 0,
-                        UiNavSelect: 0,
-                        UiNavVertical: 0,
-                        Up: 0,
-                        VERTICAL_DOWN: 0,
-                        VERTICAL_UP: 0,
-                        YAW_LEFT: 0,
-                        YAW_RIGHT: 0,
-                        Yaw: 0,
-                        YawLeft: 0,
-                        YawRight: 0
-                    };
-                },
-                Application: function(){
-                    return {
-                        AdvancedMovement: 0,
-                        CameraEntity: 0,
-                        CameraFSM: 0,
-                        CameraFirstPerson: 0,
-                        CameraIndependent: 0,
-                        CameraThirdPerson: 0,
-                        Grounded: 0,
-                        InHMD: 0,
-                        NavigationFocused: 0,
-                        SnapTurn: 0
-                    };
-                },
-                Hydra: function(){
-                    return {
-                        L0: 0,
-                        L1: 0,
-                        L2: 0,
-                        L3: 0,
-                        L4: 0,
-                        LB: 0,
-                        LS: 0,
-                        LT: 0,
-                        LX: 0,
-                        LY: 0,
-                        LeftHand: 0,
-                        R0: 0,
-                        R1: 0,
-                        R2: 0,
-                        R3: 0,
-                        R4: 0,
-                        RB: 0,
-                        RS: 0,
-                        RT: 0,
-                        RX: 0,
-                        RY: 0,
-                        RightHand: 0
-                    };
-                },
-                Keyboard: function(){
-                    return {
-                        0: 0,
-                        1: 0,
-                        2: 0,
-                        3: 0,
-                        4: 0,
-                        5: 0,
-                        6: 0,
-                        7: 0,
-                        8: 0,
-                        9: 0,
-                        A: 0,
-                        B: 0,
-                        C: 0,
-                        Control: 0,
-                        D: 0,
-                        Down: 0,
-                        E: 0,
-                        F: 0,
-                        G: 0,
-                        H: 0,
-                        I: 0,
-                        J: 0,
-                        K: 0,
-                        L: 0,
-                        Left: 0,
-                        LeftMouseButton: 0,
-                        LeftMouseClicked: 0,
-                        M: 0,
-                        MiddleMouseButton: 0,
-                        MiddleMouseClicked: 0,
-                        MouseMoveDown: 0,
-                        MouseMoveLeft: 0,
-                        MouseMoveRight: 0,
-                        MouseMoveUp: 0,
-                        MouseWheelDown: 0,
-                        MouseWheelLeft: 0,
-                        MouseWheelRight: 0,
-                        MouseWheelUp: 0,
-                        MouseX: 0,
-                        MouseY: 0,
-                        N: 0,
-                        O: 0,
-                        P: 0,
-                        PgDown: 0,
-                        PgUp: 0,
-                        Q: 0,
-                        R: 0,
-                        Right: 0,
-                        RightMouseButton: 0,
-                        RightMouseClicked: 0,
-                        S: 0,
-                        Shift: 0,
-                        Space: 0,
-                        T: 0,
-                        Tab: 0,
-                        TouchpadDown: 0,
-                        TouchpadLeft: 0,
-                        TouchpadRight: 0,
-                        TouchpadUp: 0,
-                        U: 0,
-                        Up: 0,
-                        V: 0,
-                        W: 0,
-                        X: 0,
-                        Y: 0,
-                        Z: 0
-                    };
-                },
-                LeapMotion: function(){
-                    return {
-                        LeftHand: 0,
-                        LeftHandIndex1: 0,
-                        LeftHandIndex2: 0,
-                        LeftHandIndex3: 0,
-                        LeftHandIndex4: 0,
-                        LeftHandMiddle1: 0,
-                        LeftHandMiddle2: 0,
-                        LeftHandMiddle3: 0,
-                        LeftHandMiddle4: 0,
-                        LeftHandPinky1: 0,
-                        LeftHandPinky2: 0,
-                        LeftHandPinky3: 0,
-                        LeftHandPinky4: 0,
-                        LeftHandRing1: 0,
-                        LeftHandRing2: 0,
-                        LeftHandRing3: 0,
-                        LeftHandRing4: 0,
-                        LeftHandThumb1: 0,
-                        LeftHandThumb2: 0,
-                        LeftHandThumb3: 0,
-                        LeftHandThumb4: 0,
-                        RightHand: 0,
-                        RightHandIndex1: 0,
-                        RightHandIndex2: 0,
-                        RightHandIndex3: 0,
-                        RightHandIndex4: 0,
-                        RightHandMiddle1: 0,
-                        RightHandMiddle2: 0,
-                        RightHandMiddle3: 0,
-                        RightHandMiddle4: 0,
-                        RightHandPinky1: 0,
-                        RightHandPinky2: 0,
-                        RightHandPinky3: 0,
-                        RightHandPinky4: 0,
-                        RightHandRing1: 0,
-                        RightHandRing2: 0,
-                        RightHandRing3: 0,
-                        RightHandRing4: 0,
-                        RightHandThumb1: 0,
-                        RightHandThumb2: 0,
-                        RightHandThumb3: 0,
-                        RightHandThumb4: 0
-                    };
-                }
-            };
+        Hardware:
+        {
+            Actions:
+            {
+                ACTION1: 269942528,
+                ACTION2: 270008064,
+                BOOM_IN: 540278528,
+                BOOM_OUT: 540344064,
+                Backward: 539623168,
+                BoomIn: 540278528,
+                BoomOut: 540344064,
+                CONTEXT_MENU: 270073600,
+                ContextMenu: 270073600,
+                CycleCamera: 270204672,
+                Down: 539885312,
+                Forward: 539688704,
+                Head: 806616832,
+                Hips: 806485760,
+                LATERAL_LEFT: 539754240,
+                LATERAL_RIGHT: 539819776,
+                LEFT_HAND: 806223616,
+                LEFT_HAND_CLICK: 269811456,
+                LONGITUDINAL_BACKWARD: 539623168,
+                LONGITUDINAL_FORWARD: 539688704,
+                LeftArm: 808845056,
+                LeftFoot: 806354688,
+                LeftHand: 806223616,
+                LeftHandClick: 269811456,
+                LeftHandIndex1: 809238272,
+                LeftHandIndex2: 809303808,
+                LeftHandIndex3: 809369344,
+                LeftHandIndex4: 809434880,
+                LeftHandMiddle1: 809500416,
+                LeftHandMiddle2: 809565952,
+                LeftHandMiddle3: 809631488,
+                LeftHandMiddle4: 809697024,
+                LeftHandPinky1: 810024704,
+                LeftHandPinky2: 810090240,
+                LeftHandPinky3: 810155776,
+                LeftHandPinky4: 810221312,
+                LeftHandRing1: 809762560,
+                LeftHandRing2: 809828096,
+                LeftHandRing3: 809893632,
+                LeftHandRing4: 809959168,
+                LeftHandThumb1: 808976128,
+                LeftHandThumb2: 809041664,
+                LeftHandThumb3: 809107200,
+                LeftHandThumb4: 809172736,
+                PITCH_DOWN: 540147456,
+                PITCH_UP: 540212992,
+                Pitch: 537132800,
+                PitchDown: 540147456,
+                PitchUp: 540212992,
+                PrimaryAction: 269942528,
+                RIGHT_HAND: 806289152,
+                RIGHT_HAND_CLICK: 269876992,
+                ReticleClick: 539164416,
+                ReticleDown: 539557632,
+                ReticleLeft: 539361024,
+                ReticleRight: 539426560,
+                ReticleUp: 539492096,
+                ReticleX: 539229952,
+                ReticleY: 539295488,
+                RightArm: 808910592,
+                RightFoot: 806420224,
+                RightHand: 806289152,
+                RightHandClick: 269876992,
+                RightHandIndex1: 810548992,
+                RightHandIndex2: 810614528,
+                RightHandIndex3: 810680064,
+                RightHandIndex4: 810745600,
+                RightHandMiddle1: 810811136,
+                RightHandMiddle2: 810876672,
+                RightHandMiddle3: 810942208,
+                RightHandMiddle4: 811007744,
+                RightHandPinky1: 811335424,
+                RightHandPinky2: 811400960,
+                RightHandPinky3: 811466496,
+                RightHandPinky4: 811532032,
+                RightHandRing1: 811073280,
+                RightHandRing2: 811138816,
+                RightHandRing3: 811204352,
+                RightHandRing4: 811269888,
+                RightHandThumb1: 810286848,
+                RightHandThumb2: 810352384,
+                RightHandThumb3: 810417920,
+                RightHandThumb4: 810483456,
+                Roll: 537263872,
+                SHIFT: 270335744,
+                SecondaryAction: 270008064,
+                Shift: 270335744,
+                Spine2: 806551296,
+                StepPitch: 537394944,
+                StepRoll: 537460480,
+                StepTranslateX: 537526016,
+                StepTranslateY: 537526016,
+                StepTranslateZ: 537526016,
+                StepYaw: 537329408,
+                StrafeLeft: 539754240,
+                StrafeRight: 539819776,
+                TOGGLE_MUTE: 270139136,
+                ToggleMute: 270139136,
+                ToggleOverlay: 270270208,
+                TrackedObject00: 812252928,
+                TrackedObject01: 812318464,
+                TrackedObject02: 812384000,
+                TrackedObject03: 812449536,
+                TrackedObject04: 812515072,
+                TrackedObject05: 812580608,
+                TrackedObject06: 812646144,
+                TrackedObject07: 812711680,
+                TrackedObject08: 812777216,
+                TrackedObject09: 812842752,
+                TrackedObject10: 812908288,
+                TrackedObject11: 812973824,
+                TrackedObject12: 813039360,
+                TrackedObject13: 813104896,
+                TrackedObject14: 813170432,
+                TrackedObject15: 813235968,
+                TranslateX: 536936192,
+                TranslateY: 537001728,
+                TranslateZ: 537067264,
+                UiNavBack: 539098880,
+                UiNavGroup: 538967808,
+                UiNavLateral: 538836736,
+                UiNavSelect: 539033344,
+                UiNavVertical: 538902272,
+                Up: 539950848,
+                VERTICAL_DOWN: 539885312,
+                VERTICAL_UP: 539950848,
+                YAW_LEFT: 540016384,
+                YAW_RIGHT: 540081920,
+                Yaw: 537198336,
+                YawLeft: 540016384,
+                YawRight: 540081920
+            },
+            Application:
+            {
+                AdvancedMovement: 268959487,
+                CameraEntity: 268762879,
+                CameraFSM: 268566271,
+                CameraFirstPerson: 268631807,
+                CameraIndependent: 268828415,
+                CameraThirdPerson: 268697343,
+                Grounded: 269025023,
+                InHMD: 268500735,
+                NavigationFocused: 269090559,
+                SnapTurn: 268893951
+            },
+            Hydra:
+            {
+                L0: 268697603,
+                L1: 269287427,
+                L2: 269221891,
+                L3: 269352963,
+                L4: 269156355,
+                LB: 269025283,
+                LS: 268894211,
+                LT: 537133059,
+                LX: 536870915,
+                LY: 536936451,
+                LeftHand: 807927811,
+                R0: 268828675,
+                R1: 268566531,
+                R2: 268435459,
+                R3: 268500995,
+                R4: 268632067,
+                RB: 269090819,
+                RS: 268959747,
+                RT: 537198595,
+                RX: 537001987,
+                RY: 537067523,
+                RightHand: 806354947
+            },
+            Keyboard:
+            {
+                0: 271581185,
+                1: 271646721,
+                2: 271712257,
+                3: 271777793,
+                4: 271843329,
+                5: 271908865,
+                6: 271974401,
+                7: 272039937,
+                8: 272105473,
+                9: 272171009,
+                A: 272695297,
+                B: 272760833,
+                C: 272826369,
+                Control: 404815873,
+                D: 272891905,
+                Down: 404029441,
+                E: 272957441,
+                F: 273022977,
+                G: 273088513,
+                H: 273154049,
+                I: 273219585,
+                J: 273285121,
+                K: 273350657,
+                L: 273416193,
+                Left: 403832833,
+                LeftMouseButton: 285212673,
+                LeftMouseClicked: 285409281,
+                M: 273481729,
+                MiddleMouseButton: 285343745,
+                MiddleMouseClicked: 285540353,
+                MouseMoveDown: 554041345,
+                MouseMoveLeft: 553910273,
+                MouseMoveRight: 553844737,
+                MouseMoveUp: 553975809,
+                MouseWheelDown: 554434561,
+                MouseWheelLeft: 554303489,
+                MouseWheelRight: 554237953,
+                MouseWheelUp: 554369025,
+                MouseX: 554106881,
+                MouseY: 554172417,
+                N: 273547265,
+                O: 273612801,
+                P: 273678337,
+                PgDown: 404160513,
+                PgUp: 404094977,
+                Q: 273743873,
+                R: 273809409,
+                Right: 403963905,
+                RightMouseButton: 285278209,
+                RightMouseClicked: 285474817,
+                S: 273874945,
+                Shift: 404750337,
+                Space: 270532609,
+                T: 273940481,
+                Tab: 402718721,
+                TouchpadDown: 554696705,
+                TouchpadLeft: 554565633,
+                TouchpadRight: 554500097,
+                TouchpadUp: 554631169,
+                U: 274006017,
+                Up: 403898369,
+                V: 274071553,
+                W: 274137089,
+                X: 274202625,
+                Y: 274268161,
+                Z: 274333697
+            },
+            LeapMotion:
+            {
+                LeftHand: 807927810,
+                LeftHandIndex1: 808255490,
+                LeftHandIndex2: 808321026,
+                LeftHandIndex3: 808386562,
+                LeftHandIndex4: 808452098,
+                LeftHandMiddle1: 808517634,
+                LeftHandMiddle2: 808583170,
+                LeftHandMiddle3: 808648706,
+                LeftHandMiddle4: 808714242,
+                LeftHandPinky1: 809041922,
+                LeftHandPinky2: 809107458,
+                LeftHandPinky3: 809172994,
+                LeftHandPinky4: 809238530,
+                LeftHandRing1: 808779778,
+                LeftHandRing2: 808845314,
+                LeftHandRing3: 808910850,
+                LeftHandRing4: 808976386,
+                LeftHandThumb1: 807993346,
+                LeftHandThumb2: 808058882,
+                LeftHandThumb3: 808124418,
+                LeftHandThumb4: 808189954,
+                RightHand: 806354946,
+                RightHandIndex1: 806682626,
+                RightHandIndex2: 806748162,
+                RightHandIndex3: 806813698,
+                RightHandIndex4: 806879234,
+                RightHandMiddle1: 806944770,
+                RightHandMiddle2: 807010306,
+                RightHandMiddle3: 807075842,
+                RightHandMiddle4: 807141378,
+                RightHandPinky1: 807469058,
+                RightHandPinky2: 807534594,
+                RightHandPinky3: 807600130,
+                RightHandPinky4: 807665666,
+                RightHandRing1: 807206914,
+                RightHandRing2: 807272450,
+                RightHandRing3: 807337986,
+                RightHandRing4: 807403522,
+                RightHandThumb1: 806420482,
+                RightHandThumb2: 806486018,
+                RightHandThumb3: 806551554,
+                RightHandThumb4: 806617090
+            }
         },
-        Standard: function(){
-            return {
-                A: 0,
-                B: 0,
-                Back: 0,
-                Circle: 0,
-                Cross: 0,
-                DD: 0,
-                DL: 0,
-                DR: 0,
-                DU: 0,
-                Down: 0,
-                Head: 0,
-                Hips: 0,
-                L1: 0,
-                L2: 0,
-                L3: 0,
-                LB: 0,
-                LS: 0,
-                LSTouch: 0,
-                LT: 0,
-                LTClick: 0,
-                LX: 0,
-                LY: 0,
-                Left: 0,
-                LeftArm: 0,
-                LeftFoot: 0,
-                LeftGrip: 0,
-                LeftGripTouch: 0,
-                LeftHand: 0,
-                LeftHandIndex1: 0,
-                LeftHandIndex2: 0,
-                LeftHandIndex3: 0,
-                LeftHandIndex4: 0,
-                LeftHandMiddle1: 0,
-                LeftHandMiddle2: 0,
-                LeftHandMiddle3: 0,
-                LeftHandMiddle4: 0,
-                LeftHandPinky1: 0,
-                LeftHandPinky2: 0,
-                LeftHandPinky3: 0,
-                LeftHandPinky4: 0,
-                LeftHandRing1: 0,
-                LeftHandRing2: 0,
-                LeftHandRing3: 0,
-                LeftHandRing4: 0,
-                LeftHandThumb1: 0,
-                LeftHandThumb2: 0,
-                LeftHandThumb3: 0,
-                LeftHandThumb4: 0,
-                LeftIndexPoint: 0,
-                LeftPrimaryIndex: 0,
-                LeftPrimaryIndexTouch: 0,
-                LeftPrimaryThumb: 0,
-                LeftPrimaryThumbTouch: 0,
-                LeftSecondaryIndex: 0,
-                LeftSecondaryIndexTouch: 0,
-                LeftSecondaryThumb: 0,
-                LeftSecondaryThumbTouch: 0,
-                LeftThumbUp: 0,
-                R1: 0,
-                R2: 0,
-                R3: 0,
-                RB: 0,
-                RS: 0,
-                RSTouch: 0,
-                RT: 0,
-                RTClick: 0,
-                RX: 0,
-                RY: 0,
-                Right: 0,
-                RightArm: 0,
-                RightFoot: 0,
-                RightGrip: 0,
-                RightGripTouch: 0,
-                RightHand: 0,
-                RightHandIndex1: 0,
-                RightHandIndex2: 0,
-                RightHandIndex3: 0,
-                RightHandIndex4: 0,
-                RightHandMiddle1: 0,
-                RightHandMiddle2: 0,
-                RightHandMiddle3: 0,
-                RightHandMiddle4: 0,
-                RightHandPinky1: 0,
-                RightHandPinky2: 0,
-                RightHandPinky3: 0,
-                RightHandPinky4: 0,
-                RightHandRing1: 0,
-                RightHandRing2: 0,
-                RightHandRing3: 0,
-                RightHandRing4: 0,
-                RightHandThumb1: 0,
-                RightHandThumb2: 0,
-                RightHandThumb3: 0,
-                RightHandThumb4: 0,
-                RightIndexPoint: 0,
-                RightPrimaryIndex: 0,
-                RightPrimaryIndexTouch: 0,
-                RightPrimaryThumb: 0,
-                RightPrimaryThumbTouch: 0,
-                RightSecondaryIndex: 0,
-                RightSecondaryIndexTouch: 0,
-                RightSecondaryThumb: 0,
-                RightSecondaryThumbTouch: 0,
-                RightThumbUp: 0,
-                Select: 0,
-                Spine2: 0,
-                Square: 0,
-                Start: 0,
-                TrackedObject00: 0,
-                TrackedObject01: 0,
-                TrackedObject02: 0,
-                TrackedObject03: 0,
-                TrackedObject04: 0,
-                TrackedObject05: 0,
-                TrackedObject06: 0,
-                TrackedObject07: 0,
-                TrackedObject08: 0,
-                TrackedObject09: 0,
-                TrackedObject10: 0,
-                TrackedObject11: 0,
-                TrackedObject12: 0,
-                TrackedObject13: 0,
-                TrackedObject14: 0,
-                TrackedObject15: 0,
-                Triangle: 0,
-                Up: 0,
-                X: 0,
-                Y: 0
-            };
+        Standard:
+        {
+            A: 268435456,
+            B: 268500992,
+            Back: 268697600,
+            Circle: 268500992,
+            Cross: 268435456,
+            DD: 269221888,
+            DL: 269287424,
+            DR: 269352960,
+            DU: 269156352,
+            Down: 269221888,
+            Head: 806092800,
+            Hips: 805306368,
+            L1: 269025280,
+            L2: 537133056,
+            L3: 268894208,
+            LB: 269025280,
+            LS: 268894208,
+            LSTouch: 269680640,
+            LT: 537133056,
+            LTClick: 270008320,
+            LX: 536870912,
+            LY: 536936448,
+            Left: 269287424,
+            LeftArm: 807796736,
+            LeftFoot: 805699584,
+            LeftGrip: 537264128,
+            LeftGripTouch: 271384576,
+            LeftHand: 807927808,
+            LeftHandIndex1: 808255488,
+            LeftHandIndex2: 808321024,
+            LeftHandIndex3: 808386560,
+            LeftHandIndex4: 808452096,
+            LeftHandMiddle1: 808517632,
+            LeftHandMiddle2: 808583168,
+            LeftHandMiddle3: 808648704,
+            LeftHandMiddle4: 808714240,
+            LeftHandPinky1: 809041920,
+            LeftHandPinky2: 809107456,
+            LeftHandPinky3: 809172992,
+            LeftHandPinky4: 809238528,
+            LeftHandRing1: 808779776,
+            LeftHandRing2: 808845312,
+            LeftHandRing3: 808910848,
+            LeftHandRing4: 808976384,
+            LeftHandThumb1: 807993344,
+            LeftHandThumb2: 808058880,
+            LeftHandThumb3: 808124416,
+            LeftHandThumb4: 808189952,
+            LeftIndexPoint: 270991360,
+            LeftPrimaryIndex: 270729216,
+            LeftPrimaryIndexTouch: 270860288,
+            LeftPrimaryThumb: 269418496,
+            LeftPrimaryThumbTouch: 269549568,
+            LeftSecondaryIndex: 270794752,
+            LeftSecondaryIndexTouch: 270925824,
+            LeftSecondaryThumb: 269484032,
+            LeftSecondaryThumbTouch: 269615104,
+            LeftThumbUp: 269746176,
+            R1: 269090816,
+            R2: 537198592,
+            R3: 268959744,
+            RB: 269090816,
+            RS: 268959744,
+            RSTouch: 270336000,
+            RT: 537198592,
+            RTClick: 270663680,
+            RX: 537001984,
+            RY: 537067520,
+            Right: 269352960,
+            RightArm: 806223872,
+            RightFoot: 805502976,
+            RightGrip: 537329664,
+            RightGripTouch: 271450112,
+            RightHand: 806354944,
+            RightHandIndex1: 806682624,
+            RightHandIndex2: 806748160,
+            RightHandIndex3: 806813696,
+            RightHandIndex4: 806879232,
+            RightHandMiddle1: 806944768,
+            RightHandMiddle2: 807010304,
+            RightHandMiddle3: 807075840,
+            RightHandMiddle4: 807141376,
+            RightHandPinky1: 807469056,
+            RightHandPinky2: 807534592,
+            RightHandPinky3: 807600128,
+            RightHandPinky4: 807665664,
+            RightHandRing1: 807206912,
+            RightHandRing2: 807272448,
+            RightHandRing3: 807337984,
+            RightHandRing4: 807403520,
+            RightHandThumb1: 806420480,
+            RightHandThumb2: 806486016,
+            RightHandThumb3: 806551552,
+            RightHandThumb4: 806617088,
+            RightIndexPoint: 271319040,
+            RightPrimaryIndex: 271056896,
+            RightPrimaryIndexTouch: 271187968,
+            RightPrimaryThumb: 270073856,
+            RightPrimaryThumbTouch: 270204928,
+            RightSecondaryIndex: 271122432,
+            RightSecondaryIndexTouch: 271253504,
+            RightSecondaryThumb: 270139392,
+            RightSecondaryThumbTouch: 270270464,
+            RightThumbUp: 270401536,
+            Select: 268697600,
+            Spine2: 805896192,
+            Square: 268566528,
+            Start: 268828672,
+            TrackedObject00: 809304064,
+            TrackedObject01: 809369600,
+            TrackedObject02: 809435136,
+            TrackedObject03: 809500672,
+            TrackedObject04: 809566208,
+            TrackedObject05: 809631744,
+            TrackedObject06: 809697280,
+            TrackedObject07: 809762816,
+            TrackedObject08: 809828352,
+            TrackedObject09: 809893888,
+            TrackedObject10: 809959424,
+            TrackedObject11: 810024960,
+            TrackedObject12: 810090496,
+            TrackedObject13: 810156032,
+            TrackedObject14: 810221568,
+            TrackedObject15: 810287104,
+            Triangle: 268632064,
+            Up: 269156352,
+            X: 268566528,
+            Y: 268632064
         },
-        objectName: ''
-        };
-    }
-
-function DebugDraw(){
-    return {
-        addMarker: function(QString,glm::quat,glm::vec3,glm::vec4){},
-        addMyAvatarMarker: function(QString,glm::quat,glm::vec3,glm::vec4){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        drawRay: function(glm::vec3,glm::vec3,glm::vec4){},
-        objectNameChanged: function(QString){},
-        removeMarker: function(QString){},
-        removeMyAvatarMarker: function(QString){},
-        objectName: ''
-        };
-    }
-
-function Desktop(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        setHUDAlpha: function(float){},
-        show: function(QString,QString){},
-        height: 0,
-        width: 0,
-        objectName: ''
-        };
-    }
-
-function DesktopPreviewProvider(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        setPreviewDisabledReason: function(QString){},
-        objectName: ''
-        };
-    }
-
-function DialogsManager(){
-    return {
-        addressBarShown: function(bool){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        hideAddressBar: function(){},
-        objectNameChanged: function(QString){},
-        showAddressBar: function(){},
-        showFeed: function(){},
-        showLoginDialog: function(){},
-        objectName: ''
-        };
-    }
-
-function DriveKeys(){
-    return {
-        PITCH: 0,
-        STEP_TRANSLATE_X: 0,
-        STEP_TRANSLATE_Y: 0,
-        STEP_TRANSLATE_Z: 0,
-        STEP_YAW: 0,
+        actionEvent: function(int, float){ return null; },
+        captureActionEvents: function(){ return null; },
+        captureEntityClickEvents: function(){ return null; },
+        captureJoystick: function(int){ return null; },
+        captureKeyEvents: function(KeyEvent){ return null; },
+        captureMouseEvents: function(){ return null; },
+        captureTouchEvents: function(){ return null; },
+        captureWheelEvents: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disableMapping: function(QString){ return null; },
+        enableMapping: function(QString){ return null; },
+        enableMapping__dupe: function(QString, bool){ return null; },
+        findAction: function(QString){ return null; },
+        findDevice: function(QString){ return null; },
+        getActionNames: function(){ return null; },
+        getActionValue: function(int){ return null; },
+        getActions: function(){ return null; },
+        getAllActions: function(){ return null; },
+        getAvailableInputs: function(uint){ return null; },
+        getAxisValue: function(StandardAxisChannel){ return null; },
+        getAxisValue__dupe: function(StandardAxisChannel, uint16_t){ return null; },
+        getAxisValue__dupe__dupe: function(int){ return null; },
+        getButtonValue: function(StandardButtonChannel){ return null; },
+        getButtonValue__dupe: function(StandardButtonChannel, uint16_t){ return null; },
+        getDeviceName: function(uint){ return null; },
+        getDeviceNames: function(){ return null; },
+        getHardware: function(){ return null; },
+        getInputRecorderSaveDirectory: function(){ return null; },
+        getPoseValue: function(StandardPoseChannel){ return null; },
+        getPoseValue__dupe: function(StandardPoseChannel, uint16_t){ return null; },
+        getPoseValue__dupe__dupe: function(int){ return null; },
+        getRecommendedHUDRect: function(){ return null; },
+        getStandard: function(){ return null; },
+        getValue: function(int){ return null; },
+        getViewportDimensions: function(){ return null; },
+        hardwareChanged: function(){ return null; },
+        inputEvent: function(int, float){ return null; },
+        keyPressEvent: function(KeyEvent){ return null; },
+        keyReleaseEvent: function(KeyEvent){ return null; },
+        loadInputRecording: function(QString){ return null; },
+        loadMapping: function(QString){ return null; },
+        mouseDoublePressEvent: function(MouseEvent){ return null; },
+        mouseMoveEvent: function(MouseEvent){ return null; },
+        mousePressEvent: function(MouseEvent){ return null; },
+        mouseReleaseEvent: function(MouseEvent){ return null; },
+        newMapping: function(){ return null; },
+        newMapping__dupe: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        parseMapping: function(QString){ return null; },
+        releaseActionEvents: function(){ return null; },
+        releaseEntityClickEvents: function(){ return null; },
+        releaseJoystick: function(int){ return null; },
+        releaseKeyEvents: function(KeyEvent){ return null; },
+        releaseMouseEvents: function(){ return null; },
+        releaseTouchEvents: function(){ return null; },
+        releaseWheelEvents: function(){ return null; },
+        saveInputRecording: function(){ return null; },
+        startInputPlayback: function(){ return null; },
+        startInputRecording: function(){ return null; },
+        stopInputPlayback: function(){ return null; },
+        stopInputRecording: function(){ return null; },
+        touchBeginEvent: function(TouchEvent){ return null; },
+        touchEndEvent: function(TouchEvent){ return null; },
+        touchUpdateEvent: function(TouchEvent){ return null; },
+        triggerHapticPulse: function(float, float){ return null; },
+        triggerHapticPulse__dupe: function(float, float, controller__Hand){ return null; },
+        triggerHapticPulseOnDevice: function(uint, float, float){ return null; },
+        triggerHapticPulseOnDevice__dupe: function(uint, float, float, controller__Hand){ return null; },
+        triggerShortHapticPulse: function(float){ return null; },
+        triggerShortHapticPulse__dupe: function(float, controller__Hand){ return null; },
+        triggerShortHapticPulseOnDevice: function(uint, float){ return null; },
+        triggerShortHapticPulseOnDevice__dupe: function(uint, float, controller__Hand){ return null; },
+        wheelEvent: function(WheelEvent)
+        {
+            return null;
+        }
+    },
+    DataVie: function(){ return null; },
+    DebugDraw:
+    {
+        addMarker: function(QString, glm__quat, glm__vec3, glm__vec4){ return null; },
+        addMyAvatarMarker: function(QString, glm__quat, glm__vec3, glm__vec4){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        drawRay: function(glm__vec3, glm__vec3, glm__vec4){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        removeMarker: function(QString){ return null; },
+        removeMyAvatarMarker: function(QString)
+        {
+            return null;
+        }
+    },
+    Desktop:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        height: 1080,
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        setHUDAlpha: function(float){ return null; },
+        show: function(QString, QString){ return null; },
+        width: 5520
+    },
+    DesktopPreviewProvider:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        setPreviewDisabledReason: function(QString)
+        {
+            return null;
+        }
+    },
+    DialogsManager:
+    {
+        addressBarShown: function(bool){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        hideAddressBar: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        showAddressBar: function(){ return null; },
+        showFeed: function(){ return null; },
+        showLoginDialog: function()
+        {
+            return null;
+        }
+    },
+    DriveKeys:
+    {
+        PITCH: 8,
+        STEP_TRANSLATE_X: 4,
+        STEP_TRANSLATE_Y: 5,
+        STEP_TRANSLATE_Z: 6,
+        STEP_YAW: 7,
         TRANSLATE_X: 0,
-        TRANSLATE_Y: 0,
-        TRANSLATE_Z: 0,
-        YAW: 0,
-        ZOOM: 0
-        };
-    }
-
-function Entities(){
-    return {
-        AABoxIntersectsCapsule: function(glm::vec3,glm::vec3,glm::vec3,glm::vec3,float){},
-        addAction: function(QString,QUuid,QVariantMap){},
-        addEntity: function(EntityItemProperties){},
-        addEntity: function(EntityItemProperties,bool){},
-        addModelEntity: function(QString,QString,QString,QString,bool,glm::vec3,glm::vec3){},
-        addingEntity: function(EntityItemID){},
-        appendPoint: function(QUuid,glm::vec3){},
-        callEntityClientMethod: function(QUuid,QUuid,QString){},
-        callEntityClientMethod: function(QUuid,QUuid,QString,QStringList){},
-        callEntityMethod: function(QUuid,QString){},
-        callEntityMethod: function(QUuid,QString,QStringList){},
-        callEntityServerMethod: function(QUuid,QString){},
-        callEntityServerMethod: function(QUuid,QString,QStringList){},
-        canAdjustLocks: function(){},
-        canAdjustLocksChanged: function(bool){},
-        canReplaceContent: function(){},
-        canRez: function(){},
-        canRezCertified: function(){},
-        canRezCertifiedChanged: function(bool){},
-        canRezChanged: function(bool){},
-        canRezTmp: function(){},
-        canRezTmpCertified: function(){},
-        canRezTmpCertifiedChanged: function(bool){},
-        canRezTmpChanged: function(bool){},
-        canWriteAssets: function(){},
-        canWriteAssetsChanged: function(bool){},
-        clearingEntities: function(){},
-        clickDownOnEntity: function(EntityItemID,PointerEvent){},
-        clickReleaseOnEntity: function(EntityItemID,PointerEvent){},
-        collisionWithEntity: function(EntityItemID,EntityItemID,Collision){},
-        debitEnergySource: function(float){},
-        deleteAction: function(QUuid,QUuid){},
-        deleteEntity: function(QUuid){},
-        deletingEntity: function(EntityItemID){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        dumpTree: function(){},
-        editEntity: function(QUuid,EntityItemProperties){},
-        emitScriptEvent: function(EntityItemID,QVariant){},
-        enterEntity: function(EntityItemID){},
-        findClosestEntity: function(glm::vec3,float){},
-        findEntities: function(glm::vec3,float){},
-        findEntitiesByType: function(QString,glm::vec3,float){},
-        findEntitiesInBox: function(glm::vec3,glm::vec3){},
-        findEntitiesInFrustum: function(QVariantMap){},
-        findRayIntersection: function(PickRay){},
-        findRayIntersection: function(PickRay,bool){},
-        findRayIntersection: function(PickRay,bool,QScriptValue){},
-        findRayIntersection: function(PickRay,bool,QScriptValue,QScriptValue){},
-        findRayIntersection: function(PickRay,bool,QScriptValue,QScriptValue,bool){},
-        findRayIntersection: function(PickRay,bool,QScriptValue,QScriptValue,bool,bool){},
-        findRayIntersectionBlocking: function(PickRay){},
-        findRayIntersectionBlocking: function(PickRay,bool){},
-        findRayIntersectionBlocking: function(PickRay,bool,QScriptValue){},
-        findRayIntersectionBlocking: function(PickRay,bool,QScriptValue,QScriptValue){},
-        findRayIntersectionVector: function(PickRay,bool,QVector<EntityItemID>,QVector<EntityItemID>,bool,bool){},
-        getAbsoluteJointRotationInObjectFrame: function(QUuid,int){},
-        getAbsoluteJointTranslationInObjectFrame: function(QUuid,int){},
-        getActionArguments: function(QUuid,QUuid){},
-        getActionIDs: function(QUuid){},
-        getChildrenIDs: function(QUuid){},
-        getChildrenIDsOfJoint: function(QUuid,int){},
-        getDrawZoneBoundaries: function(){},
-        getEntityLocalTransform: function(QUuid){},
-        getEntityProperties: function(QUuid){},
-        getEntityProperties: function(QUuid,EntityPropertyFlags){},
-        getEntityTransform: function(QUuid){},
-        getJointIndex: function(QUuid,QString){},
-        getJointNames: function(QUuid){},
-        getKeyboardFocusEntity: function(){},
-        getLifetimeBPS: function(){},
-        getLifetimeBPSQueued: function(){},
-        getLifetimeBytesQueued: function(){},
-        getLifetimeBytesSent: function(){},
-        getLifetimeInSeconds: function(){},
-        getLifetimeInUsecs: function(){},
-        getLifetimePPS: function(){},
-        getLifetimePPSQueued: function(){},
-        getLifetimePacketsQueued: function(){},
-        getLifetimePacketsSent: function(){},
-        getLightsArePickable: function(){},
-        getLocalJointRotation: function(QUuid,int){},
-        getLocalJointTranslation: function(QUuid,int){},
-        getMeshes: function(QUuid,QScriptValue){},
-        getNestableType: function(QUuid){},
-        getPacketsPerSecond: function(){},
-        getServerScriptStatus: function(QUuid,QScriptValue){},
-        getStaticCertificateJSON: function(QUuid){},
-        getZonesArePickable: function(){},
-        hasPacketsToSend: function(){},
-        holdingClickOnEntity: function(EntityItemID,PointerEvent){},
-        hoverEnterEntity: function(EntityItemID,PointerEvent){},
-        hoverLeaveEntity: function(EntityItemID,PointerEvent){},
-        hoverOverEntity: function(EntityItemID,PointerEvent){},
-        isChildOfParent: function(QUuid,QUuid){},
-        leaveEntity: function(EntityItemID){},
-        localCoordsToVoxelCoords: function(QUuid,glm::vec3){},
-        mouseDoublePressOffEntity: function(){},
-        mouseDoublePressOnEntity: function(EntityItemID,PointerEvent){},
-        mouseMoveOnEntity: function(EntityItemID,PointerEvent){},
-        mousePressOffEntity: function(){},
-        mousePressOnEntity: function(EntityItemID,PointerEvent){},
-        mouseReleaseOnEntity: function(EntityItemID,PointerEvent){},
-        objectNameChanged: function(QString){},
-        packetsToSendCount: function(){},
-        queryPropertyMetadata: function(QUuid,QScriptValue,QScriptValue){},
-        queryPropertyMetadata: function(QUuid,QScriptValue,QScriptValue,QScriptValue){},
-        reloadServerScripts: function(QUuid){},
-        sendClickDownOnEntity: function(EntityItemID,PointerEvent){},
-        sendClickReleaseOnEntity: function(EntityItemID,PointerEvent){},
-        sendHoldingClickOnEntity: function(EntityItemID,PointerEvent){},
-        sendHoverEnterEntity: function(EntityItemID,PointerEvent){},
-        sendHoverLeaveEntity: function(EntityItemID,PointerEvent){},
-        sendHoverOverEntity: function(EntityItemID,PointerEvent){},
-        sendMouseMoveOnEntity: function(EntityItemID,PointerEvent){},
-        sendMousePressOnEntity: function(EntityItemID,PointerEvent){},
-        sendMouseReleaseOnEntity: function(EntityItemID,PointerEvent){},
-        serversExist: function(){},
-        setAbsoluteJointRotationInObjectFrame: function(QUuid,int,glm::quat){},
-        setAbsoluteJointTranslationInObjectFrame: function(QUuid,int,glm::vec3){},
-        setAllPoints: function(QUuid,QVector<glm::vec3>){},
-        setAllVoxels: function(QUuid,int){},
-        setDrawZoneBoundaries: function(bool){},
-        setKeyboardFocusEntity: function(EntityItemID){},
-        setLightsArePickable: function(bool){},
-        setLocalJointRotation: function(QUuid,int,glm::quat){},
-        setLocalJointRotations: function(QUuid,QVector<glm::quat>){},
-        setLocalJointTranslation: function(QUuid,int,glm::vec3){},
-        setLocalJointTranslations: function(QUuid,QVector<glm::vec3>){},
-        setLocalJointsData: function(QUuid,QVector<glm::quat>,QVector<glm::vec3>){},
-        setPacketsPerSecond: function(int){},
-        setVoxel: function(QUuid,glm::vec3,int){},
-        setVoxelCapsule: function(QUuid,glm::vec3,glm::vec3,float,int){},
-        setVoxelSphere: function(QUuid,glm::vec3,float,int){},
-        setVoxelsInCuboid: function(QUuid,glm::vec3,glm::vec3,int){},
-        setZonesArePickable: function(bool){},
-        updateAction: function(QUuid,QUuid,QVariantMap){},
-        verifyStaticCertificateProperties: function(QUuid){},
-        voxelCoordsToLocalCoords: function(QUuid,glm::vec3){},
-        voxelCoordsToWorldCoords: function(QUuid,glm::vec3){},
-        wantsHandControllerPointerEvents: function(QUuid){},
-        webEventReceived: function(EntityItemID,QVariant){},
-        worldCoordsToVoxelCoords: function(QUuid,glm::vec3){},
+        TRANSLATE_Y: 1,
+        TRANSLATE_Z: 2,
+        YAW: 3,
+        ZOOM: 9
+    },
+    Entities:
+    {
+        AABoxIntersectsCapsule: function(glm__vec3, glm__vec3, glm__vec3, glm__vec3, float){ return null; },
+        addAction: function(QString, QUuid, QVariantMap){ return null; },
+        addEntity: function(EntityItemProperties){ return null; },
+        addEntity__dupe: function(EntityItemProperties, bool){ return null; },
+        addModelEntity: function(QString, QString, QString, QString, bool, glm__vec3, glm__vec3){ return null; },
+        addingEntity: function(EntityItemID){ return null; },
+        appendPoint: function(QUuid, glm__vec3){ return null; },
+        callEntityClientMethod: function(QUuid, QUuid, QString){ return null; },
+        callEntityClientMethod__dupe: function(QUuid, QUuid, QString, QStringList){ return null; },
+        callEntityMethod: function(QUuid, QString){ return null; },
+        callEntityMethod__dupe: function(QUuid, QString, QStringList){ return null; },
+        callEntityServerMethod: function(QUuid, QString){ return null; },
+        callEntityServerMethod__dupe: function(QUuid, QString, QStringList){ return null; },
+        canAdjustLocks: function(){ return null; },
+        canAdjustLocksChanged: function(bool){ return null; },
+        canReplaceContent: function(){ return null; },
+        canRez: function(){ return null; },
+        canRezCertified: function(){ return null; },
+        canRezCertifiedChanged: function(bool){ return null; },
+        canRezChanged: function(bool){ return null; },
+        canRezTmp: function(){ return null; },
+        canRezTmpCertified: function(){ return null; },
+        canRezTmpCertifiedChanged: function(bool){ return null; },
+        canRezTmpChanged: function(bool){ return null; },
+        canWriteAssets: function(){ return null; },
+        canWriteAssetsChanged: function(bool){ return null; },
+        clearingEntities: function(){ return null; },
+        clickDownOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        clickReleaseOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        collisionWithEntity: function(EntityItemID, EntityItemID, Collision){ return null; },
+        costMultiplier: 0.009999999776482582,
+        currentAvatarEnergy: 3.4028234663852886e+38,
+        debitEnergySource: function(float){ return null; },
+        deleteAction: function(QUuid, QUuid){ return null; },
+        deleteEntity: function(QUuid){ return null; },
+        deletingEntity: function(EntityItemID){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        dumpTree: function(){ return null; },
+        editEntity: function(QUuid, EntityItemProperties){ return null; },
+        emitScriptEvent: function(EntityItemID, QVariant){ return null; },
+        enterEntity: function(EntityItemID){ return null; },
+        findClosestEntity: function(glm__vec3, float){ return null; },
+        findEntities: function(glm__vec3, float){ return null; },
+        findEntitiesByType: function(QString, glm__vec3, float){ return null; },
+        findEntitiesInBox: function(glm__vec3, glm__vec3){ return null; },
+        findEntitiesInFrustum: function(QVariantMap){ return null; },
+        findRayIntersection: function(PickRay){ return null; },
+        findRayIntersection__dupe: function(PickRay, bool){ return null; },
+        findRayIntersection__dupe__dupe: function(PickRay, bool, QScriptValue){ return null; },
+        findRayIntersection__dupe__dupe__dupe: function(PickRay, bool, QScriptValue, QScriptValue){ return null; },
+        findRayIntersection__dupe__dupe__dupe__dupe: function(PickRay, bool, QScriptValue, QScriptValue, bool){ return null; },
+        findRayIntersection__dupe__dupe__dupe__dupe__dupe: function(PickRay, bool, QScriptValue, QScriptValue, bool, bool){ return null; },
+        findRayIntersectionBlocking: function(PickRay){ return null; },
+        findRayIntersectionBlocking__dupe: function(PickRay, bool){ return null; },
+        findRayIntersectionBlocking__dupe__dupe: function(PickRay, bool, QScriptValue){ return null; },
+        findRayIntersectionBlocking__dupe__dupe__dupe: function(PickRay, bool, QScriptValue, QScriptValue){ return null; },
+        findRayIntersectionVector: function(PickRay, bool, QVector_EntityItemID_, QVector_EntityItemID_, bool, bool){ return null; },
+        getAbsoluteJointRotationInObjectFrame: function(QUuid, int){ return null; },
+        getAbsoluteJointTranslationInObjectFrame: function(QUuid, int){ return null; },
+        getActionArguments: function(QUuid, QUuid){ return null; },
+        getActionIDs: function(QUuid){ return null; },
+        getChildrenIDs: function(QUuid){ return null; },
+        getChildrenIDsOfJoint: function(QUuid, int){ return null; },
+        getDrawZoneBoundaries: function(){ return null; },
+        getEntityLocalTransform: function(QUuid){ return null; },
+        getEntityProperties: function(QUuid){ return null; },
+        getEntityProperties__dupe: function(QUuid, EntityPropertyFlags){ return null; },
+        getEntityTransform: function(QUuid){ return null; },
+        getJointIndex: function(QUuid, QString){ return null; },
+        getJointNames: function(QUuid){ return null; },
+        getKeyboardFocusEntity: function(){ return null; },
+        getLifetimeBPS: function(){ return null; },
+        getLifetimeBPSQueued: function(){ return null; },
+        getLifetimeBytesQueued: function(){ return null; },
+        getLifetimeBytesSent: function(){ return null; },
+        getLifetimeInSeconds: function(){ return null; },
+        getLifetimeInUsecs: function(){ return null; },
+        getLifetimePPS: function(){ return null; },
+        getLifetimePPSQueued: function(){ return null; },
+        getLifetimePacketsQueued: function(){ return null; },
+        getLifetimePacketsSent: function(){ return null; },
+        getLightsArePickable: function(){ return null; },
+        getLocalJointRotation: function(QUuid, int){ return null; },
+        getLocalJointTranslation: function(QUuid, int){ return null; },
+        getMeshes: function(QUuid, QScriptValue){ return null; },
+        getNestableType: function(QUuid){ return null; },
+        getPacketsPerSecond: function(){ return null; },
+        getServerScriptStatus: function(QUuid, QScriptValue){ return null; },
+        getStaticCertificateJSON: function(QUuid){ return null; },
+        getZonesArePickable: function(){ return null; },
+        hasPacketsToSend: function(){ return null; },
+        holdingClickOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        hoverEnterEntity: function(EntityItemID, PointerEvent){ return null; },
+        hoverLeaveEntity: function(EntityItemID, PointerEvent){ return null; },
+        hoverOverEntity: function(EntityItemID, PointerEvent){ return null; },
+        isChildOfParent: function(QUuid, QUuid){ return null; },
         keyboardFocusEntity: null,
-        costMultiplier: 0,
-        currentAvatarEnergy: 0,
-        objectName: ''
-        };
-    }
-
-function EntityScriptServerLog(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        receivedNewLogLines: function(QString){},
-        objectName: ''
-        };
-    }
-
-function FaceTracker(){
-    return {
-        calibrate: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getMuted: function(){},
-        muteToggled: function(){},
-        objectNameChanged: function(QString){},
-        setEnabled: function(bool){},
-        toggleMute: function(){},
-        objectName: ''
-        };
-    }
-
-function File(){
-    return {
-        convertUrlToPath: function(QUrl){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getTempDir: function(){},
-        objectNameChanged: function(QString){},
-        runUnzip: function(QString,QUrl,bool,bool,bool){},
-        unzipResult: function(QString,QStringList,bool,bool,bool){},
-        objectName: ''
-        };
-    }
-
-function function(){
-    return {
-        NOT HANDLED: 0,
-        NOT HANDLED: 1,
-        NOT HANDLED: 2,
-        NOT HANDLED: 3,
-        NOT HANDLED: 4,
-        NOT HANDLED: 5,
-        NOT HANDLED: 6,
-        NOT HANDLED: 7,
-        NOT HANDLED: 8,
-        NOT HANDLED: 9,
-        NOT HANDLED: 10,
-        NOT HANDLED: 11,
-        NOT HANDLED: 12,
-        NOT HANDLED: 13,
-        NOT HANDLED: 14,
-        NOT HANDLED: 15,
-        NOT HANDLED: 16,
-        NOT HANDLED: 17,
-        NOT HANDLED: 18
-        };
-    }
-
-function GlobalServices(){
-    return {
+        leaveEntity: function(EntityItemID){ return null; },
+        localCoordsToVoxelCoords: function(QUuid, glm__vec3){ return null; },
+        mouseDoublePressOffEntity: function(){ return null; },
+        mouseDoublePressOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        mouseMoveOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        mousePressOffEntity: function(){ return null; },
+        mousePressOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        mouseReleaseOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        packetsToSendCount: function(){ return null; },
+        queryPropertyMetadata: function(QUuid, QScriptValue, QScriptValue){ return null; },
+        queryPropertyMetadata__dupe: function(QUuid, QScriptValue, QScriptValue, QScriptValue){ return null; },
+        reloadServerScripts: function(QUuid){ return null; },
+        sendClickDownOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        sendClickReleaseOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        sendHoldingClickOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        sendHoverEnterEntity: function(EntityItemID, PointerEvent){ return null; },
+        sendHoverLeaveEntity: function(EntityItemID, PointerEvent){ return null; },
+        sendHoverOverEntity: function(EntityItemID, PointerEvent){ return null; },
+        sendMouseMoveOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        sendMousePressOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        sendMouseReleaseOnEntity: function(EntityItemID, PointerEvent){ return null; },
+        serversExist: function(){ return null; },
+        setAbsoluteJointRotationInObjectFrame: function(QUuid, int, glm__quat){ return null; },
+        setAbsoluteJointTranslationInObjectFrame: function(QUuid, int, glm__vec3){ return null; },
+        setAllPoints: function(QUuid, QVector_glm__vec3_){ return null; },
+        setAllVoxels: function(QUuid, int){ return null; },
+        setDrawZoneBoundaries: function(bool){ return null; },
+        setKeyboardFocusEntity: function(EntityItemID){ return null; },
+        setLightsArePickable: function(bool){ return null; },
+        setLocalJointRotation: function(QUuid, int, glm__quat){ return null; },
+        setLocalJointRotations: function(QUuid, QVector_glm__quat_){ return null; },
+        setLocalJointTranslation: function(QUuid, int, glm__vec3){ return null; },
+        setLocalJointTranslations: function(QUuid, QVector_glm__vec3_){ return null; },
+        setLocalJointsData: function(QUuid, QVector_glm__quat_, QVector_glm__vec3_){ return null; },
+        setPacketsPerSecond: function(int){ return null; },
+        setVoxel: function(QUuid, glm__vec3, int){ return null; },
+        setVoxelCapsule: function(QUuid, glm__vec3, glm__vec3, float, int){ return null; },
+        setVoxelSphere: function(QUuid, glm__vec3, float, int){ return null; },
+        setVoxelsInCuboid: function(QUuid, glm__vec3, glm__vec3, int){ return null; },
+        setZonesArePickable: function(bool){ return null; },
+        updateAction: function(QUuid, QUuid, QVariantMap){ return null; },
+        verifyStaticCertificateProperties: function(QUuid){ return null; },
+        voxelCoordsToLocalCoords: function(QUuid, glm__vec3){ return null; },
+        voxelCoordsToWorldCoords: function(QUuid, glm__vec3){ return null; },
+        wantsHandControllerPointerEvents: function(QUuid){ return null; },
+        webEventReceived: function(EntityItemID, QVariant){ return null; },
+        worldCoordsToVoxelCoords: function(QUuid, glm__vec3)
+        {
+            return null;
+        }
+    },
+    EntityScriptServerLog:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        receivedNewLogLines: function(QString)
+        {
+            return null;
+        }
+    },
+    FaceTracker:
+    {
+        calibrate: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getMuted: function(){ return null; },
+        muteToggled: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        setEnabled: function(bool){ return null; },
+        toggleMute: function()
+        {
+            return null;
+        }
+    },
+    File:
+    {
+        convertUrlToPath: function(QUrl){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getTempDir: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        runUnzip: function(QString, QUrl, bool, bool, bool){ return null; },
+        unzipResult: function(QString, QStringList, bool, bool, bool)
+        {
+            return null;
+        }
+    },
+    Float32Arra: function(){ return null; },
+    Float64Arra: function(){ return null; },
+    GlobalServices:
+    {
+        checkAndSignalForAccessToken: function(){ return null; },
+        connected: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disconnected: function(QString){ return null; },
+        downloadInfoChanged: function(DownloadInfoResult){ return null; },
+        findableBy: "all",
+        findableByChanged: function(QString){ return null; },
+        getDownloadInfo: function(){ return null; },
+        isLoggedIn: function(){ return null; },
+        logOut: function(){ return null; },
         loggedIn: true,
-        checkAndSignalForAccessToken: function(){},
-        connected: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disconnected: function(QString){},
-        downloadInfoChanged: function(DownloadInfoResult){},
-        findableByChanged: function(QString){},
-        getDownloadInfo: function(){},
-        isLoggedIn: function(){},
-        logOut: function(){},
-        loggedInChanged: function(bool){},
-        myUsernameChanged: function(QString){},
-        objectNameChanged: function(QString){},
-        updateDownloadInfo: function(){},
-        findableBy: '',
-        metaverseServerURL: '',
-        objectName: '',
-        username: ''
-        };
-    }
-
-function GooglePoly(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getAssetList: function(QString,QString,QString){},
-        getBlocks: function(QString,QString){},
-        getFBX: function(QString,QString){},
-        getGLTF: function(QString,QString){},
-        getGLTF2: function(QString,QString){},
-        getModelInfo: function(QString){},
-        getOBJ: function(QString,QString){},
-        getTilt: function(QString,QString){},
-        objectNameChanged: function(QString){},
-        setAPIKey: function(QString){},
-        objectName: ''
-        };
-    }
-
-function Graphics(){
-    return {
-        canUpdateModel: function(QUuid){},
-        canUpdateModel: function(QUuid,int){},
-        canUpdateModel: function(QUuid,int,int){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        exportModelToOBJ: function(scriptable::ScriptableModel){},
-        getModel: function(QUuid){},
-        newMesh: function(QVariantMap){},
-        newModel: function(scriptable::ScriptableMeshes){},
-        objectNameChanged: function(QString){},
-        updateModel: function(QUuid,scriptable::ScriptableModelPointer){},
-        objectName: ''
-        };
-    }
-
-function HMD(){
-    return {
-        active: true,
-        mounted: true,
-        showTablet: true,
-        tabletContextualMode: true,
-        IPDScaleChanged: function(){},
-        getHUDLookAtPosition2D: function(){
-            return {
-                x: 0,
-                y: 0
-            };
-        },
-        getHUDLookAtPosition3D: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        activateHMDHandMouse: function(){},
-        calculateRayUICollisionPoint: function(glm::vec3,glm::vec3){},
-        centerUI: function(){},
-        closeTablet: function(){},
-        deactivateHMDHandMouse: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        displayModeChanged: function(bool){},
-        isHMDAvailable: function(){},
-        isHMDAvailable: function(QString){},
-        isHandControllerAvailable: function(){},
-        isHandControllerAvailable: function(QString){},
-        isHeadControllerAvailable: function(){},
-        isHeadControllerAvailable: function(QString){},
-        isKeyboardVisible: function(){},
-        isSubdeviceContainingNameAvailable: function(QString){},
-        mountedChanged: function(){},
-        objectNameChanged: function(QString){},
-        openTablet: function(){},
-        openTablet: function(bool){},
-        overlayFromWorldPoint: function(glm::vec3){},
-        overlayToSpherical: function(glm::vec2){},
-        preferredAudioInput: function(){},
-        preferredAudioOutput: function(){},
-        requestHideHandControllers: function(){},
-        requestShowHandControllers: function(){},
-        shouldShowHandControllers: function(){},
-        shouldShowHandControllersChanged: function(){},
-        sphericalToOverlay: function(glm::vec2){},
-        suppressKeyboard: function(){},
-        unsuppressKeyboard: function(){},
-        worldPointFromOverlay: function(glm::vec2){},
+        loggedInChanged: function(bool){ return null; },
+        metaverseServerURL: "https://metaverse.highfidelity.com",
+        myUsernameChanged: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        updateDownloadInfo: function(){ return null; },
+        username: "WolfGang"
+    },
+    GooglePoly:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getAssetList: function(QString, QString, QString){ return null; },
+        getBlocks: function(QString, QString){ return null; },
+        getFBX: function(QString, QString){ return null; },
+        getGLTF: function(QString, QString){ return null; },
+        getGLTF2: function(QString, QString){ return null; },
+        getModelInfo: function(QString){ return null; },
+        getOBJ: function(QString, QString){ return null; },
+        getTilt: function(QString, QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        setAPIKey: function(QString)
+        {
+            return null;
+        }
+    },
+    Graphics:
+    {
+        canUpdateModel: function(QUuid){ return null; },
+        canUpdateModel__dupe: function(QUuid, int){ return null; },
+        canUpdateModel__dupe__dupe: function(QUuid, int, int){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        exportModelToOBJ: function(scriptable__ScriptableModel){ return null; },
+        getModel: function(QUuid){ return null; },
+        newMesh: function(QVariantMap){ return null; },
+        newModel: function(scriptable__ScriptableMeshes){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        updateModel: function(QUuid, scriptable__ScriptableModelPointer)
+        {
+            return null;
+        }
+    },
+    HMD:
+    {
+        IPDScaleChanged: function(){ return null; },
+        activateHMDHandMouse: function(){ return null; },
+        active: false,
+        calculateRayUICollisionPoint: function(glm__vec3, glm__vec3){ return null; },
+        centerUI: function(){ return null; },
+        closeTablet: function(){ return null; },
+        deactivateHMDHandMouse: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        displayModeChanged: function(bool){ return null; },
+        eyeHeight: 1.6549999713897705,
+        getHUDLookAtPosition2: function(){ return null; },
+        getHUDLookAtPosition3: function(){ return null; },
         homeButtonHighlightID: null,
         homeButtonID: null,
+        ipd: 0.06400000303983688,
+        ipdScale: 1,
+        isHMDAvailable: function(){ return null; },
+        isHMDAvailable__dupe: function(QString){ return null; },
+        isHandControllerAvailable: function(){ return null; },
+        isHandControllerAvailable__dupe: function(QString){ return null; },
+        isHeadControllerAvailable: function(){ return null; },
+        isHeadControllerAvailable__dupe: function(QString){ return null; },
+        isKeyboardVisible: function(){ return null; },
+        isSubdeviceContainingNameAvailable: function(QString){ return null; },
+        mounted: false,
+        mountedChanged: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        openTablet: function(){ return null; },
+        openTablet__dupe: function(bool){ return null; },
+        orientation:
+        {
+            w: 1,
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        overlayFromWorldPoint: function(glm__vec3){ return null; },
+        overlayToSpherical: function(glm__vec2){ return null; },
+        playerHeight: 1.7549999952316284,
+        position:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        preferredAudioInput: function(){ return null; },
+        preferredAudioOutput: function(){ return null; },
+        requestHideHandControllers: function(){ return null; },
+        requestShowHandControllers: function(){ return null; },
+        shouldShowHandControllers: function(){ return null; },
+        shouldShowHandControllersChanged: function(){ return null; },
+        showTablet: false,
+        sphericalToOverlay: function(glm__vec2){ return null; },
+        suppressKeyboard: function(){ return null; },
+        tabletContextualMode: false,
         tabletID: null,
         tabletScreenID: null,
-        eyeHeight: 0,
-        ipd: 0,
-        ipdScale: 0,
-        playerHeight: 0,
-        orientation: function(){
-            return {
-                w: 0,
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        position: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        objectName: ''
-        };
-    }
-
-function LaserPointers(){
-    return {
-        createLaserPointer: function(QVariant){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disableLaserPointer: function(uint){},
-        editRenderState: function(uint,QString,QVariant){},
-        enableLaserPointer: function(uint){},
-        getPrevRayPickResult: function(uint){},
-        isLeftHand: function(uint){},
-        isMouse: function(uint){},
-        isRightHand: function(uint){},
-        objectNameChanged: function(QString){},
-        removeLaserPointer: function(uint){},
-        setIgnoreItems: function(uint,QScriptValue){},
-        setIncludeItems: function(uint,QScriptValue){},
-        setLaserLength: function(uint,float){},
-        setLockEndUUID: function(uint,QUuid,bool){},
-        setLockEndUUID: function(uint,QUuid,bool,glm::mat4){},
-        setPrecisionPicking: function(uint,bool){},
-        setRenderState: function(uint,QString){},
-        objectName: ''
-        };
-    }
-
-function LimitlessSpeechRecognition(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        onFinishedSpeaking: function(QString){},
-        onReceivedTranscription: function(QString){},
-        setAuthKey: function(QString){},
-        setListeningToVoice: function(bool){},
-        objectName: ''
-        };
-    }
-
-function location(){
-    return {
-        isConnected: true,
-        copyAddress: function(){},
-        copyPath: function(){},
-        deleteLater: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        goBack: function(){},
-        goBackPossible: function(bool){},
-        goForward: function(){},
-        goForwardPossible: function(bool){},
-        goToEntry: function(){},
-        goToEntry: function(LookupTrigger){},
-        goToLocalSandbox: function(){},
-        goToLocalSandbox: function(QString){},
-        goToLocalSandbox: function(QString,LookupTrigger){},
-        goToUser: function(QString){},
-        goToUser: function(QString,bool){},
-        goToViewpointForPath: function(QString,QString){},
-        handleLookupString: function(QString){},
-        handleLookupString: function(QString,bool){},
-        hostChanged: function(QString){},
-        locationChangeRequired: function(glm::vec3,bool,glm::quat,bool){},
-        lookupResultIsNotFound: function(){},
-        lookupResultIsOffline: function(){},
-        lookupResultsFinished: function(){},
-        lookupShareableNameForDomainID: function(QUuid){},
-        objectNameChanged: function(QString){},
-        pathChangeRequired: function(QString){},
-        possibleDomainChangeRequired: function(QString,ushort,QUuid){},
-        possibleDomainChangeRequiredViaICEForID: function(QString,QUuid){},
-        protocolVersion: function(){},
-        refreshPreviousLookup: function(){},
-        storeCurrentAddress: function(){},
-        domainID: '',
-        domainId: '',
-        hostname: '',
-        href: '',
-        objectName: '',
-        pathname: '',
-        placename: '',
-        protocol: ''
-        };
-    }
-
-function LocationBookmarks(){
-    return {
-        addBookmark: function(){},
-        deleteBookmark: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        setHomeLocationToAddress: function(QVariant){},
-        objectName: ''
-        };
-    }
-
-function LODManager(){
-    return {
-        LODDecreased: function(){},
-        LODIncreased: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getAutomaticLODAdjust: function(){},
-        getBoundaryLevelAdjust: function(){},
-        getDesktopLODDecreaseFPS: function(){},
-        getDesktopLODIncreaseFPS: function(){},
-        getHMDLODDecreaseFPS: function(){},
-        getHMDLODIncreaseFPS: function(){},
-        getLODDecreaseFPS: function(){},
-        getLODFeedbackText: function(){},
-        getLODIncreaseFPS: function(){},
-        getOctreeSizeScale: function(){},
-        objectNameChanged: function(QString){},
-        setAutomaticLODAdjust: function(bool){},
-        setBoundaryLevelAdjust: function(int){},
-        setDesktopLODDecreaseFPS: function(float){},
-        setHMDLODDecreaseFPS: function(float){},
-        setOctreeSizeScale: function(float){},
-        avgRenderTime: 0,
-        engineRunTime: 0,
-        fps: 0,
-        gpuTime: 0,
-        lodDecreaseFPS: 0,
-        lodIncreaseFPS: 0,
-        lodLevel: 0,
-        presentTime: 0,
-        objectName: ''
-        };
-    }
-
-function Mat4(){
-    return {
-        createFromArray: function(QVector<float>){},
-        createFromColumns: function(glm::vec4,glm::vec4,glm::vec4,glm::vec4){},
-        createFromRotAndTrans: function(glm::quat,glm::vec3){},
-        createFromScaleRotAndTrans: function(glm::vec3,glm::quat,glm::vec3){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        extractRotation: function(glm::mat4){},
-        extractScale: function(glm::mat4){},
-        extractTranslation: function(glm::mat4){},
-        getForward: function(glm::mat4){},
-        getFront: function(glm::mat4){},
-        getRight: function(glm::mat4){},
-        getUp: function(glm::mat4){},
-        inverse: function(glm::mat4){},
-        multiply: function(glm::mat4,glm::mat4){},
-        objectNameChanged: function(QString){},
-        print: function(QString,glm::mat4){},
-        print: function(QString,glm::mat4,bool){},
-        transformPoint: function(glm::mat4,glm::vec3){},
-        transformVector: function(glm::mat4,glm::vec3){},
-        objectName: ''
-        };
-    }
-
-function Menu(){
-    return {
-        addMenu: function(QString){},
-        addMenu: function(QString,QString){},
-        addMenuItem: function(MenuItemProperties){},
-        addMenuItem: function(QString,QString){},
-        addMenuItem: function(QString,QString,QString){},
-        addSeparator: function(QString,QString){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        isMenuEnabled: function(QString){},
-        isOptionChecked: function(QString){},
-        menuExists: function(QString){},
-        menuItemEvent: function(QString){},
-        menuItemExists: function(QString,QString){},
-        objectNameChanged: function(QString){},
-        removeMenu: function(QString){},
-        removeMenuItem: function(QString,QString){},
-        removeSeparator: function(QString,QString){},
-        setIsOptionChecked: function(QString,bool){},
-        setMenuEnabled: function(QString,bool){},
-        triggerOption: function(QString){},
-        objectName: ''
-        };
-    }
-
-function Messages(){
-    return {
-        dataReceived: function(QString,QByteArray,QUuid,bool){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        messageReceived: function(QString,QString,QUuid,bool){},
-        objectNameChanged: function(QString){},
-        sendData: function(QString,QByteArray){},
-        sendData: function(QString,QByteArray,bool){},
-        sendLocalMessage: function(QString,QString){},
-        sendMessage: function(QString,QString){},
-        sendMessage: function(QString,QString,bool){},
-        subscribe: function(QString){},
-        unsubscribe: function(QString){},
-        objectName: ''
-        };
-    }
-
-function Midi(){
-    return {
-        allNotesOff: function(){},
-        blockMidiDevice: function(QString,bool){},
-        broadcastEnable: function(bool){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        listMidiDevices: function(bool){},
-        midiMessage: function(QVariantMap){},
-        midiNote: function(QVariantMap){},
-        midiReset: function(){},
-        objectNameChanged: function(QString){},
-        playMidiNote: function(int,int,int){},
-        resetDevices: function(){},
-        sendMidiMessage: function(int,int,int,int,int){},
-        sendRawDword: function(int,int){},
-        thruModeEnable: function(bool){},
-        typeChanPressureEnable: function(bool){},
-        typeControlChangeEnable: function(bool){},
-        typeNoteOffEnable: function(bool){},
-        typeNoteOnEnable: function(bool){},
-        typePitchBendEnable: function(bool){},
-        typePolyKeyPressureEnable: function(bool){},
-        typeProgramChangeEnable: function(bool){},
-        typeSystemMessageEnable: function(bool){},
-        unblockMidiDevice: function(QString,bool){},
-        objectName: ''
-        };
-    }
-
-function Model(){
-    return {
-        appendMeshes: function(MeshProxyList){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getVertex: function(MeshProxy*,int){},
-        getVertexCount: function(MeshProxy*){},
-        meshToOBJ: function(MeshProxyList){},
-        newMesh: function(QVector<glm::vec3>,QVector<glm::vec3>,QVector<MeshFace>){},
-        objectNameChanged: function(QString){},
-        transformMesh: function(glm::mat4,MeshProxy*){},
-        objectName: ''
-        };
-    }
-
-function ModelCache(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        dirty: function(){},
-        getResource: function(QUrl){},
-        getResource: function(QUrl,QUrl){},
-        getResource: function(QUrl,QUrl,void*){},
-        getResourceList: function(){},
-        objectNameChanged: function(QString){},
-        prefetch: function(QUrl){},
-        prefetch: function(QUrl,void*){},
-        updateTotalSize: function(qlonglong){},
+        unsuppressKeyboard: function(){ return null; },
+        worldPointFromOverlay: function(glm__vec2)
+        {
+            return null;
+        }
+    },
+    Int16Arra: function(){ return null; },
+    Int32Arra: function(){ return null; },
+    Int8Arra: function(){ return null; },
+    LODManager:
+    {
+        LODDecreased: function(){ return null; },
+        LODIncreased: function(){ return null; },
+        avgRenderTime: 16.362445831298828,
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        engineRunTime: 0.8080000281333923,
+        fps: 61.11555862426758,
+        getAutomaticLODAdjust: function(){ return null; },
+        getBoundaryLevelAdjust: function(){ return null; },
+        getDesktopLODDecreaseFPS: function(){ return null; },
+        getDesktopLODIncreaseFPS: function(){ return null; },
+        getHMDLODDecreaseFPS: function(){ return null; },
+        getHMDLODIncreaseFPS: function(){ return null; },
+        getLODDecreaseFPS: function(){ return null; },
+        getLODFeedbackText: function(){ return null; },
+        getLODIncreaseFPS: function(){ return null; },
+        getOctreeSizeScale: function(){ return null; },
+        gpuTime: 2.232243299484253,
+        lodDecreaseFPS: 20,
+        lodIncreaseFPS: 30,
+        lodLevel: 1,
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        presentTime: 16.365957260131836,
+        setAutomaticLODAdjust: function(bool){ return null; },
+        setBoundaryLevelAdjust: function(int){ return null; },
+        setDesktopLODDecreaseFPS: function(float){ return null; },
+        setHMDLODDecreaseFPS: function(float){ return null; },
+        setOctreeSizeScale: function(float)
+        {
+            return null;
+        }
+    },
+    LaserPointers:
+    {
+        createLaserPointer: function(QVariant){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disableLaserPointer: function(uint){ return null; },
+        editRenderState: function(uint, QString, QVariant){ return null; },
+        enableLaserPointer: function(uint){ return null; },
+        getPrevRayPickResult: function(uint){ return null; },
+        isLeftHand: function(uint){ return null; },
+        isMouse: function(uint){ return null; },
+        isRightHand: function(uint){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        removeLaserPointer: function(uint){ return null; },
+        setIgnoreItems: function(uint, QScriptValue){ return null; },
+        setIncludeItems: function(uint, QScriptValue){ return null; },
+        setLaserLength: function(uint, float){ return null; },
+        setLockEndUUID: function(uint, QUuid, bool){ return null; },
+        setLockEndUUID__dupe: function(uint, QUuid, bool, glm__mat4){ return null; },
+        setPrecisionPicking: function(uint, bool){ return null; },
+        setRenderState: function(uint, QString)
+        {
+            return null;
+        }
+    },
+    LimitlessSpeechRecognition:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        onFinishedSpeaking: function(QString){ return null; },
+        onReceivedTranscription: function(QString){ return null; },
+        setAuthKey: function(QString){ return null; },
+        setListeningToVoice: function(bool)
+        {
+            return null;
+        }
+    },
+    LocationBookmarks:
+    {
+        addBookmark: function(){ return null; },
+        deleteBookmark: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        setHomeLocationToAddress: function(QVariant)
+        {
+            return null;
+        }
+    },
+    Mat4:
+    {
+        createFromArray: function(QVector_float_){ return null; },
+        createFromColumns: function(glm__vec4, glm__vec4, glm__vec4, glm__vec4){ return null; },
+        createFromRotAndTrans: function(glm__quat, glm__vec3){ return null; },
+        createFromScaleRotAndTrans: function(glm__vec3, glm__quat, glm__vec3){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        extractRotation: function(glm__mat4){ return null; },
+        extractScale: function(glm__mat4){ return null; },
+        extractTranslation: function(glm__mat4){ return null; },
+        getForward: function(glm__mat4){ return null; },
+        getFront: function(glm__mat4){ return null; },
+        getRight: function(glm__mat4){ return null; },
+        getUp: function(glm__mat4){ return null; },
+        inverse: function(glm__mat4){ return null; },
+        multiply: function(glm__mat4, glm__mat4){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        print: function(QString, glm__mat4){ return null; },
+        print__dupe: function(QString, glm__mat4, bool){ return null; },
+        transformPoint: function(glm__mat4, glm__vec3){ return null; },
+        transformVector: function(glm__mat4, glm__vec3)
+        {
+            return null;
+        }
+    },
+    Menu:
+    {
+        addMenu: function(QString){ return null; },
+        addMenu__dupe: function(QString, QString){ return null; },
+        addMenuItem: function(MenuItemProperties){ return null; },
+        addMenuItem__dupe: function(QString, QString){ return null; },
+        addMenuItem__dupe__dupe: function(QString, QString, QString){ return null; },
+        addSeparator: function(QString, QString){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        isMenuEnabled: function(QString){ return null; },
+        isOptionChecked: function(QString){ return null; },
+        menuExists: function(QString){ return null; },
+        menuItemEvent: function(QString){ return null; },
+        menuItemExists: function(QString, QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        removeMenu: function(QString){ return null; },
+        removeMenuItem: function(QString, QString){ return null; },
+        removeSeparator: function(QString, QString){ return null; },
+        setIsOptionChecked: function(QString, bool){ return null; },
+        setMenuEnabled: function(QString, bool){ return null; },
+        triggerOption: function(QString)
+        {
+            return null;
+        }
+    },
+    Messages:
+    {
+        dataReceived: function(QString, QByteArray, QUuid, bool){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        messageReceived: function(QString, QString, QUuid, bool){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        sendData: function(QString, QByteArray){ return null; },
+        sendData__dupe: function(QString, QByteArray, bool){ return null; },
+        sendLocalMessage: function(QString, QString){ return null; },
+        sendMessage: function(QString, QString){ return null; },
+        sendMessage__dupe: function(QString, QString, bool){ return null; },
+        subscribe: function(QString){ return null; },
+        unsubscribe: function(QString)
+        {
+            return null;
+        }
+    },
+    Midi:
+    {
+        allNotesOff: function(){ return null; },
+        blockMidiDevice: function(QString, bool){ return null; },
+        broadcastEnable: function(bool){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        listMidiDevices: function(bool){ return null; },
+        midiMessage: function(QVariantMap){ return null; },
+        midiNote: function(QVariantMap){ return null; },
+        midiReset: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        playMidiNote: function(int, int, int){ return null; },
+        resetDevices: function(){ return null; },
+        sendMidiMessage: function(int, int, int, int, int){ return null; },
+        sendRawDword: function(int, int){ return null; },
+        thruModeEnable: function(bool){ return null; },
+        typeChanPressureEnable: function(bool){ return null; },
+        typeControlChangeEnable: function(bool){ return null; },
+        typeNoteOffEnable: function(bool){ return null; },
+        typeNoteOnEnable: function(bool){ return null; },
+        typePitchBendEnable: function(bool){ return null; },
+        typePolyKeyPressureEnable: function(bool){ return null; },
+        typeProgramChangeEnable: function(bool){ return null; },
+        typeSystemMessageEnable: function(bool){ return null; },
+        unblockMidiDevice: function(QString, bool)
+        {
+            return null;
+        }
+    },
+    Model:
+    {
+        appendMeshes: function(MeshProxyList){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getVertex: function(MeshProxy_, int){ return null; },
+        getVertexCount: function(MeshProxy_){ return null; },
+        meshToOBJ: function(MeshProxyList){ return null; },
+        newMesh: function(QVector_glm__vec3_, QVector_glm__vec3_, QVector_MeshFace_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        transformMesh: function(glm__mat4, MeshProxy_)
+        {
+            return null;
+        }
+    },
+    ModelCache:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        dirty: function(){ return null; },
+        getResource: function(QUrl){ return null; },
+        getResource__dupe: function(QUrl, QUrl){ return null; },
+        getResource__dupe__dupe: function(QUrl, QUrl, void_){ return null; },
+        getResourceList: function(){ return null; },
         numCached: 0,
-        numTotal: 0,
+        numTotal: 1,
+        objectName: "ModelCache",
+        objectNameChanged: function(QString){ return null; },
+        prefetch: function(QUrl){ return null; },
+        prefetch__dupe: function(QUrl, void_){ return null; },
         sizeCached: 0,
-        sizeTotal: 0,
-        objectName: ''
-        };
-    }
-
-function MyAvatar(){
-    return {
-        characterControllerEnabled: true,
-        collisionsEnabled: true,
-        hmdLeanRecenterEnabled: true,
-        hmdRollControlEnabled: true,
-        isAway: true,
-        lookAtSnappingEnabled: true,
-        shouldRenderLocally: true,
-        useAdvancedMovementControls: true,
-        addAnimationStateHandler: function(QScriptValue,QScriptValue){},
-        addThrust: function(glm::vec3){},
-        animGraphLoaded: function(){},
-        attach: function(QString){},
-        attach: function(QString,QString){},
-        attach: function(QString,QString,glm::vec3){},
-        attach: function(QString,QString,glm::vec3,glm::quat){},
-        attach: function(QString,QString,glm::vec3,glm::quat,float){},
-        attach: function(QString,QString,glm::vec3,glm::quat,float,bool){},
-        attach: function(QString,QString,glm::vec3,glm::quat,float,bool,bool){},
-        attach: function(QString,QString,glm::vec3,glm::quat,float,bool,bool,bool){},
-        attachmentsChanged: function(){},
-        audioListenerModeChanged: function(){},
-        centerBody: function(){},
-        clearAvatarEntity: function(QUuid){},
-        clearIKJointLimitHistory: function(){},
-        clearJointData: function(QString){},
-        clearJointData: function(int){},
-        clearJointsData: function(){},
-        clearPinOnJoint: function(int){},
-        clearScaleRestriction: function(){},
-        collisionWithEntity: function(Collision){},
-        decreaseSize: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        detachAll: function(QString){},
-        detachAll: function(QString,QString){},
-        detachOne: function(QString){},
-        detachOne: function(QString,QString){},
-        disableDriveKey: function(DriveKeys){},
-        displayNameChanged: function(){},
-        dominantHandChanged: function(QString){},
-        enableDriveKey: function(DriveKeys){},
-        energyChanged: function(float){},
-        getAbsoluteDefaultJointRotationInObjectFrame: function(int){},
-        getAbsoluteDefaultJointTranslationInObjectFrame: function(int){},
-        getAbsoluteJointRotationInObjectFrame: function(int){},
-        getAbsoluteJointTranslationInObjectFrame: function(int){},
-        getAcceleration: function(){},
-        getAnimGraphOverrideUrl: function(){},
-        getAnimGraphUrl: function(){},
-        getAnimationRoles: function(){},
-        getAttachmentData: function(){},
-        getAttachmentsVariant: function(){},
-        getAvatarEntityData: function(){},
-        getAvatarScale: function(){},
-        getCharacterControllerEnabled: function(){},
-        getClearOverlayWhenMoving: function(){},
-        getCollisionsEnabled: function(){},
-        getControllerLeftHandMatrix: function(){},
-        getControllerRightHandMatrix: function(){},
-        getDataRate: function(){},
-        getDataRate: function(QString){},
-        getDefaultEyePosition: function(){},
-        getDefaultJointRotation: function(int){},
-        getDefaultJointTranslation: function(int){},
-        getDomainMaxScale: function(){},
-        getDomainMinScale: function(){},
-        getDominantHand: function(){},
-        getEnableMeshVisible: function(){},
-        getEyeHeight: function(){},
-        getEyePosition: function(){},
-        getFlyingEnabled: function(){},
-        getFullAvatarModelName: function(){},
-        getFullAvatarURLFromPreferences: function(){},
-        getGravity: function(){},
-        getHMDLeanRecenterEnabled: function(){},
-        getHandState: function(){},
-        getHeadDeltaPitch: function(){},
-        getHeadFinalPitch: function(){},
-        getHeadFinalRoll: function(){},
-        getHeadFinalYaw: function(){},
-        getHeadPosition: function(){},
-        getHeight: function(){},
-        getIKErrorOnLastSolve: function(){},
-        getJointIndex: function(QString){},
-        getJointNames: function(){},
-        getJointPosition: function(QString){},
-        getJointPosition: function(int){},
-        getJointRotation: function(QString){},
-        getJointRotation: function(int){},
-        getJointRotations: function(){},
-        getJointTranslation: function(QString){},
-        getJointTranslation: function(int){},
-        getJointTranslations: function(){},
-        getLeftHandPose: function(){},
-        getLeftHandPosition: function(){},
-        getLeftHandTipPose: function(){},
-        getLeftHandTipPosition: function(){},
-        getLeftPalmPosition: function(){},
-        getLeftPalmRotation: function(){},
-        getNeckPosition: function(){},
-        getOrientationForAudio: function(){},
-        getOrientationVar: function(){},
-        getParentID: function(){},
-        getParentJointIndex: function(){},
-        getPositionForAudio: function(){},
-        getRawDriveKey: function(DriveKeys){},
-        getRightHandPose: function(){},
-        getRightHandPosition: function(){},
-        getRightHandTipPose: function(){},
-        getRightHandTipPosition: function(){},
-        getRightPalmPosition: function(){},
-        getRightPalmRotation: function(){},
-        getSensorToWorldMatrix: function(){},
-        getSensorToWorldScale: function(){},
-        getSimulationRate: function(){},
-        getSimulationRate: function(QString){},
-        getSkeleton: function(){},
-        getSkeletonOffset: function(){},
-        getSnapTurn: function(){},
-        getTargetAvatar: function(){},
-        getTargetAvatarPosition: function(){},
-        getTargetScale: function(){},
-        getThrust: function(){},
-        getUpdateRate: function(){},
-        getUpdateRate: function(QString){},
-        goToLocation: function(QVariant){},
-        goToLocation: function(glm::vec3){},
-        goToLocation: function(glm::vec3,bool){},
-        goToLocation: function(glm::vec3,bool,glm::quat){},
-        goToLocation: function(glm::vec3,bool,glm::quat,bool){},
-        goToLocationAndEnableCollisions: function(glm::vec3){},
-        increaseSize: function(){},
-        isDown: function(glm::vec3){},
-        isDriveKeyDisabled: function(DriveKeys){},
-        isFlying: function(){},
-        isInAir: function(){},
-        isJointDataValid: function(QString){},
-        isJointDataValid: function(int){},
-        isUp: function(glm::vec3){},
-        jointToWorldDirection: function(glm::vec3){},
-        jointToWorldDirection: function(glm::vec3,int){},
-        jointToWorldPoint: function(glm::vec3){},
-        jointToWorldPoint: function(glm::vec3,int){},
-        jointToWorldRotation: function(glm::quat){},
-        jointToWorldRotation: function(glm::quat,int){},
-        lookAtSnappingChanged: function(bool){},
-        newCollisionSoundURL: function(QUrl){},
-        objectNameChanged: function(QString){},
-        onLoadComplete: function(){},
-        overrideAnimation: function(QString,float,bool,float,float){},
-        overrideRoleAnimation: function(QString,QString,float,bool,float,float){},
-        pinJoint: function(int,glm::vec3,glm::quat){},
-        positionGoneTo: function(){},
-        removeAnimationStateHandler: function(QScriptValue){},
-        resetLastSent: function(){},
-        resetSensorsAndBody: function(){},
-        resetSize: function(){},
-        restoreAnimation: function(){},
-        restoreRoleAnimation: function(QString){},
-        restrictScaleFromDomainSettings: function(QJsonObject){},
-        rigReady: function(){},
-        rigReset: function(){},
-        safeLanding: function(glm::vec3){},
-        scaleChanged: function(){},
-        sendAvatarDataPacket: function(){},
-        sendIdentityPacket: function(){},
-        sensorToWorldScaleChanged: function(float){},
-        sessionDisplayNameChanged: function(){},
-        sessionUUIDChanged: function(){},
-        setAbsoluteJointRotationInObjectFrame: function(int,glm::quat){},
-        setAbsoluteJointTranslationInObjectFrame: function(int,glm::vec3){},
-        setAnimGraphOverrideUrl: function(QUrl){},
-        setAnimGraphUrl: function(QUrl){},
-        setAttachmentData: function(QVector<AttachmentData>){},
-        setAttachmentsVariant: function(QVariantList){},
-        setAvatarEntityData: function(AvatarEntityMap){},
-        setAvatarScale: function(float){},
-        setBlendshape: function(QString,float){},
-        setCharacterControllerEnabled: function(bool){},
-        setClearOverlayWhenMoving: function(bool){},
-        setCollisionsEnabled: function(bool){},
-        setDominantHand: function(QString){},
-        setEnableDebugDrawAnimPose: function(bool){},
-        setEnableDebugDrawDefaultPose: function(bool){},
-        setEnableDebugDrawDetailedCollision: function(bool){},
-        setEnableDebugDrawHandControllers: function(bool){},
-        setEnableDebugDrawIKChains: function(bool){},
-        setEnableDebugDrawIKConstraints: function(bool){},
-        setEnableDebugDrawIKTargets: function(bool){},
-        setEnableDebugDrawPosition: function(bool){},
-        setEnableDebugDrawSensorToWorldMatrix: function(bool){},
-        setEnableInverseKinematics: function(bool){},
-        setEnableMeshVisible: function(bool){},
-        setFlyingEnabled: function(bool){},
-        setForceFaceTrackerConnected: function(bool){},
-        setGravity: function(float){},
-        setHMDLeanRecenterEnabled: function(bool){},
-        setHandState: function(char){},
-        setJointData: function(QString,glm::quat,glm::vec3){},
-        setJointData: function(int,glm::quat,glm::vec3){},
-        setJointMappingsFromNetworkReply: function(){},
-        setJointRotation: function(QString,glm::quat){},
-        setJointRotation: function(int,glm::quat){},
-        setJointRotations: function(QVector<glm::quat>){},
-        setJointTranslation: function(QString,glm::vec3){},
-        setJointTranslation: function(int,glm::vec3){},
-        setJointTranslations: function(QVector<glm::vec3>){},
-        setModelScale: function(float){},
-        setModelURLFinished: function(bool){},
-        setOrientationVar: function(QVariant){},
-        setParentID: function(QUuid){},
-        setParentJointIndex: function(ushort){},
-        setRawJointData: function(QVector<JointData>){},
-        setSessionUUID: function(QUuid){},
-        setSkeletonOffset: function(glm::vec3){},
-        setSnapTurn: function(bool){},
-        setThrust: function(glm::vec3){},
-        skeletonChanged: function(){},
-        skeletonModelURLChanged: function(){},
-        transformChanged: function(){},
-        updateAvatarEntity: function(QUuid,QByteArray){},
-        updateMotionBehaviorFromMenu: function(){},
-        useFullAvatarURL: function(QUrl){},
-        useFullAvatarURL: function(QUrl,QString){},
-        wentActive: function(){},
-        wentAway: function(){},
-        worldToJointDirection: function(glm::vec3){},
-        worldToJointDirection: function(glm::vec3,int){},
-        worldToJointPoint: function(glm::vec3){},
-        worldToJointPoint: function(glm::vec3,int){},
-        worldToJointRotation: function(glm::quat){},
-        worldToJointRotation: function(glm::quat,int){},
+        sizeTotal: 16187109,
+        updateTotalSize: function(qlonglong)
+        {
+            return null;
+        }
+    },
+    MyAvatar:
+    {
+        SELF_ID: "{00000000-0000-0000-0000-000000000001}",
+        addAnimationStateHandler: function(QScriptValue, QScriptValue){ return null; },
+        addThrust: function(glm__vec3){ return null; },
+        angularVelocity:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        animGraphLoaded: function(){ return null; },
+        attach: function(QString){ return null; },
+        attach__dupe: function(QString, QString){ return null; },
+        attach__dupe__dupe: function(QString, QString, glm__vec3){ return null; },
+        attach__dupe__dupe__dupe: function(QString, QString, glm__vec3, glm__quat){ return null; },
+        attach__dupe__dupe__dupe__dupe: function(QString, QString, glm__vec3, glm__quat, float){ return null; },
+        attach__dupe__dupe__dupe__dupe__dupe: function(QString, QString, glm__vec3, glm__quat, float, bool){ return null; },
+        attach__dupe__dupe__dupe__dupe__dupe__dupe: function(QString, QString, glm__vec3, glm__quat, float, bool, bool){ return null; },
+        attach__dupe__dupe__dupe__dupe__dupe__dupe__dupe: function(QString, QString, glm__vec3, glm__quat, float, bool, bool, bool){ return null; },
+        attachmentData:
+        {},
+        attachmentsChanged: function(){ return null; },
         audioAverageLoudness: 0,
         audioListenerMode: 0,
-        audioListenerModeCamera: 0,
-        audioListenerModeCustom: 0,
+        audioListenerModeCamera: 1,
+        audioListenerModeChanged: function(){ return null; },
+        audioListenerModeCustom: 2,
         audioListenerModeHead: 0,
         audioLoudness: 0,
         bodyPitch: 0,
         bodyRoll: 0,
-        bodyYaw: 0,
-        density: 0,
-        energy: 0,
-        headPitch: 0,
+        bodyYaw: 123.14949798583984,
+        centerBody: function(){ return null; },
+        characterControllerEnabled: true,
+        clearAvatarEntity: function(QUuid){ return null; },
+        clearIKJointLimitHistory: function(){ return null; },
+        clearJointData: function(QString){ return null; },
+        clearJointData__dupe: function(int){ return null; },
+        clearJointsData: function(){ return null; },
+        clearPinOnJoint: function(int){ return null; },
+        clearScaleRestriction: function(){ return null; },
+        collisionSoundURL: "https://hifi-public.s3.amazonaws.com/sounds/Collisions-otherorganic/Body_Hits_Impact.wav",
+        collisionWithEntity: function(Collision){ return null; },
+        collisionsEnabled: true,
+        controllerLeftHandMatrix:
+        {
+            r0c0: 1,
+            r0c1: 0,
+            r0c2: 0,
+            r0c3: 0,
+            r1c0: 0,
+            r1c1: 1,
+            r1c2: 0,
+            r1c3: 0,
+            r2c0: 0,
+            r2c1: 0,
+            r2c2: 1,
+            r2c3: 0,
+            r3c0: 0,
+            r3c1: 0,
+            r3c2: 0,
+            r3c3: 1
+        },
+        controllerRightHandMatrix:
+        {
+            r0c0: 1,
+            r0c1: 0,
+            r0c2: 0,
+            r0c3: 0,
+            r1c0: 0,
+            r1c1: 1,
+            r1c2: 0,
+            r1c3: 0,
+            r2c0: 0,
+            r2c1: 0,
+            r2c2: 1,
+            r2c3: 0,
+            r3c0: 0,
+            r3c1: 0,
+            r3c2: 0,
+            r3c3: 1
+        },
+        customListenOrientation:
+        {
+            w: 1,
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        customListenPosition:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        decreaseSize: function(){ return null; },
+        density: 1000,
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        detachAll: function(QString){ return null; },
+        detachAll__dupe: function(QString, QString){ return null; },
+        detachOne: function(QString){ return null; },
+        detachOne__dupe: function(QString, QString){ return null; },
+        disableDriveKey: function(DriveKeys){ return null; },
+        displayName: "WolfGang",
+        displayNameChanged: function(){ return null; },
+        dominantHandChanged: function(QString){ return null; },
+        enableDriveKey: function(DriveKeys){ return null; },
+        energy: 1,
+        energyChanged: function(float){ return null; },
+        getAbsoluteDefaultJointRotationInObjectFrame: function(int){ return null; },
+        getAbsoluteDefaultJointTranslationInObjectFrame: function(int){ return null; },
+        getAbsoluteJointRotationInObjectFrame: function(int){ return null; },
+        getAbsoluteJointTranslationInObjectFrame: function(int){ return null; },
+        getAcceleration: function(){ return null; },
+        getAnimGraphOverrideUrl: function(){ return null; },
+        getAnimGraphUrl: function(){ return null; },
+        getAnimationRoles: function(){ return null; },
+        getAttachmentData: function(){ return null; },
+        getAttachmentsVariant: function(){ return null; },
+        getAvatarEntityData: function(){ return null; },
+        getAvatarScale: function(){ return null; },
+        getCharacterControllerEnabled: function(){ return null; },
+        getClearOverlayWhenMoving: function(){ return null; },
+        getCollisionsEnabled: function(){ return null; },
+        getControllerLeftHandMatrix: function(){ return null; },
+        getControllerRightHandMatrix: function(){ return null; },
+        getDataRate: function(){ return null; },
+        getDataRate__dupe: function(QString){ return null; },
+        getDefaultEyePosition: function(){ return null; },
+        getDefaultJointRotation: function(int){ return null; },
+        getDefaultJointTranslation: function(int){ return null; },
+        getDomainMaxScale: function(){ return null; },
+        getDomainMinScale: function(){ return null; },
+        getDominantHand: function(){ return null; },
+        getEnableMeshVisible: function(){ return null; },
+        getEyeHeight: function(){ return null; },
+        getEyePosition: function(){ return null; },
+        getFlyingEnabled: function(){ return null; },
+        getFullAvatarModelName: function(){ return null; },
+        getFullAvatarURLFromPreferences: function(){ return null; },
+        getGravity: function(){ return null; },
+        getHMDLeanRecenterEnabled: function(){ return null; },
+        getHandState: function(){ return null; },
+        getHeadDeltaPitch: function(){ return null; },
+        getHeadFinalPitch: function(){ return null; },
+        getHeadFinalRoll: function(){ return null; },
+        getHeadFinalYaw: function(){ return null; },
+        getHeadPosition: function(){ return null; },
+        getHeight: function(){ return null; },
+        getIKErrorOnLastSolve: function(){ return null; },
+        getJointIndex: function(QString){ return null; },
+        getJointNames: function(){ return null; },
+        getJointPosition: function(QString){ return null; },
+        getJointPosition__dupe: function(int){ return null; },
+        getJointRotation: function(QString){ return null; },
+        getJointRotation__dupe: function(int){ return null; },
+        getJointRotations: function(){ return null; },
+        getJointTranslation: function(QString){ return null; },
+        getJointTranslation__dupe: function(int){ return null; },
+        getJointTranslations: function(){ return null; },
+        getLeftHandPose: function(){ return null; },
+        getLeftHandPosition: function(){ return null; },
+        getLeftHandTipPose: function(){ return null; },
+        getLeftHandTipPosition: function(){ return null; },
+        getLeftPalmPosition: function(){ return null; },
+        getLeftPalmRotation: function(){ return null; },
+        getNeckPosition: function(){ return null; },
+        getOrientationForAudio: function(){ return null; },
+        getOrientationVar: function(){ return null; },
+        getParentID: function(){ return null; },
+        getParentJointIndex: function(){ return null; },
+        getPositionForAudio: function(){ return null; },
+        getRawDriveKey: function(DriveKeys){ return null; },
+        getRightHandPose: function(){ return null; },
+        getRightHandPosition: function(){ return null; },
+        getRightHandTipPose: function(){ return null; },
+        getRightHandTipPosition: function(){ return null; },
+        getRightPalmPosition: function(){ return null; },
+        getRightPalmRotation: function(){ return null; },
+        getSensorToWorldMatrix: function(){ return null; },
+        getSensorToWorldScale: function(){ return null; },
+        getSimulationRate: function(){ return null; },
+        getSimulationRate__dupe: function(QString){ return null; },
+        getSkeleton: function(){ return null; },
+        getSkeletonOffset: function(){ return null; },
+        getSnapTurn: function(){ return null; },
+        getTargetAvatar: function(){ return null; },
+        getTargetAvatarPosition: function(){ return null; },
+        getTargetScale: function(){ return null; },
+        getThrust: function(){ return null; },
+        getUpdateRate: function(){ return null; },
+        getUpdateRate__dupe: function(QString){ return null; },
+        goToLocation: function(QVariant){ return null; },
+        goToLocation__dupe: function(glm__vec3){ return null; },
+        goToLocation__dupe__dupe: function(glm__vec3, bool){ return null; },
+        goToLocation__dupe__dupe__dupe: function(glm__vec3, bool, glm__quat){ return null; },
+        goToLocation__dupe__dupe__dupe__dupe: function(glm__vec3, bool, glm__quat, bool){ return null; },
+        goToLocationAndEnableCollisions: function(glm__vec3){ return null; },
+        handPosition:
+        {
+            x: 504.1449890136719,
+            y: 1.0619027614593506,
+            z: -490.2359924316406
+        },
+        headOrientation:
+        {
+            w: 0.46201616525650024,
+            x: -0.1145789697766304,
+            y: 0.8535816669464111,
+            z: 0.21168632805347443
+        },
+        headPitch: -27.856441497802734,
         headRoll: 0,
         headYaw: 0,
-        hmdRollControlDeadZone: 0,
-        hmdRollControlRate: 0,
-        motorTimescale: 0,
-        pitchSpeed: 0,
-        scale: 0,
-        sensorToWorldScale: 0,
-        userEyeHeight: 0,
-        userHeight: 0,
-        walkSpeed: 0,
-        yawSpeed: 0,
-        angularVelocity: function(){
-            return {
+        hmdLeanRecenterEnabled: true,
+        hmdRollControlDeadZone: 8,
+        hmdRollControlEnabled: true,
+        hmdRollControlRate: 114,
+        increaseSize: function(){ return null; },
+        isAway: false,
+        isDown: function(glm__vec3){ return null; },
+        isDriveKeyDisabled: function(DriveKeys){ return null; },
+        isFlying: function(){ return null; },
+        isInAir: function(){ return null; },
+        isJointDataValid: function(QString){ return null; },
+        isJointDataValid__dupe: function(int){ return null; },
+        isUp: function(glm__vec3){ return null; },
+        jointNames:
+        {
+            0: "polySurface222.004",
+            1: "polySurface222.005",
+            10: "RightToe_End",
+            11: "RightToe_End_end",
+            12: "LeftUpLeg",
+            13: "LeftLeg",
+            14: "LeftFoot",
+            15: "LeftToeBase",
+            16: "LeftToe_End",
+            17: "LeftToe_End_end",
+            18: "Spine",
+            19: "Spine1",
+            2: "polySurface222.006",
+            20: "Spine2",
+            21: "RightShoulder",
+            22: "RightArm",
+            23: "RightForeArm",
+            24: "RightHand",
+            25: "RightHandPinky1",
+            26: "RightHandPinky2",
+            27: "RightHandPinky3",
+            28: "RightHandPinky4",
+            29: "RightHandPinky4_end",
+            3: "polySurface222.007",
+            30: "RightHandRing1",
+            31: "RightHandRing2",
+            32: "RightHandRing3",
+            33: "RightHandRing4",
+            34: "RightHandRing4_end",
+            35: "RightHandMiddle1",
+            36: "RightHandMiddle2",
+            37: "RightHandMiddle3",
+            38: "RightHandMiddle4",
+            39: "RightHandMiddle4_end",
+            4: "Armature.001",
+            40: "RightHandIndex1",
+            41: "RightHandIndex2",
+            42: "RightHandIndex3",
+            43: "RightHandIndex4",
+            44: "RightHandIndex4_end",
+            45: "RightHandThumb1",
+            46: "RightHandThumb2",
+            47: "RightHandThumb3",
+            48: "RightHandThumb4",
+            49: "RightHandThumb4_end",
+            5: "Hips",
+            50: "LeftShoulder",
+            51: "LeftArm",
+            52: "LeftForeArm",
+            53: "LeftHand",
+            54: "LeftHandPinky1",
+            55: "LeftHandPinky2",
+            56: "LeftHandPinky3",
+            57: "LeftHandPinky4",
+            58: "LeftHandPinky4_end",
+            59: "LeftHandRing1",
+            6: "RightUpLeg",
+            60: "LeftHandRing2",
+            61: "LeftHandRing3",
+            62: "LeftHandRing4",
+            63: "LeftHandRing4_end",
+            64: "LeftHandMiddle1",
+            65: "LeftHandMiddle2",
+            66: "LeftHandMiddle3",
+            67: "LeftHandMiddle4",
+            68: "LeftHandMiddle4_end",
+            69: "LeftHandIndex1",
+            7: "RightLeg",
+            70: "LeftHandIndex2",
+            71: "LeftHandIndex3",
+            72: "LeftHandIndex4",
+            73: "LeftHandIndex4_end",
+            74: "LeftHandThumb1",
+            75: "LeftHandThumb2",
+            76: "LeftHandThumb3",
+            77: "LeftHandThumb4",
+            78: "LeftHandThumb4_end",
+            79: "Neck",
+            8: "RightFoot",
+            80: "Head",
+            81: "HeadTop_End",
+            82: "HeadTop_End_end",
+            9: "RightToeBase"
+        },
+        jointToWorldDirection: function(glm__vec3){ return null; },
+        jointToWorldDirection__dupe: function(glm__vec3, int){ return null; },
+        jointToWorldPoint: function(glm__vec3){ return null; },
+        jointToWorldPoint__dupe: function(glm__vec3, int){ return null; },
+        jointToWorldRotation: function(glm__quat){ return null; },
+        jointToWorldRotation__dupe: function(glm__quat, int){ return null; },
+        leftHandPose:
+        {
+            angularVelocity:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        attachmentData: function(){
-            return {
-            };
-        },
-        controllerLeftHandMatrix: function(){
-            return {
-                r0c0: 0,
-                r0c1: 0,
-                r0c2: 0,
-                r0c3: 0,
-                r1c0: 0,
-                r1c1: 0,
-                r1c2: 0,
-                r1c3: 0,
-                r2c0: 0,
-                r2c1: 0,
-                r2c2: 0,
-                r2c3: 0,
-                r3c0: 0,
-                r3c1: 0,
-                r3c2: 0,
-                r3c3: 0
-            };
-        },
-        controllerRightHandMatrix: function(){
-            return {
-                r0c0: 0,
-                r0c1: 0,
-                r0c2: 0,
-                r0c3: 0,
-                r1c0: 0,
-                r1c1: 0,
-                r1c2: 0,
-                r1c3: 0,
-                r2c0: 0,
-                r2c1: 0,
-                r2c2: 0,
-                r2c3: 0,
-                r3c0: 0,
-                r3c1: 0,
-                r3c2: 0,
-                r3c3: 0
-            };
-        },
-        customListenOrientation: function(){
-            return {
-                w: 0,
+            },
+            rotation:
+            {
+                w: 1,
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        customListenPosition: function(){
-            return {
+            },
+            translation:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        handPosition: function(){
-            return {
+            },
+            valid: false,
+            velocity:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
+            }
         },
-        headOrientation: function(){
-            return {
-                w: 0,
+        leftHandPosition:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        leftHandTipPose:
+        {
+            angularVelocity:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        jointNames: function(){
-            return {
-                0: '',
-                1: '',
-                10: '',
-                11: '',
-                12: '',
-                13: '',
-                14: '',
-                15: '',
-                16: '',
-                17: '',
-                18: '',
-                19: '',
-                2: '',
-                20: '',
-                21: '',
-                22: '',
-                23: '',
-                24: '',
-                25: '',
-                26: '',
-                27: '',
-                28: '',
-                29: '',
-                3: '',
-                30: '',
-                31: '',
-                32: '',
-                33: '',
-                34: '',
-                35: '',
-                36: '',
-                37: '',
-                38: '',
-                39: '',
-                4: '',
-                40: '',
-                41: '',
-                42: '',
-                43: '',
-                44: '',
-                45: '',
-                46: '',
-                47: '',
-                48: '',
-                49: '',
-                5: '',
-                50: '',
-                51: '',
-                52: '',
-                53: '',
-                54: '',
-                55: '',
-                56: '',
-                57: '',
-                58: '',
-                59: '',
-                6: '',
-                60: '',
-                61: '',
-                62: '',
-                63: '',
-                64: '',
-                65: '',
-                66: '',
-                67: '',
-                68: '',
-                69: '',
-                7: '',
-                70: '',
-                71: '',
-                72: '',
-                73: '',
-                74: '',
-                75: '',
-                76: '',
-                77: '',
-                78: '',
-                79: '',
-                8: '',
-                80: '',
-                81: '',
-                82: '',
-                9: ''
-            };
-        },
-        leftHandPose: function(){
-            return {
-                valid: true,
-                angularVelocity: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                rotation: function(){
-                    return {
-                        w: 0,
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                translation: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                velocity: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                }
-            };
-        },
-        leftHandPosition: function(){
-            return {
+            },
+            rotation:
+            {
+                w: 1,
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        leftHandTipPose: function(){
-            return {
-                valid: true,
-                angularVelocity: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                rotation: function(){
-                    return {
-                        w: 0,
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                translation: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                velocity: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                }
-            };
-        },
-        leftHandTipPosition: function(){
-            return {
+            },
+            translation:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        motorVelocity: function(){
-            return {
+            },
+            valid: false,
+            velocity:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
+            }
         },
-        orientation: function(){
-            return {
-                w: 0,
+        leftHandTipPosition:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        lookAtSnappingChanged: function(bool){ return null; },
+        lookAtSnappingEnabled: true,
+        motorMode: "simple",
+        motorReferenceFrame: "camera",
+        motorTimescale: 1000000,
+        motorVelocity:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        newCollisionSoundURL: function(QUrl){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        onLoadComplete: function(){ return null; },
+        orientation:
+        {
+            w: 0.47601184248924255,
+            x: 0,
+            y: 0.8794388771057129,
+            z: 0
+        },
+        overrideAnimation: function(QString, float, bool, float, float){ return null; },
+        overrideRoleAnimation: function(QString, QString, float, bool, float, float){ return null; },
+        pinJoint: function(int, glm__vec3, glm__quat){ return null; },
+        pitchSpeed: 75,
+        position:
+        {
+            x: 504.1449890136719,
+            y: 1.0619027614593506,
+            z: -490.2359924316406
+        },
+        positionGoneTo: function(){ return null; },
+        qmlPosition:
+        {},
+        removeAnimationStateHandler: function(QScriptValue){ return null; },
+        resetLastSent: function(){ return null; },
+        resetSensorsAndBody: function(){ return null; },
+        resetSize: function(){ return null; },
+        restoreAnimation: function(){ return null; },
+        restoreRoleAnimation: function(QString){ return null; },
+        restrictScaleFromDomainSettings: function(QJsonObject){ return null; },
+        rigReady: function(){ return null; },
+        rigReset: function(){ return null; },
+        rightHandPose:
+        {
+            angularVelocity:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        position: function(){
-            return {
+            },
+            rotation:
+            {
+                w: 1,
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        qmlPosition: function(){
-            return {
-            };
-        },
-        rightHandPose: function(){
-            return {
-                valid: true,
-                angularVelocity: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                rotation: function(){
-                    return {
-                        w: 0,
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                translation: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                velocity: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                }
-            };
-        },
-        rightHandPosition: function(){
-            return {
+            },
+            translation:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        rightHandTipPose: function(){
-            return {
-                valid: true,
-                angularVelocity: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                rotation: function(){
-                    return {
-                        w: 0,
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                translation: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                },
-                velocity: function(){
-                    return {
-                        x: 0,
-                        y: 0,
-                        z: 0
-                    };
-                }
-            };
-        },
-        rightHandTipPosition: function(){
-            return {
+            },
+            valid: false,
+            velocity:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
+            }
         },
-        sensorToWorldMatrix: function(){
-            return {
-                r0c0: 0,
-                r0c1: 0,
-                r0c2: 0,
-                r0c3: 0,
-                r1c0: 0,
-                r1c1: 0,
-                r1c2: 0,
-                r1c3: 0,
-                r2c0: 0,
-                r2c1: 0,
-                r2c2: 0,
-                r2c3: 0,
-                r3c0: 0,
-                r3c1: 0,
-                r3c2: 0,
-                r3c3: 0
-            };
+        rightHandPosition:
+        {
+            x: 0,
+            y: 0,
+            z: 0
         },
-        skeletonOffset: function(){
-            return {
+        rightHandTipPose:
+        {
+            angularVelocity:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        velocity: function(){
-            return {
+            },
+            rotation:
+            {
+                w: 1,
                 x: 0,
                 y: 0,
                 z: 0
-            };
-        },
-        SELF_ID: '',
-        collisionSoundURL: '',
-        displayName: '',
-        motorMode: '',
-        motorReferenceFrame: '',
-        objectName: '',
-        sessionDisplayName: '',
-        sessionUUID: '',
-        skeletonModelURL: ''
-        };
-    }
-
-function OffscreenFlags(){
-    return {
-        navigationFocusDisabled: true,
-        navigationFocused: true,
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        navigationFocusDisabledChanged: function(){},
-        navigationFocusedChanged: function(){},
-        objectNameChanged: function(QString){},
-        objectName: ''
-        };
-    }
-
-function Overlays(){
-    return {
-        addOverlay: function(QString,QVariant){},
-        cloneOverlay: function(OverlayID){},
-        deleteOverlay: function(OverlayID){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        editOverlay: function(OverlayID,QVariant){},
-        editOverlays: function(QVariant){},
-        findOverlays: function(glm::vec3,float){},
-        findRayIntersection: function(PickRay){},
-        findRayIntersection: function(PickRay,bool){},
-        findRayIntersection: function(PickRay,bool,QScriptValue){},
-        findRayIntersection: function(PickRay,bool,QScriptValue,QScriptValue){},
-        findRayIntersection: function(PickRay,bool,QScriptValue,QScriptValue,bool){},
-        findRayIntersection: function(PickRay,bool,QScriptValue,QScriptValue,bool,bool){},
-        getKeyboardFocusOverlay: function(){},
-        getOverlayAtPoint: function(glm::vec2){},
-        getOverlayType: function(OverlayID){},
-        getOverlaysProperties: function(QVariant){},
-        getProperties: function(OverlayID,QStringList){},
-        getProperty: function(OverlayID,QString){},
-        height: function(){},
-        hoverEnterOverlay: function(OverlayID,PointerEvent){},
-        hoverLeaveOverlay: function(OverlayID,PointerEvent){},
-        hoverOverOverlay: function(OverlayID,PointerEvent){},
-        isAddedOverlay: function(OverlayID){},
-        isLoaded: function(OverlayID){},
-        mouseDoublePressOffOverlay: function(){},
-        mouseDoublePressOnOverlay: function(OverlayID,PointerEvent){},
-        mouseMoveOnOverlay: function(OverlayID,PointerEvent){},
-        mousePressOffOverlay: function(){},
-        mousePressOnOverlay: function(OverlayID,PointerEvent){},
-        mouseReleaseOnOverlay: function(OverlayID,PointerEvent){},
-        objectNameChanged: function(QString){},
-        overlayDeleted: function(OverlayID){},
-        sendHoverEnterOverlay: function(OverlayID,PointerEvent){},
-        sendHoverLeaveOverlay: function(OverlayID,PointerEvent){},
-        sendHoverOverOverlay: function(OverlayID,PointerEvent){},
-        sendMouseMoveOnOverlay: function(OverlayID,PointerEvent){},
-        sendMousePressOnOverlay: function(OverlayID,PointerEvent){},
-        sendMouseReleaseOnOverlay: function(OverlayID,PointerEvent){},
-        setKeyboardFocusOverlay: function(OverlayID){},
-        textSize: function(OverlayID,QString){},
-        width: function(){},
-        keyboardFocusOverlay: null,
-        objectName: ''
-        };
-    }
-
-function Paths(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        defaultScripts: '',
-        objectName: '',
-        resources: ''
-        };
-    }
-
-function Picks(){
-    return {
-        INTERSECTED_AVATAR: function(){},
-        INTERSECTED_ENTITY: function(){},
-        INTERSECTED_HUD: function(){},
-        INTERSECTED_NONE: function(){},
-        INTERSECTED_OVERLAY: function(){},
-        PICK_ALL_INTERSECTIONS: function(){},
-        PICK_AVATARS: function(){},
-        PICK_COARSE: function(){},
-        PICK_ENTITIES: function(){},
-        PICK_HUD: function(){},
-        PICK_INCLUDE_INVISIBLE: function(){},
-        PICK_INCLUDE_NONCOLLIDABLE: function(){},
-        PICK_NOTHING: function(){},
-        PICK_OVERLAYS: function(){},
-        createPick: function(PickQuery::PickType,QVariant){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disablePick: function(uint){},
-        enablePick: function(uint){},
-        getPrevPickResult: function(uint){},
-        isLeftHand: function(uint){},
-        isMouse: function(uint){},
-        isRightHand: function(uint){},
-        objectNameChanged: function(QString){},
-        removePick: function(uint){},
-        setIgnoreItems: function(uint,QScriptValue){},
-        setIncludeItems: function(uint,QScriptValue){},
-        setPrecisionPicking: function(uint,bool){},
-        INTERSECTED_AVATAR: 0,
-        INTERSECTED_ENTITY: 0,
-        INTERSECTED_HUD: 0,
-        INTERSECTED_NONE: 0,
-        INTERSECTED_OVERLAY: 0,
-        PICK_ALL_INTERSECTIONS: 0,
-        PICK_AVATARS: 0,
-        PICK_COARSE: 0,
-        PICK_ENTITIES: 0,
-        PICK_HUD: 0,
-        PICK_INCLUDE_INVISIBLE: 0,
-        PICK_INCLUDE_NONCOLLIDABLE: 0,
-        PICK_NOTHING: 0,
-        PICK_OVERLAYS: 0,
-        objectName: ''
-        };
-    }
-
-function PickType(){
-    return {
-        Ray: 0,
-        Stylus: 0
-        };
-    }
-
-function Pointers(){
-    return {
-        createPointer: function(PickQuery::PickType,QVariant){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disablePointer: function(uint){},
-        editRenderState: function(uint,QString,QVariant){},
-        enablePointer: function(uint){},
-        getPrevPickResult: function(uint){},
-        isLeftHand: function(uint){},
-        isMouse: function(uint){},
-        isRightHand: function(uint){},
-        objectNameChanged: function(QString){},
-        removePointer: function(uint){},
-        setIgnoreItems: function(uint,QScriptValue){},
-        setIncludeItems: function(uint,QScriptValue){},
-        setLength: function(uint,float){},
-        setLockEndUUID: function(uint,QUuid,bool){},
-        setLockEndUUID: function(uint,QUuid,bool,glm::mat4){},
-        setPrecisionPicking: function(uint,bool){},
-        setRenderState: function(uint,QString){},
-        objectName: ''
-        };
-    }
-
-function Quat(){
-    return {
-        angle: function(glm::quat){},
-        angleAxis: function(float,glm::vec3){},
-        axis: function(glm::quat){},
-        cancelOutRoll: function(glm::quat){},
-        cancelOutRollAndPitch: function(glm::quat){},
-        conjugate: function(glm::quat){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        dot: function(glm::quat,glm::quat){},
-        equal: function(glm::quat,glm::quat){},
-        fromPitchYawRollDegrees: function(float,float,float){},
-        fromPitchYawRollRadians: function(float,float,float){},
-        fromVec3Degrees: function(glm::vec3){},
-        fromVec3Radians: function(glm::vec3){},
-        getForward: function(glm::quat){},
-        getFront: function(glm::quat){},
-        getRight: function(glm::quat){},
-        getUp: function(glm::quat){},
-        inverse: function(glm::quat){},
-        lookAt: function(glm::vec3,glm::vec3,glm::vec3){},
-        lookAtSimple: function(glm::vec3,glm::vec3){},
-        mix: function(glm::quat,glm::quat,float){},
-        multiply: function(glm::quat,glm::quat){},
-        normalize: function(glm::quat){},
-        objectNameChanged: function(QString){},
-        print: function(QString,glm::quat){},
-        print: function(QString,glm::quat,bool){},
-        rotationBetween: function(glm::vec3,glm::vec3){},
-        safeEulerAngles: function(glm::quat){},
-        slerp: function(glm::quat,glm::quat,float){},
-        squad: function(glm::quat,glm::quat,glm::quat,glm::quat,float){},
-        IDENTITY: function(){
-            return {
-                w: 0,
+            },
+            translation:
+            {
                 x: 0,
                 y: 0,
                 z: 0
-            };
+            },
+            valid: false,
+            velocity:
+            {
+                x: 0,
+                y: 0,
+                z: 0
+            }
         },
-        objectName: ''
-        };
-    }
-
-function Rates(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        dropped: 0,
-        newFrame: 0,
-        present: 0,
-        render: 0,
-        simulation: 0,
-        objectName: ''
-        };
-    }
-
-function RayPick(){
-    return {
-        INTERSECTED_AVATAR: function(){},
-        INTERSECTED_ENTITY: function(){},
-        INTERSECTED_HUD: function(){},
-        INTERSECTED_NONE: function(){},
-        INTERSECTED_OVERLAY: function(){},
-        PICK_ALL_INTERSECTIONS: function(){},
-        PICK_AVATARS: function(){},
-        PICK_COARSE: function(){},
-        PICK_ENTITIES: function(){},
-        PICK_HUD: function(){},
-        PICK_INCLUDE_INVISIBLE: function(){},
-        PICK_INCLUDE_NONCOLLIDABLE: function(){},
-        PICK_NOTHING: function(){},
-        PICK_OVERLAYS: function(){},
-        createRayPick: function(QVariant){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disableRayPick: function(uint){},
-        enableRayPick: function(uint){},
-        getPrevRayPickResult: function(uint){},
-        isLeftHand: function(uint){},
-        isMouse: function(uint){},
-        isRightHand: function(uint){},
-        objectNameChanged: function(QString){},
-        removeRayPick: function(uint){},
-        setIgnoreItems: function(uint,QScriptValue){},
-        setIncludeItems: function(uint,QScriptValue){},
-        setPrecisionPicking: function(uint,bool){},
-        INTERSECTED_AVATAR: 0,
-        INTERSECTED_ENTITY: 0,
-        INTERSECTED_HUD: 0,
-        INTERSECTED_NONE: 0,
-        INTERSECTED_OVERLAY: 0,
-        PICK_ALL_INTERSECTIONS: 0,
-        PICK_AVATARS: 0,
-        PICK_COARSE: 0,
-        PICK_ENTITIES: 0,
-        PICK_HUD: 0,
-        PICK_INCLUDE_INVISIBLE: 0,
-        PICK_INCLUDE_NONCOLLIDABLE: 0,
-        PICK_NOTHING: 0,
-        PICK_OVERLAYS: 0,
-        objectName: ''
-        };
-    }
-
-function Recording(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getDefaultRecordingSaveDirectory: function(){},
-        getPlayFromCurrentLocation: function(){},
-        getPlayerUseAttachments: function(){},
-        getPlayerUseDisplayName: function(){},
-        getPlayerUseHeadModel: function(){},
-        getPlayerUseSkeletonModel: function(){},
-        isPaused: function(){},
-        isPlaying: function(){},
-        isRecording: function(){},
-        loadLastRecording: function(){},
-        loadRecording: function(QString){},
-        loadRecording: function(QString,QScriptValue){},
-        objectNameChanged: function(QString){},
-        pausePlayer: function(){},
-        playerElapsed: function(){},
-        playerLength: function(){},
-        recorderElapsed: function(){},
-        saveRecording: function(QString){},
-        saveRecordingToAsset: function(QScriptValue){},
-        setPlayFromCurrentLocation: function(bool){},
-        setPlayerAudioOffset: function(float){},
-        setPlayerLoop: function(bool){},
-        setPlayerTime: function(float){},
-        setPlayerUseAttachments: function(bool){},
-        setPlayerUseDisplayName: function(bool){},
-        setPlayerUseHeadModel: function(bool){},
-        setPlayerUseSkeletonModel: function(bool){},
-        setPlayerVolume: function(float){},
-        startPlaying: function(){},
-        startRecording: function(){},
-        stopPlaying: function(){},
-        stopRecording: function(){},
-        objectName: ''
-        };
-    }
-
-function Render(){
-    return {
-        enabled: true,
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        dirtyEnabled: function(){},
-        getConfig: function(QString){},
-        load: function(QJsonObject){},
-        load: function(QVariantMap){},
-        loaded: function(){},
-        newStats: function(){},
-        objectNameChanged: function(QString){},
-        refresh: function(){},
-        toJSON: function(){},
-        cpuRunTime: 0,
-        objectName: ''
-        };
-    }
-
-function Resource(){
-    return {
-        State: function(){
-            return {
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                objectNameChanged: function(QString){},
-                FAILED: 0,
-                FINISHED: 0,
-                LOADED: 0,
-                LOADING: 0,
-                QUEUED: 0,
-                objectName: ''
-            };
+        rightHandTipPosition:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        safeLanding: function(glm__vec3){ return null; },
+        scale: 1,
+        scaleChanged: function(){ return null; },
+        sendAvatarDataPacket: function(){ return null; },
+        sendIdentityPacket: function(){ return null; },
+        sensorToWorldMatrix:
+        {
+            r0c0: -0.560097336769104,
+            r0c1: 0,
+            r0c2: 0.8575672507286072,
+            r0c3: 504.1777648925781,
+            r1c0: 0,
+            r1c1: 1.02427077293396,
+            r1c2: 0,
+            r1c3: 1.6083216667175293,
+            r2c0: -0.8575672507286072,
+            r2c1: 0,
+            r2c2: -0.560097336769104,
+            r2c3: -490.2574157714844,
+            r3c0: 0,
+            r3c1: 0,
+            r3c2: 0,
+            r3c3: 1
+        },
+        sensorToWorldScale: 1.02427077293396,
+        sensorToWorldScaleChanged: function(float){ return null; },
+        sessionDisplayName: "WolfGang",
+        sessionDisplayNameChanged: function(){ return null; },
+        sessionUUID: "{e125fdb4-e642-4d2f-b621-a35d741f1e01}",
+        sessionUUIDChanged: function(){ return null; },
+        setAbsoluteJointRotationInObjectFrame: function(int, glm__quat){ return null; },
+        setAbsoluteJointTranslationInObjectFrame: function(int, glm__vec3){ return null; },
+        setAnimGraphOverrideUrl: function(QUrl){ return null; },
+        setAnimGraphUrl: function(QUrl){ return null; },
+        setAttachmentData: function(QVector_AttachmentData_){ return null; },
+        setAttachmentsVariant: function(QVariantList){ return null; },
+        setAvatarEntityData: function(AvatarEntityMap){ return null; },
+        setAvatarScale: function(float){ return null; },
+        setBlendshape: function(QString, float){ return null; },
+        setCharacterControllerEnabled: function(bool){ return null; },
+        setClearOverlayWhenMoving: function(bool){ return null; },
+        setCollisionsEnabled: function(bool){ return null; },
+        setDominantHand: function(QString){ return null; },
+        setEnableDebugDrawAnimPose: function(bool){ return null; },
+        setEnableDebugDrawDefaultPose: function(bool){ return null; },
+        setEnableDebugDrawDetailedCollision: function(bool){ return null; },
+        setEnableDebugDrawHandControllers: function(bool){ return null; },
+        setEnableDebugDrawIKChains: function(bool){ return null; },
+        setEnableDebugDrawIKConstraints: function(bool){ return null; },
+        setEnableDebugDrawIKTargets: function(bool){ return null; },
+        setEnableDebugDrawPosition: function(bool){ return null; },
+        setEnableDebugDrawSensorToWorldMatrix: function(bool){ return null; },
+        setEnableInverseKinematics: function(bool){ return null; },
+        setEnableMeshVisible: function(bool){ return null; },
+        setFlyingEnabled: function(bool){ return null; },
+        setForceFaceTrackerConnected: function(bool){ return null; },
+        setGravity: function(float){ return null; },
+        setHMDLeanRecenterEnabled: function(bool){ return null; },
+        setHandState: function(char){ return null; },
+        setJointData: function(QString, glm__quat, glm__vec3){ return null; },
+        setJointData__dupe: function(int, glm__quat, glm__vec3){ return null; },
+        setJointMappingsFromNetworkReply: function(){ return null; },
+        setJointRotation: function(QString, glm__quat){ return null; },
+        setJointRotation__dupe: function(int, glm__quat){ return null; },
+        setJointRotations: function(QVector_glm__quat_){ return null; },
+        setJointTranslation: function(QString, glm__vec3){ return null; },
+        setJointTranslation__dupe: function(int, glm__vec3){ return null; },
+        setJointTranslations: function(QVector_glm__vec3_){ return null; },
+        setModelScale: function(float){ return null; },
+        setModelURLFinished: function(bool){ return null; },
+        setOrientationVar: function(QVariant){ return null; },
+        setParentID: function(QUuid){ return null; },
+        setParentJointIndex: function(ushort){ return null; },
+        setRawJointData: function(QVector_JointData_){ return null; },
+        setSessionUUID: function(QUuid){ return null; },
+        setSkeletonOffset: function(glm__vec3){ return null; },
+        setSnapTurn: function(bool){ return null; },
+        setThrust: function(glm__vec3){ return null; },
+        shouldRenderLocally: true,
+        skeletonChanged: function(){ return null; },
+        skeletonModelURL: "https://wlf.io/assets/collie.fst",
+        skeletonModelURLChanged: function(){ return null; },
+        skeletonOffset:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        transformChanged: function(){ return null; },
+        updateAvatarEntity: function(QUuid, QByteArray){ return null; },
+        updateMotionBehaviorFromMenu: function(){ return null; },
+        useAdvancedMovementControls: true,
+        useFullAvatarURL: function(QUrl){ return null; },
+        useFullAvatarURL__dupe: function(QUrl, QString){ return null; },
+        userEyeHeight: 1.6449999809265137,
+        userHeight: 1.7549999952316284,
+        velocity:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        walkSpeed: 2.5999999046325684,
+        wentActive: function(){ return null; },
+        wentAway: function(){ return null; },
+        worldToJointDirection: function(glm__vec3){ return null; },
+        worldToJointDirection__dupe: function(glm__vec3, int){ return null; },
+        worldToJointPoint: function(glm__vec3){ return null; },
+        worldToJointPoint__dupe: function(glm__vec3, int){ return null; },
+        worldToJointRotation: function(glm__quat){ return null; },
+        worldToJointRotation__dupe: function(glm__quat, int){ return null; },
+        yawSpeed: 100
+    },
+    OffscreenFlags:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        navigationFocusDisabled: false,
+        navigationFocusDisabledChanged: function(){ return null; },
+        navigationFocused: false,
+        navigationFocusedChanged: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString)
+        {
+            return null;
         }
-        };
-    }
-
-function Resources(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        overrideUrlPrefix: function(QString,QString){},
-        restoreUrlPrefix: function(QString){},
-        objectName: ''
-        };
-    }
-
-function Reticle(){
-    return {
-        allowMouseCapture: true,
-        mouseCaptured: true,
-        pointingAtSystemOverlay: true,
-        visible: true,
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getAllowMouseCapture: function(){},
-        getDepth: function(){},
-        getMaximumPosition: function(){},
-        getPosition: function(){},
-        getScale: function(){},
-        getVisible: function(){},
-        isMouseCaptured: function(){},
-        isPointingAtSystemOverlay: function(){},
-        objectNameChanged: function(QString){},
-        setAllowMouseCapture: function(bool){},
-        setDepth: function(float){},
-        setPosition: function(QVariant){},
-        setScale: function(float){},
-        setVisible: function(bool){},
-        depth: 0,
-        scale: 0,
-        maximumPosition: function(){
-            return {
-                x: 0,
-                y: 0
-            };
+    },
+    OverlayWebWindo: function(){ return null; },
+    OverlayWindo: function(){ return null; },
+    Overlays:
+    {
+        addOverlay: function(QString, QVariant){ return null; },
+        cloneOverlay: function(OverlayID){ return null; },
+        deleteOverlay: function(OverlayID){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        editOverlay: function(OverlayID, QVariant){ return null; },
+        editOverlays: function(QVariant){ return null; },
+        findOverlays: function(glm__vec3, float){ return null; },
+        findRayIntersection: function(PickRay){ return null; },
+        findRayIntersection__dupe: function(PickRay, bool){ return null; },
+        findRayIntersection__dupe__dupe: function(PickRay, bool, QScriptValue){ return null; },
+        findRayIntersection__dupe__dupe__dupe: function(PickRay, bool, QScriptValue, QScriptValue){ return null; },
+        findRayIntersection__dupe__dupe__dupe__dupe: function(PickRay, bool, QScriptValue, QScriptValue, bool){ return null; },
+        findRayIntersection__dupe__dupe__dupe__dupe__dupe: function(PickRay, bool, QScriptValue, QScriptValue, bool, bool){ return null; },
+        getKeyboardFocusOverlay: function(){ return null; },
+        getOverlayAtPoint: function(glm__vec2){ return null; },
+        getOverlayType: function(OverlayID){ return null; },
+        getOverlaysProperties: function(QVariant){ return null; },
+        getProperties: function(OverlayID, QStringList){ return null; },
+        getProperty: function(OverlayID, QString){ return null; },
+        height: function(){ return null; },
+        hoverEnterOverlay: function(OverlayID, PointerEvent){ return null; },
+        hoverLeaveOverlay: function(OverlayID, PointerEvent){ return null; },
+        hoverOverOverlay: function(OverlayID, PointerEvent){ return null; },
+        isAddedOverlay: function(OverlayID){ return null; },
+        isLoaded: function(OverlayID){ return null; },
+        keyboardFocusOverlay: null,
+        mouseDoublePressOffOverlay: function(){ return null; },
+        mouseDoublePressOnOverlay: function(OverlayID, PointerEvent){ return null; },
+        mouseMoveOnOverlay: function(OverlayID, PointerEvent){ return null; },
+        mousePressOffOverlay: function(){ return null; },
+        mousePressOnOverlay: function(OverlayID, PointerEvent){ return null; },
+        mouseReleaseOnOverlay: function(OverlayID, PointerEvent){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        overlayDeleted: function(OverlayID){ return null; },
+        sendHoverEnterOverlay: function(OverlayID, PointerEvent){ return null; },
+        sendHoverLeaveOverlay: function(OverlayID, PointerEvent){ return null; },
+        sendHoverOverOverlay: function(OverlayID, PointerEvent){ return null; },
+        sendMouseMoveOnOverlay: function(OverlayID, PointerEvent){ return null; },
+        sendMousePressOnOverlay: function(OverlayID, PointerEvent){ return null; },
+        sendMouseReleaseOnOverlay: function(OverlayID, PointerEvent){ return null; },
+        setKeyboardFocusOverlay: function(OverlayID){ return null; },
+        textSize: function(OverlayID, QString){ return null; },
+        width: function()
+        {
+            return null;
+        }
+    },
+    Paths:
+    {
+        defaultScripts: "file:///C:/Program Files (x86)/Steam/steamapps/common/High Fidelity/scripts",
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        resources: ":/"
+    },
+    PickType:
+    {
+        Ray: 0,
+        Stylus: 1
+    },
+    Picks:
+    {
+        INTERSECTED_AVATAR: 3,
+        INTERSECTED_AVATAR: function(){ return null; },
+        INTERSECTED_ENTITY: 1,
+        INTERSECTED_ENTITY: function(){ return null; },
+        INTERSECTED_HUD: 4,
+        INTERSECTED_HUD: function(){ return null; },
+        INTERSECTED_NONE: 0,
+        INTERSECTED_NONE: function(){ return null; },
+        INTERSECTED_OVERLAY: 2,
+        INTERSECTED_OVERLAY: function(){ return null; },
+        PICK_ALL_INTERSECTIONS: 128,
+        PICK_ALL_INTERSECTIONS: function(){ return null; },
+        PICK_AVATARS: 4,
+        PICK_AVATARS: function(){ return null; },
+        PICK_COARSE: 16,
+        PICK_COARSE: function(){ return null; },
+        PICK_ENTITIES: 1,
+        PICK_ENTITIES: function(){ return null; },
+        PICK_HUD: 8,
+        PICK_HUD: function(){ return null; },
+        PICK_INCLUDE_INVISIBLE: 32,
+        PICK_INCLUDE_INVISIBLE: function(){ return null; },
+        PICK_INCLUDE_NONCOLLIDABLE: 64,
+        PICK_INCLUDE_NONCOLLIDABLE: function(){ return null; },
+        PICK_NOTHING: 0,
+        PICK_NOTHING: function(){ return null; },
+        PICK_OVERLAYS: 2,
+        PICK_OVERLAYS: function(){ return null; },
+        createPick: function(PickQuery__PickType, QVariant){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disablePick: function(uint){ return null; },
+        enablePick: function(uint){ return null; },
+        getPrevPickResult: function(uint){ return null; },
+        isLeftHand: function(uint){ return null; },
+        isMouse: function(uint){ return null; },
+        isRightHand: function(uint){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        removePick: function(uint){ return null; },
+        setIgnoreItems: function(uint, QScriptValue){ return null; },
+        setIncludeItems: function(uint, QScriptValue){ return null; },
+        setPrecisionPicking: function(uint, bool)
+        {
+            return null;
+        }
+    },
+    Pointers:
+    {
+        createPointer: function(PickQuery__PickType, QVariant){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disablePointer: function(uint){ return null; },
+        editRenderState: function(uint, QString, QVariant){ return null; },
+        enablePointer: function(uint){ return null; },
+        getPrevPickResult: function(uint){ return null; },
+        isLeftHand: function(uint){ return null; },
+        isMouse: function(uint){ return null; },
+        isRightHand: function(uint){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        removePointer: function(uint){ return null; },
+        setIgnoreItems: function(uint, QScriptValue){ return null; },
+        setIncludeItems: function(uint, QScriptValue){ return null; },
+        setLength: function(uint, float){ return null; },
+        setLockEndUUID: function(uint, QUuid, bool){ return null; },
+        setLockEndUUID__dupe: function(uint, QUuid, bool, glm__mat4){ return null; },
+        setPrecisionPicking: function(uint, bool){ return null; },
+        setRenderState: function(uint, QString)
+        {
+            return null;
+        }
+    },
+    Quat:
+    {
+        IDENTITY:
+        {
+            w: 1,
+            x: 0,
+            y: 0,
+            z: 0
         },
-        position: function(){
-            return {
-                x: 0,
-                y: 0
-            };
-        },
-        objectName: ''
-        };
-    }
-
-function Scene(){
-    return {
-        shouldRenderAvatars: true,
-        shouldRenderEntities: true,
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        shouldRenderAvatarsChanged: function(bool){},
-        shouldRenderEntitiesChanged: function(bool){},
-        stage: function(){
-            return {
-                sunModel: true,
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                objectNameChanged: function(QString){},
-                setLocation: function(float,float,float){},
-                setOrientation: function(glm::quat){},
-                keyLight: function(){
-                    return {
-                        deleteLater: function(){},
-                        destroyed: function(){},
-                        destroyed: function(QObject*){},
-                        objectNameChanged: function(QString){},
-                        ambientIntensity: 0,
-                        intensity: 0,
-                        color: function(){
-                            return {
-                                x: 0,
-                                y: 0,
-                                z: 0
-                            };
-                        },
-                        direction: function(){
-                            return {
-                                x: 0,
-                                y: 0,
-                                z: 0
-                            };
-                        },
-                        objectName: ''
-                    };
-                },
-                location: function(){
-                    return {
-                        deleteLater: function(){},
-                        destroyed: function(){},
-                        destroyed: function(QObject*){},
-                        objectNameChanged: function(QString){},
-                        altitude: 0,
-                        latitude: 0,
-                        longitude: 0,
-                        objectName: ''
-                    };
-                },
-                time: function(){
-                    return {
-                        deleteLater: function(){},
-                        destroyed: function(){},
-                        destroyed: function(QObject*){},
-                        objectNameChanged: function(QString){},
-                        day: 0,
-                        hour: 0,
-                        objectName: ''
-                    };
-                },
-                backgroundMode: '',
-                objectName: ''
-            };
-        },
-        objectName: ''
-        };
-    }
-
-function Script(){
-    return {
-        _requireResolve: function(QString){},
-        _requireResolve: function(QString,QString){},
-        addEventHandler: function(EntityItemID,QString,QScriptValue){},
-        beginProfileRange: function(QString){},
-        callAnimationStateHandler: function(QScriptValue,AnimVariantMap,QStringList,bool,AnimVariantResultHandler){},
-        callEntityScriptMethod: function(EntityItemID,QString){},
-        callEntityScriptMethod: function(EntityItemID,QString,EntityItemID,Collision){},
-        callEntityScriptMethod: function(EntityItemID,QString,PointerEvent){},
-        callEntityScriptMethod: function(EntityItemID,QString,QStringList){},
-        callEntityScriptMethod: function(EntityItemID,QString,QStringList,QUuid){},
-        cleanupMenuItem: function(QString){},
-        clearDebugWindow: function(){},
-        clearInterval: function(QObject*){},
-        clearTimeout: function(QObject*){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        doneRunning: function(){},
-        endProfileRange: function(QString){},
-        entityScriptContentAvailable: function(EntityItemID,QString,QString,bool,bool,QString){},
-        entityScriptDetailsUpdated: function(){},
-        errorLoadingScript: function(QString){},
-        errorMessage: function(QString,QString){},
-        evaluate: function(QString,QString){},
-        evaluate: function(QString,QString,int){},
-        evaluateInClosure: function(QScriptValue,QScriptProgram){},
-        executeOnScriptThread: function(std::function<void){},
-        executeOnScriptThread: function(std::function<void){},
-        finished: function(QString,ScriptEnginePointer){},
-        formatException: function(QScriptValue,bool){},
-        generateUUID: function(){},
-        getContext: function(){},
-        include: function(QString){},
-        include: function(QString,QScriptValue){},
-        include: function(QStringList){},
-        include: function(QStringList,QScriptValue){},
-        infoMessage: function(QString,QString){},
-        isAgentScript: function(){},
-        isClientScript: function(){},
-        isEntityClientScript: function(){},
-        isEntityScriptRunning: function(EntityItemID){},
-        isEntityServerScript: function(){},
-        lintScript: function(QString,QString){},
-        lintScript: function(QString,QString,int){},
-        load: function(QString){},
-        loadEntityScript: function(EntityItemID,QString,bool){},
-        loadScript: function(QString,bool){},
-        makeError: function(){},
-        makeError: function(QScriptValue){},
-        makeError: function(QScriptValue,QString){},
-        objectNameChanged: function(QString){},
-        print: function(QString){},
-        printedMessage: function(QString,QString){},
-        registerFunction: function(QString,QScriptEngine::FunctionSignature){},
-        registerFunction: function(QString,QScriptEngine::FunctionSignature,int){},
-        registerFunction: function(QString,QString,QScriptEngine::FunctionSignature){},
-        registerFunction: function(QString,QString,QScriptEngine::FunctionSignature,int){},
-        registerGetterSetter: function(QString,QScriptEngine::FunctionSignature,QScriptEngine::FunctionSignature){},
-        registerGetterSetter: function(QString,QScriptEngine::FunctionSignature,QScriptEngine::FunctionSignature,QString){},
-        registerGlobalObject: function(QString,QObject*){},
-        registerValue: function(QString,QScriptValue){},
-        reloadScript: function(QString,bool){},
-        removeEventHandler: function(EntityItemID,QString,QScriptValue){},
-        requestGarbageCollection: function(){},
-        require: function(QString){},
-        resetModuleCache: function(){},
-        resetModuleCache: function(bool){},
-        resolvePath: function(QString){},
-        resourcesPath: function(){},
-        runningStateChanged: function(){},
-        scriptEnding: function(){},
-        scriptLoaded: function(QString){},
-        setInterval: function(QScriptValue,int){},
-        setTimeout: function(QScriptValue,int){},
-        signalHandlerException: function(QScriptValue){},
-        stop: function(){},
-        stop: function(bool){},
-        unhandledException: function(QScriptValue){},
-        unloadAllEntityScripts: function(){},
-        unloadEntityScript: function(EntityItemID){},
-        unloadEntityScript: function(EntityItemID,bool){},
-        update: function(float){},
-        updateMemoryCost: function(qlonglong){},
-        warningMessage: function(QString,QString){},
-        context: '',
-        objectName: ''
-        };
-    }
-
-function ScriptDiscoveryService(){
-    return {
-        clearDebugWindow: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        errorLoadingScript: function(QString){},
-        errorMessage: function(QString,QString){},
-        getLocal: function(){},
-        getPublic: function(){},
-        getRunning: function(){},
-        infoMessage: function(QString,QString){},
-        loadOneScript: function(QString){},
-        loadScript: function(){},
-        loadScript: function(QUrl){},
-        loadScript: function(QUrl,bool){},
-        loadScript: function(QUrl,bool,bool){},
-        loadScript: function(QUrl,bool,bool,bool){},
-        loadScript: function(QUrl,bool,bool,bool,bool){},
-        objectNameChanged: function(QString){},
-        onClearDebugWindow: function(){},
-        onErrorLoadingScript: function(QString){},
-        onErrorMessage: function(QString,QString){},
-        onInfoMessage: function(QString,QString){},
-        onPrintedMessage: function(QString,QString){},
-        onScriptFinished: function(QString,ScriptEnginePointer){},
-        onWarningMessage: function(QString,QString){},
-        printedMessage: function(QString,QString){},
-        reloadAllScripts: function(){},
-        scriptCountChanged: function(){},
-        scriptLoadError: function(QString,QString){},
-        scriptsReloading: function(){},
-        stopAllScripts: function(){},
-        stopAllScripts: function(bool){},
-        stopScript: function(QString){},
-        stopScript: function(QString,bool){},
-        warningMessage: function(QString,QString){},
-        scriptsModel: function(){
-            return {
-                canFetchMore: function(QModelIndex){},
-                columnCount: function(){},
-                columnCount: function(QModelIndex){},
-                columnsAboutToBeInserted: function(QModelIndex,int,int){},
-                columnsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                columnsAboutToBeRemoved: function(QModelIndex,int,int){},
-                columnsInserted: function(QModelIndex,int,int){},
-                columnsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                columnsRemoved: function(QModelIndex,int,int){},
-                data: function(QModelIndex){},
-                data: function(QModelIndex,int){},
-                dataChanged: function(QModelIndex,QModelIndex){},
-                dataChanged: function(QModelIndex,QModelIndex,QVector<int>){},
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                downloadFinished: function(){},
-                fetchMore: function(QModelIndex){},
-                flags: function(QModelIndex){},
-                hasChildren: function(){},
-                hasChildren: function(QModelIndex){},
-                hasIndex: function(int,int){},
-                hasIndex: function(int,int,QModelIndex){},
-                headerData: function(int,Qt::Orientation){},
-                headerData: function(int,Qt::Orientation,int){},
-                headerDataChanged: function(Qt::Orientation,int,int){},
-                index: function(int,int){},
-                index: function(int,int,QModelIndex){},
-                layoutAboutToBeChanged: function(){},
-                layoutAboutToBeChanged: function(QList<QPersistentModelIndex>){},
-                layoutAboutToBeChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                layoutChanged: function(){},
-                layoutChanged: function(QList<QPersistentModelIndex>){},
-                layoutChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                match: function(QModelIndex,int,QVariant){},
-                match: function(QModelIndex,int,QVariant,int){},
-                match: function(QModelIndex,int,QVariant,int,Qt::MatchFlags){},
-                modelAboutToBeReset: function(){},
-                modelReset: function(){},
-                objectNameChanged: function(QString){},
-                parent: function(QModelIndex){},
-                reloadDefaultFiles: function(){},
-                reloadLocalFiles: function(){},
-                resetInternalData: function(){},
-                revert: function(){},
-                rowCount: function(){},
-                rowCount: function(QModelIndex){},
-                rowsAboutToBeInserted: function(QModelIndex,int,int){},
-                rowsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                rowsAboutToBeRemoved: function(QModelIndex,int,int){},
-                rowsInserted: function(QModelIndex,int,int){},
-                rowsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                rowsRemoved: function(QModelIndex,int,int){},
-                setData: function(QModelIndex,QVariant){},
-                setData: function(QModelIndex,QVariant,int){},
-                sibling: function(int,int,QModelIndex){},
-                submit: function(){},
-                updateScriptsLocation: function(QString){},
-                objectName: ''
-            };
-        },
-        scriptsModelFilter: function(){
-            return {
-                dynamicSortFilter: true,
-                isSortLocaleAware: true,
-                canFetchMore: function(QModelIndex){},
-                clear: function(){},
-                columnCount: function(){},
-                columnCount: function(QModelIndex){},
-                columnsAboutToBeInserted: function(QModelIndex,int,int){},
-                columnsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                columnsAboutToBeRemoved: function(QModelIndex,int,int){},
-                columnsInserted: function(QModelIndex,int,int){},
-                columnsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                columnsRemoved: function(QModelIndex,int,int){},
-                data: function(QModelIndex){},
-                data: function(QModelIndex,int){},
-                dataChanged: function(QModelIndex,QModelIndex){},
-                dataChanged: function(QModelIndex,QModelIndex,QVector<int>){},
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                fetchMore: function(QModelIndex){},
-                filterRegExp: function(undefined{},
-                flags: function(QModelIndex){},
-                hasChildren: function(){},
-                hasChildren: function(QModelIndex){},
-                hasIndex: function(int,int){},
-                hasIndex: function(int,int,QModelIndex){},
-                headerData: function(int,Qt::Orientation){},
-                headerData: function(int,Qt::Orientation,int){},
-                headerDataChanged: function(Qt::Orientation,int,int){},
-                index: function(int,int){},
-                index: function(int,int,QModelIndex){},
-                invalidate: function(){},
-                layoutAboutToBeChanged: function(){},
-                layoutAboutToBeChanged: function(QList<QPersistentModelIndex>){},
-                layoutAboutToBeChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                layoutChanged: function(){},
-                layoutChanged: function(QList<QPersistentModelIndex>){},
-                layoutChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                mapFromSource: function(QModelIndex){},
-                mapSelectionFromSource: function(QItemSelection){},
-                mapSelectionToSource: function(QItemSelection){},
-                mapToSource: function(QModelIndex){},
-                match: function(QModelIndex,int,QVariant){},
-                match: function(QModelIndex,int,QVariant,int){},
-                match: function(QModelIndex,int,QVariant,int,Qt::MatchFlags){},
-                modelAboutToBeReset: function(){},
-                modelReset: function(){},
-                objectNameChanged: function(QString){},
-                parent: function(QModelIndex){},
-                resetInternalData: function(){},
-                revert: function(){},
-                rowCount: function(){},
-                rowCount: function(QModelIndex){},
-                rowsAboutToBeInserted: function(QModelIndex,int,int){},
-                rowsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                rowsAboutToBeRemoved: function(QModelIndex,int,int){},
-                rowsInserted: function(QModelIndex,int,int){},
-                rowsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                rowsRemoved: function(QModelIndex,int,int){},
-                setData: function(QModelIndex,QVariant){},
-                setData: function(QModelIndex,QVariant,int){},
-                setFilterFixedString: function(QString){},
-                setFilterRegExp: function(QString){},
-                setFilterWildcard: function(QString){},
-                sibling: function(int,int,QModelIndex){},
-                sourceModelChanged: function(){},
-                submit: function(){},
-                filterCaseSensitivity: 0,
-                filterKeyColumn: 0,
-                filterRole: 0,
-                sortCaseSensitivity: 0,
-                sortRole: 0,
-                sourceModel: function(){
-                    return {
-                        canFetchMore: function(QModelIndex){},
-                        columnCount: function(){},
-                        columnCount: function(QModelIndex){},
-                        columnsAboutToBeInserted: function(QModelIndex,int,int){},
-                        columnsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        columnsAboutToBeRemoved: function(QModelIndex,int,int){},
-                        columnsInserted: function(QModelIndex,int,int){},
-                        columnsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        columnsRemoved: function(QModelIndex,int,int){},
-                        data: function(QModelIndex){},
-                        data: function(QModelIndex,int){},
-                        dataChanged: function(QModelIndex,QModelIndex){},
-                        dataChanged: function(QModelIndex,QModelIndex,QVector<int>){},
-                        deleteLater: function(){},
-                        destroyed: function(){},
-                        destroyed: function(QObject*){},
-                        downloadFinished: function(){},
-                        fetchMore: function(QModelIndex){},
-                        flags: function(QModelIndex){},
-                        hasChildren: function(){},
-                        hasChildren: function(QModelIndex){},
-                        hasIndex: function(int,int){},
-                        hasIndex: function(int,int,QModelIndex){},
-                        headerData: function(int,Qt::Orientation){},
-                        headerData: function(int,Qt::Orientation,int){},
-                        headerDataChanged: function(Qt::Orientation,int,int){},
-                        index: function(int,int){},
-                        index: function(int,int,QModelIndex){},
-                        layoutAboutToBeChanged: function(){},
-                        layoutAboutToBeChanged: function(QList<QPersistentModelIndex>){},
-                        layoutAboutToBeChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                        layoutChanged: function(){},
-                        layoutChanged: function(QList<QPersistentModelIndex>){},
-                        layoutChanged: function(QList<QPersistentModelIndex>,QAbstractItemModel::LayoutChangeHint){},
-                        match: function(QModelIndex,int,QVariant){},
-                        match: function(QModelIndex,int,QVariant,int){},
-                        match: function(QModelIndex,int,QVariant,int,Qt::MatchFlags){},
-                        modelAboutToBeReset: function(){},
-                        modelReset: function(){},
-                        objectNameChanged: function(QString){},
-                        parent: function(QModelIndex){},
-                        reloadDefaultFiles: function(){},
-                        reloadLocalFiles: function(){},
-                        resetInternalData: function(){},
-                        revert: function(){},
-                        rowCount: function(){},
-                        rowCount: function(QModelIndex){},
-                        rowsAboutToBeInserted: function(QModelIndex,int,int){},
-                        rowsAboutToBeMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        rowsAboutToBeRemoved: function(QModelIndex,int,int){},
-                        rowsInserted: function(QModelIndex,int,int){},
-                        rowsMoved: function(QModelIndex,int,int,QModelIndex,int){},
-                        rowsRemoved: function(QModelIndex,int,int){},
-                        setData: function(QModelIndex,QVariant){},
-                        setData: function(QModelIndex,QVariant,int){},
-                        sibling: function(int,int,QModelIndex){},
-                        submit: function(){},
-                        updateScriptsLocation: function(QString){},
-                        objectName: ''
-                    };
-                },
-                objectName: ''
-            };
-        },
-        debugScriptUrl: '',
-        defaultScriptsPath: '',
-        objectName: ''
-        };
-    }
-
-function Selection(){
-    return {
-        addToSelectedItemsList: function(QString,QString,QUuid){},
-        clearSelectedItemsList: function(QString){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disableListHighlight: function(QString){},
-        enableListHighlight: function(QString,QVariantMap){},
-        getHighlightedListNames: function(){},
-        getListHighlightStyle: function(QString){},
-        getListNames: function(){},
-        getSelectedItemsList: function(QString){},
-        objectNameChanged: function(QString){},
-        printList: function(QString){},
-        removeFromSelectedItemsList: function(QString,QString,QUuid){},
-        removeListFromMap: function(QString){},
-        selectedItemsListChanged: function(QString){},
-        objectName: ''
-        };
-    }
-
-function Settings(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getValue: function(QString){},
-        getValue: function(QString,QVariant){},
-        objectNameChanged: function(QString){},
-        setValue: function(QString,QVariant){},
-        objectName: ''
-        };
-    }
-
-function Snapshot(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getSnapshotsLocation: function(){},
-        objectNameChanged: function(QString){},
-        setSnapshotsLocation: function(QString){},
-        snapshotLocationSet: function(QString){},
-        objectName: ''
-        };
-    }
-
-function SoundCache(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        dirty: function(){},
-        getResource: function(QUrl){},
-        getResource: function(QUrl,QUrl){},
-        getResource: function(QUrl,QUrl,void*){},
-        getResourceList: function(){},
-        getSound: function(QUrl){},
-        objectNameChanged: function(QString){},
-        prefetch: function(QUrl){},
-        prefetch: function(QUrl,void*){},
-        updateTotalSize: function(qlonglong){},
-        numCached: 0,
-        numTotal: 0,
-        sizeCached: 0,
-        sizeTotal: 0,
-        objectName: ''
-        };
-    }
-
-function SpeechRecognizer(){
-    return {
-        addCommand: function(QString){},
-        commandRecognized: function(QString){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        enabledUpdated: function(bool){},
-        objectNameChanged: function(QString){},
-        removeCommand: function(QString){},
-        setEnabled: function(bool){},
-        objectName: ''
-        };
-    }
-
-function Stats(){
-    return {
-        activeFocus: true,
-        activeFocusOnTab: true,
-        antialiasing: true,
-        clip: true,
+        angle: function(glm__quat){ return null; },
+        angleAxis: function(float, glm__vec3){ return null; },
+        axis: function(glm__quat){ return null; },
+        cancelOutRoll: function(glm__quat){ return null; },
+        cancelOutRollAndPitch: function(glm__quat){ return null; },
+        conjugate: function(glm__quat){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        dot: function(glm__quat, glm__quat){ return null; },
+        equal: function(glm__quat, glm__quat){ return null; },
+        fromPitchYawRollDegrees: function(float, float, float){ return null; },
+        fromPitchYawRollRadians: function(float, float, float){ return null; },
+        fromVec3Degrees: function(glm__vec3){ return null; },
+        fromVec3Radians: function(glm__vec3){ return null; },
+        getForward: function(glm__quat){ return null; },
+        getFront: function(glm__quat){ return null; },
+        getRight: function(glm__quat){ return null; },
+        getUp: function(glm__quat){ return null; },
+        inverse: function(glm__quat){ return null; },
+        lookAt: function(glm__vec3, glm__vec3, glm__vec3){ return null; },
+        lookAtSimple: function(glm__vec3, glm__vec3){ return null; },
+        mix: function(glm__quat, glm__quat, float){ return null; },
+        multiply: function(glm__quat, glm__quat){ return null; },
+        normalize: function(glm__quat){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        print: function(QString, glm__quat){ return null; },
+        print__dupe: function(QString, glm__quat, bool){ return null; },
+        rotationBetween: function(glm__vec3, glm__vec3){ return null; },
+        safeEulerAngles: function(glm__quat){ return null; },
+        slerp: function(glm__quat, glm__quat, float){ return null; },
+        squad: function(glm__quat, glm__quat, glm__quat, glm__quat, float)
+        {
+            return null;
+        }
+    },
+    Rates:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        dropped: 0,
+        newFrame: 63.630001068115234,
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        present: 55.58000183105469,
+        render: 60.150001525878906,
+        simulation: 53.720001220703125
+    },
+    RayPick:
+    {
+        INTERSECTED_AVATAR: 3,
+        INTERSECTED_AVATAR: function(){ return null; },
+        INTERSECTED_ENTITY: 1,
+        INTERSECTED_ENTITY: function(){ return null; },
+        INTERSECTED_HUD: 4,
+        INTERSECTED_HUD: function(){ return null; },
+        INTERSECTED_NONE: 0,
+        INTERSECTED_NONE: function(){ return null; },
+        INTERSECTED_OVERLAY: 2,
+        INTERSECTED_OVERLAY: function(){ return null; },
+        PICK_ALL_INTERSECTIONS: 128,
+        PICK_ALL_INTERSECTIONS: function(){ return null; },
+        PICK_AVATARS: 4,
+        PICK_AVATARS: function(){ return null; },
+        PICK_COARSE: 16,
+        PICK_COARSE: function(){ return null; },
+        PICK_ENTITIES: 1,
+        PICK_ENTITIES: function(){ return null; },
+        PICK_HUD: 8,
+        PICK_HUD: function(){ return null; },
+        PICK_INCLUDE_INVISIBLE: 32,
+        PICK_INCLUDE_INVISIBLE: function(){ return null; },
+        PICK_INCLUDE_NONCOLLIDABLE: 64,
+        PICK_INCLUDE_NONCOLLIDABLE: function(){ return null; },
+        PICK_NOTHING: 0,
+        PICK_NOTHING: function(){ return null; },
+        PICK_OVERLAYS: 2,
+        PICK_OVERLAYS: function(){ return null; },
+        createRayPick: function(QVariant){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disableRayPick: function(uint){ return null; },
+        enableRayPick: function(uint){ return null; },
+        getPrevRayPickResult: function(uint){ return null; },
+        isLeftHand: function(uint){ return null; },
+        isMouse: function(uint){ return null; },
+        isRightHand: function(uint){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        removeRayPick: function(uint){ return null; },
+        setIgnoreItems: function(uint, QScriptValue){ return null; },
+        setIncludeItems: function(uint, QScriptValue){ return null; },
+        setPrecisionPicking: function(uint, bool)
+        {
+            return null;
+        }
+    },
+    Recording:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getDefaultRecordingSaveDirectory: function(){ return null; },
+        getPlayFromCurrentLocation: function(){ return null; },
+        getPlayerUseAttachments: function(){ return null; },
+        getPlayerUseDisplayName: function(){ return null; },
+        getPlayerUseHeadModel: function(){ return null; },
+        getPlayerUseSkeletonModel: function(){ return null; },
+        isPaused: function(){ return null; },
+        isPlaying: function(){ return null; },
+        isRecording: function(){ return null; },
+        loadLastRecording: function(){ return null; },
+        loadRecording: function(QString){ return null; },
+        loadRecording__dupe: function(QString, QScriptValue){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        pausePlayer: function(){ return null; },
+        playerElapsed: function(){ return null; },
+        playerLength: function(){ return null; },
+        recorderElapsed: function(){ return null; },
+        saveRecording: function(QString){ return null; },
+        saveRecordingToAsset: function(QScriptValue){ return null; },
+        setPlayFromCurrentLocation: function(bool){ return null; },
+        setPlayerAudioOffset: function(float){ return null; },
+        setPlayerLoop: function(bool){ return null; },
+        setPlayerTime: function(float){ return null; },
+        setPlayerUseAttachments: function(bool){ return null; },
+        setPlayerUseDisplayName: function(bool){ return null; },
+        setPlayerUseHeadModel: function(bool){ return null; },
+        setPlayerUseSkeletonModel: function(bool){ return null; },
+        setPlayerVolume: function(float){ return null; },
+        startPlaying: function(){ return null; },
+        startRecording: function(){ return null; },
+        stopPlaying: function(){ return null; },
+        stopRecording: function()
+        {
+            return null;
+        }
+    },
+    Render:
+    {
+        cpuRunTime: 0.785,
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        dirtyEnabled: function(){ return null; },
         enabled: true,
-        expanded: true,
-        focus: true,
-        smooth: true,
-        timingExpanded: true,
-        visible: true,
-        activeFocusChanged: function(bool){},
-        activeFocusOnTabChanged: function(bool){},
-        antialiasingChanged: function(bool){},
-        appdroppedChanged: function(){},
-        assetMbpsInChanged: function(){},
-        assetMbpsOutChanged: function(){},
-        assetPingChanged: function(){},
-        audioAudioInboundPPSChanged: function(){},
-        audioCodecChanged: function(){},
-        audioMixerInKbpsChanged: function(){},
-        audioMixerInPpsChanged: function(){},
-        audioMixerKbpsChanged: function(){},
-        audioMixerOutKbpsChanged: function(){},
-        audioMixerOutPpsChanged: function(){},
-        audioMixerPpsChanged: function(){},
-        audioNoiseGateChanged: function(){},
-        audioOutboundPPSChanged: function(){},
-        audioPacketLossChanged: function(){},
-        audioPingChanged: function(){},
-        audioSilentInboundPPSChanged: function(){},
-        audioSilentOutboundPPSChanged: function(){},
-        avatarCountChanged: function(){},
-        avatarMixerInKbpsChanged: function(){},
-        avatarMixerInPpsChanged: function(){},
-        avatarMixerOutKbpsChanged: function(){},
-        avatarMixerOutPpsChanged: function(){},
-        avatarPingChanged: function(){},
-        avatarSimulationTimeChanged: function(){},
-        baselineOffsetChanged: function(double){},
-        batchFrameTimeChanged: function(){},
-        bgColorChanged: function(){},
-        childAt: function(double,double){},
-        childrenChanged: function(){},
-        childrenRectChanged: function(QRectF){},
-        clipChanged: function(bool){},
-        contains: function(QPointF){},
-        decimatedTextureCountChanged: function(){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        downloadLimitChanged: function(){},
-        downloadUrlsChanged: function(){},
-        downloadsChanged: function(){},
-        downloadsPendingChanged: function(){},
-        enabledChanged: function(){},
-        engineFrameTimeChanged: function(){},
-        entitiesPingChanged: function(){},
-        entityPacketsInKbpsChanged: function(){},
-        expandedChanged: function(){},
-        focusChanged: function(bool){},
-        forceActiveFocus: function(){},
-        forceActiveFocus: function(Qt::FocusReason){},
-        forceUpdateStats: function(){},
-        gameLoopRateChanged: function(){},
-        gameUpdateStatsChanged: function(){},
-        glContextSwapchainMemoryChanged: function(){},
-        gpuBufferMemoryChanged: function(){},
-        gpuBuffersChanged: function(){},
-        gpuFrameTimeChanged: function(){},
-        gpuFreeMemoryChanged: function(){},
-        gpuTextureExternalMemoryChanged: function(){},
-        gpuTextureFramebufferMemoryChanged: function(){},
-        gpuTextureMemoryChanged: function(){},
-        gpuTextureMemoryPressureStateChanged: function(){},
-        gpuTextureResidentMemoryChanged: function(){},
-        gpuTextureResourceMemoryChanged: function(){},
-        gpuTextureResourcePopulatedMemoryChanged: function(){},
-        gpuTexturesChanged: function(){},
-        grabToImage: function(QJSValue){},
-        grabToImage: function(QJSValue,QSize){},
-        heightChanged: function(){},
-        implicitHeightChanged: function(){},
-        implicitWidthChanged: function(){},
-        itemConsideredChanged: function(){},
-        itemOutOfViewChanged: function(){},
-        itemRenderedChanged: function(){},
-        itemTooSmallChanged: function(){},
-        localElementsChanged: function(){},
-        localInternalChanged: function(){},
-        localLeavesChanged: function(){},
-        lodStatusChanged: function(){},
-        longframesChanged: function(){},
-        longrendersChanged: function(){},
-        longsubmitsChanged: function(){},
-        mapFromGlobal: function(QQmlV4Function*){},
-        mapFromItem: function(QQmlV4Function*){},
-        mapToGlobal: function(QQmlV4Function*){},
-        mapToItem: function(QQmlV4Function*){},
-        materialSwitchesChanged: function(){},
-        mbpsInChanged: function(){},
-        mbpsOutChanged: function(){},
-        messagePingChanged: function(){},
-        myAvatarSendRateChanged: function(){},
-        nextItemInFocusChain: function(){},
-        nextItemInFocusChain: function(bool){},
-        notUpdatedAvatarCountChanged: function(){},
-        objectNameChanged: function(QString){},
-        opacityChanged: function(){},
-        packetInCountChanged: function(){},
-        packetOutCountChanged: function(){},
-        packetStatsChanged: function(){},
-        parentChanged: function(QQuickItem*){},
-        positionChanged: function(){},
-        presentdroprateChanged: function(){},
-        presentnewrateChanged: function(){},
-        presentrateChanged: function(){},
-        processingChanged: function(){},
-        processingPendingChanged: function(){},
-        qmlTextureMemoryChanged: function(){},
-        quadsChanged: function(){},
-        rectifiedTextureCountChanged: function(){},
-        renderrateChanged: function(){},
-        rotationChanged: function(){},
-        scaleChanged: function(){},
-        sendingModeChanged: function(){},
-        serverCountChanged: function(){},
-        serverElementsChanged: function(){},
-        serverInternalChanged: function(){},
-        serverLeavesChanged: function(){},
-        shadowConsideredChanged: function(){},
-        shadowOutOfViewChanged: function(){},
-        shadowRenderedChanged: function(){},
-        shadowTooSmallChanged: function(){},
-        smoothChanged: function(bool){},
-        speedChanged: function(){},
-        stateChanged: function(QString){},
-        stutterrateChanged: function(){},
-        texturePendingTransfersChanged: function(){},
-        timingExpandedChanged: function(){},
-        timingStatsChanged: function(){},
-        transformOriginChanged: function(TransformOrigin){},
-        trianglesChanged: function(){},
-        update: function(){},
-        updatedAvatarCountChanged: function(){},
-        visibleChanged: function(){},
-        visibleChildrenChanged: function(){},
-        widthChanged: function(){},
-        windowChanged: function(QQuickWindow*){},
-        xChanged: function(){},
-        yChanged: function(){},
-        yawChanged: function(){},
-        zChanged: function(){},
-        appdropped: 0,
-        assetMbpsIn: 0,
-        assetMbpsOut: 0,
-        assetPing: 0,
-        audioAudioInboundPPS: 0,
-        audioMixerInKbps: 0,
-        audioMixerInPps: 0,
-        audioMixerKbps: 0,
-        audioMixerOutKbps: 0,
-        audioMixerOutPps: 0,
-        audioMixerPps: 0,
-        audioOutboundPPS: 0,
-        audioPacketLoss: 0,
-        audioPing: 0,
-        audioSilentInboundPPS: 0,
-        audioSilentOutboundPPS: 0,
-        avatarCount: 0,
-        avatarMixerInKbps: 0,
-        avatarMixerInPps: 0,
-        avatarMixerOutKbps: 0,
-        avatarMixerOutPps: 0,
-        avatarPing: 0,
-        avatarSimulationTime: 0,
-        baselineOffset: 0,
-        batchFrameTime: 0,
-        decimatedTextureCount: 0,
-        downloadLimit: 0,
-        downloads: 0,
-        downloadsPending: 0,
-        engineFrameTime: 0,
-        entitiesPing: 0,
-        entityPacketsInKbps: 0,
-        gameLoopRate: 0,
-        glContextSwapchainMemory: 0,
-        gpuBufferMemory: 0,
-        gpuBuffers: 0,
-        gpuFrameTime: 0,
-        gpuFreeMemory: 0,
-        gpuTextureExternalMemory: 0,
-        gpuTextureFramebufferMemory: 0,
-        gpuTextureMemory: 0,
-        gpuTextureResidentMemory: 0,
-        gpuTextureResourceMemory: 0,
-        gpuTextureResourcePopulatedMemory: 0,
-        gpuTextures: 0,
-        height: 0,
-        implicitHeight: 0,
-        implicitWidth: 0,
-        itemConsidered: 0,
-        itemOutOfView: 0,
-        itemRendered: 0,
-        itemTooSmall: 0,
-        localElements: 0,
-        localInternal: 0,
-        localLeaves: 0,
-        longframes: 0,
-        longrenders: 0,
-        longsubmits: 0,
-        materialSwitches: 0,
-        mbpsIn: 0,
-        mbpsOut: 0,
-        messagePing: 0,
-        myAvatarSendRate: 0,
-        notUpdatedAvatarCount: 0,
-        opacity: 0,
-        packetInCount: 0,
-        packetOutCount: 0,
-        presentdroprate: 0,
-        presentnewrate: 0,
-        presentrate: 0,
-        processing: 0,
-        processingPending: 0,
-        qmlTextureMemory: 0,
-        quads: 0,
-        rectifiedTextureCount: 0,
-        renderrate: 0,
-        rotation: 0,
-        scale: 0,
-        serverCount: 0,
-        serverElements: 0,
-        serverInternal: 0,
-        serverLeaves: 0,
-        shadowConsidered: 0,
-        shadowOutOfView: 0,
-        shadowRendered: 0,
-        shadowTooSmall: 0,
-        speed: 0,
-        stutterrate: 0,
-        texturePendingTransfers: 0,
-        transformOrigin: 0,
-        triangles: 0,
-        updatedAvatarCount: 0,
-        width: 0,
-        x: 0,
-        y: 0,
-        yaw: 0,
-        z: 0,
-        anchors: function(){
-            return {
-                alignWhenCentered: true,
-                baselineChanged: function(){},
-                baselineOffsetChanged: function(){},
-                bottomChanged: function(){},
-                bottomMarginChanged: function(){},
-                centerAlignedChanged: function(){},
-                centerInChanged: function(){},
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                fillChanged: function(){},
-                horizontalCenterChanged: function(){},
-                horizontalCenterOffsetChanged: function(){},
-                leftChanged: function(){},
-                leftMarginChanged: function(){},
-                marginsChanged: function(){},
-                objectNameChanged: function(QString){},
-                rightChanged: function(){},
-                rightMarginChanged: function(){},
-                topChanged: function(){},
-                topMarginChanged: function(){},
-                verticalCenterChanged: function(){},
-                verticalCenterOffsetChanged: function(){},
-                centerIn: null,
-                fill: null,
-                baselineOffset: 0,
-                bottomMargin: 0,
-                horizontalCenterOffset: 0,
-                leftMargin: 0,
-                margins: 0,
-                rightMargin: 0,
-                topMargin: 0,
-                verticalCenterOffset: 0,
-                baseline: function(){
-                    return {
-                    };
+        getConfig: function(QString){ return null; },
+        load: function(QJsonObject){ return null; },
+        load__dupe: function(QVariantMap){ return null; },
+        loaded: function(){ return null; },
+        newStats: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        refresh: function(){ return null; },
+        toJSON: function()
+        {
+            return null;
+        }
+    },
+    Resource:
+    {
+        State:
+        {
+            FAILED: 4,
+            FINISHED: 3,
+            LOADED: 2,
+            LOADING: 1,
+            QUEUED: 0,
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            objectName: "ResourceState",
+            objectNameChanged: function(QString)
+            {
+                return null;
+            }
+        }
+    },
+    Resources:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        overrideUrlPrefix: function(QString, QString){ return null; },
+        restoreUrlPrefix: function(QString)
+        {
+            return null;
+        }
+    },
+    Reticle:
+    {
+        allowMouseCapture: true,
+        depth: 1,
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getAllowMouseCapture: function(){ return null; },
+        getDepth: function(){ return null; },
+        getMaximumPosition: function(){ return null; },
+        getPosition: function(){ return null; },
+        getScale: function(){ return null; },
+        getVisible: function(){ return null; },
+        isMouseCaptured: function(){ return null; },
+        isPointingAtSystemOverlay: function(){ return null; },
+        maximumPosition:
+        {
+            x: 1919,
+            y: 1079
+        },
+        mouseCaptured: false,
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        pointingAtSystemOverlay: true,
+        position:
+        {
+            x: 482,
+            y: 293
+        },
+        scale: 1,
+        setAllowMouseCapture: function(bool){ return null; },
+        setDepth: function(float){ return null; },
+        setPosition: function(QVariant){ return null; },
+        setScale: function(float){ return null; },
+        setVisible: function(bool){ return null; },
+        visible: true
+    },
+    Scene:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        shouldRenderAvatars: true,
+        shouldRenderAvatarsChanged: function(bool){ return null; },
+        shouldRenderEntities: true,
+        shouldRenderEntitiesChanged: function(bool){ return null; },
+        stage:
+        {
+            backgroundMode: "inherit",
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            keyLight:
+            {
+                ambientIntensity: 0.5,
+                color:
+                {
+                    x: 1,
+                    y: 1,
+                    z: 1
                 },
-                bottom: function(){
-                    return {
-                    };
+                deleteLater: function(){ return null; },
+                destroyed: function(){ return null; },
+                destroyed__dupe: function(QObject_){ return null; },
+                direction:
+                {
+                    x: 0,
+                    y: -0.6913065910339355,
+                    z: 0.7225615382194519
                 },
-                horizontalCenter: function(){
-                    return {
-                    };
-                },
-                left: function(){
-                    return {
-                    };
-                },
-                right: function(){
-                    return {
-                    };
-                },
-                top: function(){
-                    return {
-                    };
-                },
-                verticalCenter: function(){
-                    return {
-                    };
-                },
-                objectName: ''
-            };
+                intensity: 1,
+                objectName: "",
+                objectNameChanged: function(QString)
+                {
+                    return null;
+                }
+            },
+            location:
+            {
+                altitude: 0.029999999329447746,
+                deleteLater: function(){ return null; },
+                destroyed: function(){ return null; },
+                destroyed__dupe: function(QObject_){ return null; },
+                latitude: 37.777000427246094,
+                longitude: 122.40699768066406,
+                objectName: "",
+                objectNameChanged: function(QString)
+                {
+                    return null;
+                }
+            },
+            objectName: "",
+            objectNameChanged: function(QString){ return null; },
+            setLocation: function(float, float, float){ return null; },
+            setOrientation: function(glm__quat){ return null; },
+            sunModel: true,
+            time:
+            {
+                day: 60,
+                deleteLater: function(){ return null; },
+                destroyed: function(){ return null; },
+                destroyed__dupe: function(QObject_){ return null; },
+                hour: 12,
+                objectName: "",
+                objectNameChanged: function(QString)
+                {
+                    return null;
+                }
+            }
+        }
+    },
+    Script:
+    {
+        _requireResolve: function(QString){ return null; },
+        _requireResolve__dupe: function(QString, QString){ return null; },
+        addEventHandler: function(EntityItemID, QString, QScriptValue){ return null; },
+        beginProfileRange: function(QString){ return null; },
+        callAnimationStateHandler: function(QScriptValue, AnimVariantMap, QStringList, bool, AnimVariantResultHandler){ return null; },
+        callEntityScriptMethod: function(EntityItemID, QString){ return null; },
+        callEntityScriptMethod__dupe: function(EntityItemID, QString, EntityItemID, Collision){ return null; },
+        callEntityScriptMethod__dupe__dupe: function(EntityItemID, QString, PointerEvent){ return null; },
+        callEntityScriptMethod__dupe__dupe__dupe: function(EntityItemID, QString, QStringList){ return null; },
+        callEntityScriptMethod__dupe__dupe__dupe__dupe: function(EntityItemID, QString, QStringList, QUuid){ return null; },
+        cleanupMenuItem: function(QString){ return null; },
+        clearDebugWindow: function(){ return null; },
+        clearInterval: function(QObject_){ return null; },
+        clearTimeout: function(QObject_){ return null; },
+        context: "client",
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        doneRunning: function(){ return null; },
+        endProfileRange: function(QString){ return null; },
+        entityScriptContentAvailable: function(EntityItemID, QString, QString, bool, bool, QString){ return null; },
+        entityScriptDetailsUpdated: function(){ return null; },
+        errorLoadingScript: function(QString){ return null; },
+        errorMessage: function(QString, QString){ return null; },
+        evaluate: function(QString, QString){ return null; },
+        evaluate__dupe: function(QString, QString, int){ return null; },
+        evaluateInClosure: function(QScriptValue, QScriptProgram){ return null; },
+        executeOnScriptThread: function(std__function_void___){ return null; },
+        executeOnScriptThread__dupe: function(std__function_void___, Qt__ConnectionType){ return null; },
+        finished: function(QString, ScriptEnginePointer){ return null; },
+        formatException: function(QScriptValue, bool){ return null; },
+        generateUUID: function(){ return null; },
+        getContext: function(){ return null; },
+        include: function(QString){ return null; },
+        include__dupe: function(QString, QScriptValue){ return null; },
+        include__dupe__dupe: function(QStringList){ return null; },
+        include__dupe__dupe__dupe: function(QStringList, QScriptValue){ return null; },
+        infoMessage: function(QString, QString){ return null; },
+        isAgentScript: function(){ return null; },
+        isClientScript: function(){ return null; },
+        isEntityClientScript: function(){ return null; },
+        isEntityScriptRunning: function(EntityItemID){ return null; },
+        isEntityServerScript: function(){ return null; },
+        lintScript: function(QString, QString){ return null; },
+        lintScript__dupe: function(QString, QString, int){ return null; },
+        load: function(QString){ return null; },
+        loadEntityScript: function(EntityItemID, QString, bool){ return null; },
+        loadScript: function(QString, bool){ return null; },
+        makeError: function(){ return null; },
+        makeError__dupe: function(QScriptValue){ return null; },
+        makeError__dupe__dupe: function(QScriptValue, QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        print: function(QString){ return null; },
+        printedMessage: function(QString, QString){ return null; },
+        registerFunction: function(QString, QScriptEngine__FunctionSignature){ return null; },
+        registerFunction__dupe: function(QString, QScriptEngine__FunctionSignature, int){ return null; },
+        registerFunction__dupe__dupe: function(QString, QString, QScriptEngine__FunctionSignature){ return null; },
+        registerFunction__dupe__dupe__dupe: function(QString, QString, QScriptEngine__FunctionSignature, int){ return null; },
+        registerGetterSetter: function(QString, QScriptEngine__FunctionSignature, QScriptEngine__FunctionSignature){ return null; },
+        registerGetterSetter__dupe: function(QString, QScriptEngine__FunctionSignature, QScriptEngine__FunctionSignature, QString){ return null; },
+        registerGlobalObject: function(QString, QObject_){ return null; },
+        registerValue: function(QString, QScriptValue){ return null; },
+        reloadScript: function(QString, bool){ return null; },
+        removeEventHandler: function(EntityItemID, QString, QScriptValue){ return null; },
+        requestGarbageCollection: function(){ return null; },
+        require: function(QString){ return null; },
+        resetModuleCache: function(){ return null; },
+        resetModuleCache__dupe: function(bool){ return null; },
+        resolvePath: function(QString){ return null; },
+        resourcesPath: function(){ return null; },
+        runningStateChanged: function(){ return null; },
+        scriptEnding: function(){ return null; },
+        scriptLoaded: function(QString){ return null; },
+        setInterval: function(QScriptValue, int){ return null; },
+        setTimeout: function(QScriptValue, int){ return null; },
+        signalHandlerException: function(QScriptValue){ return null; },
+        stop: function(){ return null; },
+        stop__dupe: function(bool){ return null; },
+        unhandledException: function(QScriptValue){ return null; },
+        unloadAllEntityScripts: function(){ return null; },
+        unloadEntityScript: function(EntityItemID){ return null; },
+        unloadEntityScript__dupe: function(EntityItemID, bool){ return null; },
+        update: function(float){ return null; },
+        updateMemoryCost: function(qlonglong){ return null; },
+        warningMessage: function(QString, QString)
+        {
+            return null;
+        }
+    },
+    ScriptDiscoveryService:
+    {
+        clearDebugWindow: function(){ return null; },
+        debugScriptUrl: "",
+        defaultScriptsPath: "file:///C:/Program Files (x86)/Steam/steamapps/common/High Fidelity/scripts",
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        errorLoadingScript: function(QString){ return null; },
+        errorMessage: function(QString, QString){ return null; },
+        getLocal: function(){ return null; },
+        getPublic: function(){ return null; },
+        getRunning: function(){ return null; },
+        infoMessage: function(QString, QString){ return null; },
+        loadOneScript: function(QString){ return null; },
+        loadScript: function(){ return null; },
+        loadScript__dupe: function(QUrl){ return null; },
+        loadScript__dupe__dupe: function(QUrl, bool){ return null; },
+        loadScript__dupe__dupe__dupe: function(QUrl, bool, bool){ return null; },
+        loadScript__dupe__dupe__dupe__dupe: function(QUrl, bool, bool, bool){ return null; },
+        loadScript__dupe__dupe__dupe__dupe__dupe: function(QUrl, bool, bool, bool, bool){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        onClearDebugWindow: function(){ return null; },
+        onErrorLoadingScript: function(QString){ return null; },
+        onErrorMessage: function(QString, QString){ return null; },
+        onInfoMessage: function(QString, QString){ return null; },
+        onPrintedMessage: function(QString, QString){ return null; },
+        onScriptFinished: function(QString, ScriptEnginePointer){ return null; },
+        onWarningMessage: function(QString, QString){ return null; },
+        printedMessage: function(QString, QString){ return null; },
+        reloadAllScripts: function(){ return null; },
+        scriptCountChanged: function(){ return null; },
+        scriptLoadError: function(QString, QString){ return null; },
+        scriptsModel:
+        {
+            canFetchMore: function(QModelIndex){ return null; },
+            columnCount: function(){ return null; },
+            columnCount__dupe: function(QModelIndex){ return null; },
+            columnsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+            columnsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+            columnsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+            columnsInserted: function(QModelIndex, int, int){ return null; },
+            columnsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+            columnsRemoved: function(QModelIndex, int, int){ return null; },
+            data: function(QModelIndex){ return null; },
+            data__dupe: function(QModelIndex, int){ return null; },
+            dataChanged: function(QModelIndex, QModelIndex){ return null; },
+            dataChanged__dupe: function(QModelIndex, QModelIndex, QVector_int_){ return null; },
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            downloadFinished: function(){ return null; },
+            fetchMore: function(QModelIndex){ return null; },
+            flags: function(QModelIndex){ return null; },
+            hasChildren: function(){ return null; },
+            hasChildren__dupe: function(QModelIndex){ return null; },
+            hasIndex: function(int, int){ return null; },
+            hasIndex__dupe: function(int, int, QModelIndex){ return null; },
+            headerData: function(int, Qt__Orientation){ return null; },
+            headerData__dupe: function(int, Qt__Orientation, int){ return null; },
+            headerDataChanged: function(Qt__Orientation, int, int){ return null; },
+            index: function(int, int){ return null; },
+            index__dupe: function(int, int, QModelIndex){ return null; },
+            layoutAboutToBeChanged: function(){ return null; },
+            layoutAboutToBeChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+            layoutAboutToBeChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+            layoutChanged: function(){ return null; },
+            layoutChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+            layoutChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+            match: function(QModelIndex, int, QVariant){ return null; },
+            match__dupe: function(QModelIndex, int, QVariant, int){ return null; },
+            match__dupe__dupe: function(QModelIndex, int, QVariant, int, Qt__MatchFlags){ return null; },
+            modelAboutToBeReset: function(){ return null; },
+            modelReset: function(){ return null; },
+            objectName: "",
+            objectNameChanged: function(QString){ return null; },
+            reloadDefaultFiles: function(){ return null; },
+            reloadLocalFiles: function(){ return null; },
+            resetInternalData: function(){ return null; },
+            revert: function(){ return null; },
+            rowCount: function(){ return null; },
+            rowCount__dupe: function(QModelIndex){ return null; },
+            rowsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+            rowsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+            rowsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+            rowsInserted: function(QModelIndex, int, int){ return null; },
+            rowsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+            rowsRemoved: function(QModelIndex, int, int){ return null; },
+            setData: function(QModelIndex, QVariant){ return null; },
+            setData__dupe: function(QModelIndex, QVariant, int){ return null; },
+            sibling: function(int, int, QModelIndex){ return null; },
+            submit: function(){ return null; },
+            updateScriptsLocation: function(QString)
+            {
+                return null;
+            }
         },
-        baseline: function(){
-            return {
-            };
+        scriptsModelFilter:
+        {
+            canFetchMore: function(QModelIndex){ return null; },
+            clear: function(){ return null; },
+            columnCount: function(){ return null; },
+            columnCount__dupe: function(QModelIndex){ return null; },
+            columnsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+            columnsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+            columnsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+            columnsInserted: function(QModelIndex, int, int){ return null; },
+            columnsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+            columnsRemoved: function(QModelIndex, int, int){ return null; },
+            data: function(QModelIndex){ return null; },
+            data__dupe: function(QModelIndex, int){ return null; },
+            dataChanged: function(QModelIndex, QModelIndex){ return null; },
+            dataChanged__dupe: function(QModelIndex, QModelIndex, QVector_int_){ return null; },
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            dynamicSortFilter: true,
+            fetchMore: function(QModelIndex){ return null; },
+            filterCaseSensitivity: 0,
+            filterKeyColumn: 0,
+            filterRegEx: function(){ return null; },
+            filterRole: 0,
+            flags: function(QModelIndex){ return null; },
+            hasChildren: function(){ return null; },
+            hasChildren__dupe: function(QModelIndex){ return null; },
+            hasIndex: function(int, int){ return null; },
+            hasIndex__dupe: function(int, int, QModelIndex){ return null; },
+            headerData: function(int, Qt__Orientation){ return null; },
+            headerData__dupe: function(int, Qt__Orientation, int){ return null; },
+            headerDataChanged: function(Qt__Orientation, int, int){ return null; },
+            index: function(int, int){ return null; },
+            index__dupe: function(int, int, QModelIndex){ return null; },
+            invalidate: function(){ return null; },
+            isSortLocaleAware: false,
+            layoutAboutToBeChanged: function(){ return null; },
+            layoutAboutToBeChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+            layoutAboutToBeChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+            layoutChanged: function(){ return null; },
+            layoutChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+            layoutChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+            mapFromSource: function(QModelIndex){ return null; },
+            mapSelectionFromSource: function(QItemSelection){ return null; },
+            mapSelectionToSource: function(QItemSelection){ return null; },
+            mapToSource: function(QModelIndex){ return null; },
+            match: function(QModelIndex, int, QVariant){ return null; },
+            match__dupe: function(QModelIndex, int, QVariant, int){ return null; },
+            match__dupe__dupe: function(QModelIndex, int, QVariant, int, Qt__MatchFlags){ return null; },
+            modelAboutToBeReset: function(){ return null; },
+            modelReset: function(){ return null; },
+            objectName: "",
+            objectNameChanged: function(QString){ return null; },
+            resetInternalData: function(){ return null; },
+            revert: function(){ return null; },
+            rowCount: function(){ return null; },
+            rowCount__dupe: function(QModelIndex){ return null; },
+            rowsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+            rowsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+            rowsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+            rowsInserted: function(QModelIndex, int, int){ return null; },
+            rowsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+            rowsRemoved: function(QModelIndex, int, int){ return null; },
+            setData: function(QModelIndex, QVariant){ return null; },
+            setData__dupe: function(QModelIndex, QVariant, int){ return null; },
+            setFilterFixedString: function(QString){ return null; },
+            setFilterRegExp: function(QString){ return null; },
+            setFilterWildcard: function(QString){ return null; },
+            sibling: function(int, int, QModelIndex){ return null; },
+            sortCaseSensitivity: 1,
+            sortRole: 0,
+            sourceModel:
+            {
+                canFetchMore: function(QModelIndex){ return null; },
+                columnCount: function(){ return null; },
+                columnCount__dupe: function(QModelIndex){ return null; },
+                columnsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+                columnsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                columnsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+                columnsInserted: function(QModelIndex, int, int){ return null; },
+                columnsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                columnsRemoved: function(QModelIndex, int, int){ return null; },
+                data: function(QModelIndex){ return null; },
+                data__dupe: function(QModelIndex, int){ return null; },
+                dataChanged: function(QModelIndex, QModelIndex){ return null; },
+                dataChanged__dupe: function(QModelIndex, QModelIndex, QVector_int_){ return null; },
+                deleteLater: function(){ return null; },
+                destroyed: function(){ return null; },
+                destroyed__dupe: function(QObject_){ return null; },
+                downloadFinished: function(){ return null; },
+                fetchMore: function(QModelIndex){ return null; },
+                flags: function(QModelIndex){ return null; },
+                hasChildren: function(){ return null; },
+                hasChildren__dupe: function(QModelIndex){ return null; },
+                hasIndex: function(int, int){ return null; },
+                hasIndex__dupe: function(int, int, QModelIndex){ return null; },
+                headerData: function(int, Qt__Orientation){ return null; },
+                headerData__dupe: function(int, Qt__Orientation, int){ return null; },
+                headerDataChanged: function(Qt__Orientation, int, int){ return null; },
+                index: function(int, int){ return null; },
+                index__dupe: function(int, int, QModelIndex){ return null; },
+                layoutAboutToBeChanged: function(){ return null; },
+                layoutAboutToBeChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+                layoutAboutToBeChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+                layoutChanged: function(){ return null; },
+                layoutChanged__dupe: function(QList_QPersistentModelIndex_){ return null; },
+                layoutChanged__dupe__dupe: function(QList_QPersistentModelIndex_, QAbstractItemModel__LayoutChangeHint){ return null; },
+                match: function(QModelIndex, int, QVariant){ return null; },
+                match__dupe: function(QModelIndex, int, QVariant, int){ return null; },
+                match__dupe__dupe: function(QModelIndex, int, QVariant, int, Qt__MatchFlags){ return null; },
+                modelAboutToBeReset: function(){ return null; },
+                modelReset: function(){ return null; },
+                objectName: "",
+                objectNameChanged: function(QString){ return null; },
+                reloadDefaultFiles: function(){ return null; },
+                reloadLocalFiles: function(){ return null; },
+                resetInternalData: function(){ return null; },
+                revert: function(){ return null; },
+                rowCount: function(){ return null; },
+                rowCount__dupe: function(QModelIndex){ return null; },
+                rowsAboutToBeInserted: function(QModelIndex, int, int){ return null; },
+                rowsAboutToBeMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                rowsAboutToBeRemoved: function(QModelIndex, int, int){ return null; },
+                rowsInserted: function(QModelIndex, int, int){ return null; },
+                rowsMoved: function(QModelIndex, int, int, QModelIndex, int){ return null; },
+                rowsRemoved: function(QModelIndex, int, int){ return null; },
+                setData: function(QModelIndex, QVariant){ return null; },
+                setData__dupe: function(QModelIndex, QVariant, int){ return null; },
+                sibling: function(int, int, QModelIndex){ return null; },
+                submit: function(){ return null; },
+                updateScriptsLocation: function(QString)
+                {
+                    return null;
+                }
+            },
+            sourceModelChanged: function(){ return null; },
+            submit: function()
+            {
+                return null;
+            }
         },
-        bottom: function(){
-            return {
-            };
-        },
-        children: function(){
-            return {
-            };
-        },
-        childrenRect: function(){
-            return {
-            };
-        },
-        data: function(){
-            return {
-            };
-        },
-        downloadUrls: function(){
-            return {
-            };
-        },
-        horizontalCenter: function(){
-            return {
-            };
-        },
-        layer: function(){
-            return {
-                enabled: true,
-                mipmap: true,
-                smooth: true,
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                effectChanged: function(QQmlComponent*){},
-                enabledChanged: function(bool){},
-                formatChanged: function(QQuickShaderEffectSource::Format){},
-                mipmapChanged: function(bool){},
-                nameChanged: function(QByteArray){},
-                objectNameChanged: function(QString){},
-                sizeChanged: function(QSize){},
-                smoothChanged: function(bool){},
-                sourceRectChanged: function(QRectF){},
-                textureMirroringChanged: function(QQuickShaderEffectSource::TextureMirroring){},
-                wrapModeChanged: function(QQuickShaderEffectSource::WrapMode){},
-                effect: null,
-                format: 0,
-                textureMirroring: 0,
-                wrapMode: 0,
-                samplerName: function(){
-                    return {
-                    };
-                },
-                sourceRect: function(){
-                    return {
-                    };
-                },
-                textureSize: function(){
-                    return {
-                    };
-                },
-                objectName: ''
-            };
-        },
-        left: function(){
-            return {
-            };
-        },
-        parent: function(){
-            return {
-                NOT HANDLED: 0,
-                NOT HANDLED: 1,
-                NOT HANDLED: 2,
-                NOT HANDLED: 3,
-                NOT HANDLED: 4,
-                NOT HANDLED: 5,
-                NOT HANDLED: 6
-            };
-        },
-        position: function(){
-            return {
-            };
-        },
-        resources: function(){
-            return {
-            };
-        },
-        right: function(){
-            return {
-            };
-        },
-        states: function(){
-            return {
-            };
-        },
-        top: function(){
-            return {
-            };
-        },
-        transform: function(){
-            return {
-            };
-        },
-        transformOriginPoint: function(){
-            return {
-            };
-        },
-        transitions: function(){
-            return {
-            };
-        },
-        verticalCenter: function(){
-            return {
-            };
-        },
-        visibleChildren: function(){
-            return {
-            };
-        },
-        audioCodec: '',
-        audioNoiseGate: '',
-        bgColor: '',
-        gameUpdateStats: '',
-        gpuTextureMemoryPressureState: '',
-        lodStatus: '',
-        monospaceFont: '',
-        objectName: '',
-        packetStats: '',
-        sendingMode: '',
-        state: '',
-        timingStats: ''
-        };
-    }
-
-function Steam(){
-    return {
-        running: true,
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        isRunning: function(){},
-        objectNameChanged: function(QString){},
-        openInviteOverlay: function(){},
-        objectName: ''
-        };
-    }
-
-function Tablet(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getTablet: function(QString){},
-        objectNameChanged: function(QString){},
-        playSound: function(TabletAudioEvents){},
-        tabletNotification: function(){},
-        objectName: ''
-        };
-    }
-
-function tabletInterface(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getTablet: function(QString){},
-        objectNameChanged: function(QString){},
-        playSound: function(TabletAudioEvents){},
-        tabletNotification: function(){},
-        objectName: ''
-        };
-    }
-
-function TextureCache(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        dirty: function(){},
-        getResource: function(QUrl){},
-        getResource: function(QUrl,QUrl){},
-        getResource: function(QUrl,QUrl,void*){},
-        getResourceList: function(){},
-        objectNameChanged: function(QString){},
-        prefetch: function(QUrl){},
-        prefetch: function(QUrl,int){},
-        prefetch: function(QUrl,int,int){},
-        prefetch: function(QUrl,void*){},
-        spectatorCameraFramebufferReset: function(){},
-        updateTotalSize: function(qlonglong){},
+        scriptsReloading: function(){ return null; },
+        stopAllScripts: function(){ return null; },
+        stopAllScripts__dupe: function(bool){ return null; },
+        stopScript: function(QString){ return null; },
+        stopScript__dupe: function(QString, bool){ return null; },
+        warningMessage: function(QString, QString)
+        {
+            return null;
+        }
+    },
+    Selection:
+    {
+        addToSelectedItemsList: function(QString, QString, QUuid){ return null; },
+        clearSelectedItemsList: function(QString){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disableListHighlight: function(QString){ return null; },
+        enableListHighlight: function(QString, QVariantMap){ return null; },
+        getHighlightedListNames: function(){ return null; },
+        getListHighlightStyle: function(QString){ return null; },
+        getListNames: function(){ return null; },
+        getSelectedItemsList: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        printList: function(QString){ return null; },
+        removeFromSelectedItemsList: function(QString, QString, QUuid){ return null; },
+        removeListFromMap: function(QString){ return null; },
+        selectedItemsListChanged: function(QString)
+        {
+            return null;
+        }
+    },
+    Settings:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getValue: function(QString){ return null; },
+        getValue__dupe: function(QString, QVariant){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        setValue: function(QString, QVariant)
+        {
+            return null;
+        }
+    },
+    Snapshot:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getSnapshotsLocation: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        setSnapshotsLocation: function(QString){ return null; },
+        snapshotLocationSet: function(QString)
+        {
+            return null;
+        }
+    },
+    SoundCache:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        dirty: function(){ return null; },
+        getResource: function(QUrl){ return null; },
+        getResource__dupe: function(QUrl, QUrl){ return null; },
+        getResource__dupe__dupe: function(QUrl, QUrl, void_){ return null; },
+        getResourceList: function(){ return null; },
+        getSound: function(QUrl){ return null; },
         numCached: 0,
         numTotal: 0,
+        objectName: "SoundCache",
+        objectNameChanged: function(QString){ return null; },
+        prefetch: function(QUrl){ return null; },
+        prefetch__dupe: function(QUrl, void_){ return null; },
         sizeCached: 0,
-        sizeTotal: 0,
-        objectName: ''
-        };
-    }
-
-function Toolbars(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getToolbar: function(QString){},
-        objectNameChanged: function(QString){},
-        objectName: ''
-        };
-    }
-
-function TREE_SCALE(){
-    return {
-        };
-    }
-
-function UndoStack(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        objectNameChanged: function(QString){},
-        pushCommand: function(QScriptValue,QScriptValue,QScriptValue,QScriptValue){},
-        objectName: ''
-        };
-    }
-
-function UserActivityLogger(){
-    return {
-        bubbleActivated: function(){},
-        bubbleToggled: function(bool){},
-        closedTablet: function(){},
-        commerceEntityRezzed: function(QString,QString,QString){},
-        commercePassphraseAuthenticationStatus: function(QString){},
-        commercePassphraseEntry: function(QString){},
-        commercePurchaseFailure: function(QString,QString,int,bool,QString){},
-        commercePurchaseSuccess: function(QString,QString,int,bool){},
-        commerceWalletSetupFinished: function(int,QString,int){},
-        commerceWalletSetupProgress: function(int,QString,int,int,QString){},
-        commerceWalletSetupStarted: function(int,QString,int,QString,QString){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        enabledEdit: function(){},
-        logAction: function(QString){},
-        logAction: function(QString,QVariantMap){},
-        makeUserConnection: function(QString,bool){},
-        makeUserConnection: function(QString,bool,QString){},
-        objectNameChanged: function(QString){},
-        openedMarketplace: function(){},
-        openedTablet: function(bool){},
-        palAction: function(QString,QString){},
-        palOpened: function(float){},
-        toggledAway: function(bool){},
-        tutorialProgress: function(QString,int,float,float){},
-        tutorialProgress: function(QString,int,float,float,QString){},
-        tutorialProgress: function(QString,int,float,float,QString,int){},
-        tutorialProgress: function(QString,int,float,float,QString,int,QString){},
-        objectName: ''
-        };
-    }
-
-function Users(){
-    return {
-        canKick: true,
-        requestsDomainListData: true,
-        avatarDisconnected: function(QUuid){},
-        canKickChanged: function(bool){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        disableIgnoreRadius: function(){},
-        enableIgnoreRadius: function(){},
-        enteredIgnoreRadius: function(){},
-        getAvatarGain: function(QUuid){},
-        getCanKick: function(){},
-        getIgnoreRadiusEnabled: function(){},
-        getIgnoreStatus: function(QUuid){},
-        getPersonalMuteStatus: function(QUuid){},
-        ignore: function(QUuid){},
-        ignore: function(QUuid,bool){},
-        ignoreRadiusEnabledChanged: function(bool){},
-        kick: function(QUuid){},
-        mute: function(QUuid){},
-        objectNameChanged: function(QString){},
-        personalMute: function(QUuid){},
-        personalMute: function(QUuid,bool){},
-        requestUsernameFromID: function(QUuid){},
-        setAvatarGain: function(QUuid,float){},
-        toggleIgnoreRadius: function(){},
-        usernameFromIDReply: function(QString,QString,QString,bool){},
-        objectName: ''
-        };
-    }
-
-function Uuid(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        fromString: function(QString){},
-        generate: function(){},
-        isEqual: function(QUuid,QUuid){},
-        isNull: function(QUuid){},
-        objectNameChanged: function(QString){},
-        print: function(QString,QUuid){},
-        toString: function(QUuid){},
-        NULL: '',
-        objectName: ''
-        };
-    }
-
-function Vec3(){
-    return {
-        cross: function(glm::vec3,glm::vec3){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        distance: function(glm::vec3,glm::vec3){},
-        dot: function(glm::vec3,glm::vec3){},
-        equal: function(glm::vec3,glm::vec3){},
-        fromPolar: function(float,float){},
-        fromPolar: function(glm::vec3){},
-        getAngle: function(glm::vec3,glm::vec3){},
-        length: function(glm::vec3){},
-        mix: function(glm::vec3,glm::vec3,float){},
-        multiply: function(float,glm::vec3){},
-        multiply: function(glm::vec3,float){},
-        multiplyQbyV: function(glm::quat,glm::vec3){},
-        multiplyVbyV: function(glm::vec3,glm::vec3){},
-        normalize: function(glm::vec3){},
-        objectNameChanged: function(QString){},
-        orientedAngle: function(glm::vec3,glm::vec3,glm::vec3){},
-        print: function(QString,glm::vec3){},
-        reflect: function(glm::vec3,glm::vec3){},
-        subtract: function(glm::vec3,glm::vec3){},
-        sum: function(glm::vec3,glm::vec3){},
-        toPolar: function(glm::vec3){},
-        withinEpsilon: function(glm::vec3,glm::vec3,float){},
-        FLOAT_MAX: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
+        sizeTotal: 3397010,
+        updateTotalSize: function(qlonglong)
+        {
+            return null;
+        }
+    },
+    SpeechRecognizer:
+    {
+        addCommand: function(QString){ return null; },
+        commandRecognized: function(QString){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        enabledUpdated: function(bool){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        removeCommand: function(QString){ return null; },
+        setEnabled: function(bool)
+        {
+            return null;
+        }
+    },
+    Stats:
+    {
+        activeFocus: false,
+        activeFocusChanged: function(bool){ return null; },
+        activeFocusOnTab: false,
+        activeFocusOnTabChanged: function(bool){ return null; },
+        anchors:
+        {
+            alignWhenCentered: true,
+            baseline:
+            {},
+            baselineChanged: function(){ return null; },
+            baselineOffset: 0,
+            baselineOffsetChanged: function(){ return null; },
+            bottom:
+            {},
+            bottomChanged: function(){ return null; },
+            bottomMargin: 0,
+            bottomMarginChanged: function(){ return null; },
+            centerAlignedChanged: function(){ return null; },
+            centerIn: null,
+            centerInChanged: function(){ return null; },
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            fill: null,
+            fillChanged: function(){ return null; },
+            horizontalCenter:
+            {},
+            horizontalCenterChanged: function(){ return null; },
+            horizontalCenterOffset: 0,
+            horizontalCenterOffsetChanged: function(){ return null; },
+            left:
+            {},
+            leftChanged: function(){ return null; },
+            leftMargin: 0,
+            leftMarginChanged: function(){ return null; },
+            margins: 0,
+            marginsChanged: function(){ return null; },
+            objectName: "",
+            objectNameChanged: function(QString){ return null; },
+            right:
+            {},
+            rightChanged: function(){ return null; },
+            rightMargin: 0,
+            rightMarginChanged: function(){ return null; },
+            top:
+            {},
+            topChanged: function(){ return null; },
+            topMargin: 0,
+            topMarginChanged: function(){ return null; },
+            verticalCenter:
+            {},
+            verticalCenterChanged: function(){ return null; },
+            verticalCenterOffset: 0,
+            verticalCenterOffsetChanged: function()
+            {
+                return null;
+            }
         },
-        FLOAT_MIN: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
+        antialiasing: false,
+        antialiasingChanged: function(bool){ return null; },
+        appdropped: 0,
+        appdroppedChanged: function(){ return null; },
+        assetMbpsIn: 0,
+        assetMbpsInChanged: function(){ return null; },
+        assetMbpsOut: 0,
+        assetMbpsOutChanged: function(){ return null; },
+        assetPing: 0,
+        assetPingChanged: function(){ return null; },
+        audioAudioInboundPPS: 0,
+        audioAudioInboundPPSChanged: function(){ return null; },
+        audioCodec: "",
+        audioCodecChanged: function(){ return null; },
+        audioMixerInKbps: 0,
+        audioMixerInKbpsChanged: function(){ return null; },
+        audioMixerInPps: 0,
+        audioMixerInPpsChanged: function(){ return null; },
+        audioMixerKbps: 0,
+        audioMixerKbpsChanged: function(){ return null; },
+        audioMixerOutKbps: 0,
+        audioMixerOutKbpsChanged: function(){ return null; },
+        audioMixerOutPps: 0,
+        audioMixerOutPpsChanged: function(){ return null; },
+        audioMixerPps: 0,
+        audioMixerPpsChanged: function(){ return null; },
+        audioNoiseGate: "",
+        audioNoiseGateChanged: function(){ return null; },
+        audioOutboundPPS: 0,
+        audioOutboundPPSChanged: function(){ return null; },
+        audioPacketLoss: 0,
+        audioPacketLossChanged: function(){ return null; },
+        audioPing: 0,
+        audioPingChanged: function(){ return null; },
+        audioSilentInboundPPS: 0,
+        audioSilentInboundPPSChanged: function(){ return null; },
+        audioSilentOutboundPPS: 0,
+        audioSilentOutboundPPSChanged: function(){ return null; },
+        avatarCount: 0,
+        avatarCountChanged: function(){ return null; },
+        avatarMixerInKbps: 0,
+        avatarMixerInKbpsChanged: function(){ return null; },
+        avatarMixerInPps: 0,
+        avatarMixerInPpsChanged: function(){ return null; },
+        avatarMixerOutKbps: 0,
+        avatarMixerOutKbpsChanged: function(){ return null; },
+        avatarMixerOutPps: 0,
+        avatarMixerOutPpsChanged: function(){ return null; },
+        avatarPing: 0,
+        avatarPingChanged: function(){ return null; },
+        avatarSimulationTime: 0,
+        avatarSimulationTimeChanged: function(){ return null; },
+        baseline:
+        {},
+        baselineOffset: 0,
+        baselineOffsetChanged: function(double){ return null; },
+        batchFrameTime: 0,
+        batchFrameTimeChanged: function(){ return null; },
+        bgColor: "#AA111111",
+        bgColorChanged: function(){ return null; },
+        bottom:
+        {},
+        childAt: function(double, double){ return null; },
+        children:
+        {},
+        childrenChanged: function(){ return null; },
+        childrenRect:
+        {},
+        childrenRectChanged: function(QRectF){ return null; },
+        clip: false,
+        clipChanged: function(bool){ return null; },
+        contains: function(QPointF){ return null; },
+        data:
+        {},
+        decimatedTextureCount: 0,
+        decimatedTextureCountChanged: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        downloadLimit: 0,
+        downloadLimitChanged: function(){ return null; },
+        downloadUrls:
+        {},
+        downloadUrlsChanged: function(){ return null; },
+        downloads: 0,
+        downloadsChanged: function(){ return null; },
+        downloadsPending: 0,
+        downloadsPendingChanged: function(){ return null; },
+        enabled: true,
+        enabledChanged: function(){ return null; },
+        engineFrameTime: 0,
+        engineFrameTimeChanged: function(){ return null; },
+        entitiesPing: 0,
+        entitiesPingChanged: function(){ return null; },
+        entityPacketsInKbps: 0,
+        entityPacketsInKbpsChanged: function(){ return null; },
+        expanded: false,
+        expandedChanged: function(){ return null; },
+        focus: false,
+        focusChanged: function(bool){ return null; },
+        forceActiveFocus: function(){ return null; },
+        forceActiveFocus__dupe: function(Qt__FocusReason){ return null; },
+        forceUpdateStats: function(){ return null; },
+        gameLoopRate: 0,
+        gameLoopRateChanged: function(){ return null; },
+        gameUpdateStats: "",
+        gameUpdateStatsChanged: function(){ return null; },
+        glContextSwapchainMemory: 0,
+        glContextSwapchainMemoryChanged: function(){ return null; },
+        gpuBufferMemory: 0,
+        gpuBufferMemoryChanged: function(){ return null; },
+        gpuBuffers: 0,
+        gpuBuffersChanged: function(){ return null; },
+        gpuFrameTime: 0,
+        gpuFrameTimeChanged: function(){ return null; },
+        gpuFreeMemory: 0,
+        gpuFreeMemoryChanged: function(){ return null; },
+        gpuTextureExternalMemory: 0,
+        gpuTextureExternalMemoryChanged: function(){ return null; },
+        gpuTextureFramebufferMemory: 0,
+        gpuTextureFramebufferMemoryChanged: function(){ return null; },
+        gpuTextureMemory: 0,
+        gpuTextureMemoryChanged: function(){ return null; },
+        gpuTextureMemoryPressureState: "",
+        gpuTextureMemoryPressureStateChanged: function(){ return null; },
+        gpuTextureResidentMemory: 0,
+        gpuTextureResidentMemoryChanged: function(){ return null; },
+        gpuTextureResourceMemory: 0,
+        gpuTextureResourceMemoryChanged: function(){ return null; },
+        gpuTextureResourcePopulatedMemory: 0,
+        gpuTextureResourcePopulatedMemoryChanged: function(){ return null; },
+        gpuTextures: 0,
+        gpuTexturesChanged: function(){ return null; },
+        grabToImage: function(QJSValue){ return null; },
+        grabToImage__dupe: function(QJSValue, QSize){ return null; },
+        height: 346,
+        heightChanged: function(){ return null; },
+        horizontalCenter:
+        {},
+        implicitHeight: 346,
+        implicitHeightChanged: function(){ return null; },
+        implicitWidth: 671,
+        implicitWidthChanged: function(){ return null; },
+        itemConsidered: 0,
+        itemConsideredChanged: function(){ return null; },
+        itemOutOfView: 0,
+        itemOutOfViewChanged: function(){ return null; },
+        itemRendered: 0,
+        itemRenderedChanged: function(){ return null; },
+        itemTooSmall: 0,
+        itemTooSmallChanged: function(){ return null; },
+        layer:
+        {
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            effect: null,
+            effectChanged: function(QQmlComponent_){ return null; },
+            enabled: false,
+            enabledChanged: function(bool){ return null; },
+            format: 6408,
+            formatChanged: function(QQuickShaderEffectSource__Format){ return null; },
+            mipmap: false,
+            mipmapChanged: function(bool){ return null; },
+            nameChanged: function(QByteArray){ return null; },
+            objectName: "",
+            objectNameChanged: function(QString){ return null; },
+            samplerName:
+            {},
+            sizeChanged: function(QSize){ return null; },
+            smooth: false,
+            smoothChanged: function(bool){ return null; },
+            sourceRect:
+            {},
+            sourceRectChanged: function(QRectF){ return null; },
+            textureMirroring: 2,
+            textureMirroringChanged: function(QQuickShaderEffectSource__TextureMirroring){ return null; },
+            textureSize:
+            {},
+            wrapMode: 0,
+            wrapModeChanged: function(QQuickShaderEffectSource__WrapMode)
+            {
+                return null;
+            }
         },
-        FRONT: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        HALF: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        ONE: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        RIGHT: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        TWO: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_NEG_X: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_NEG_Y: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_NEG_Z: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_X: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_XY: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_XYZ: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_XZ: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_Y: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_YZ: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UNIT_Z: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        UP: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        ZERO: function(){
-            return {
-                x: 0,
-                y: 0,
-                z: 0
-            };
-        },
-        objectName: ''
-        };
-    }
-
-function Wallet(){
-    return {
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        getWalletStatus: function(){},
-        objectNameChanged: function(QString){},
-        ownershipVerificationFailed: function(QUuid){},
-        ownershipVerificationSuccess: function(QUuid){},
-        proveAvatarEntityOwnershipVerification: function(QUuid){},
-        refreshWalletStatus: function(){},
-        walletNotSetup: function(){},
-        walletStatusChanged: function(){},
-        walletStatus: 0,
-        objectName: ''
-        };
-    }
-
-function Window(){
-    return {
-        alert: function(){},
-        alert: function(QString){},
-        announcement: function(QString){},
-        assetsDirChanged: function(QString){},
-        browse: function(){},
-        browse: function(QString){},
-        browse: function(QString,QString){},
-        browse: function(QString,QString,QString){},
-        browseAssets: function(){},
-        browseAssets: function(QString){},
-        browseAssets: function(QString,QString){},
-        browseAssets: function(QString,QString,QString){},
-        browseAssetsAsync: function(){},
-        browseAssetsAsync: function(QString){},
-        browseAssetsAsync: function(QString,QString){},
-        browseAssetsAsync: function(QString,QString,QString){},
-        browseAsync: function(){},
-        browseAsync: function(QString){},
-        browseAsync: function(QString,QString){},
-        browseAsync: function(QString,QString,QString){},
-        browseChanged: function(QString){},
-        browseDir: function(){},
-        browseDir: function(QString){},
-        browseDir: function(QString,QString){},
-        browseDirAsync: function(){},
-        browseDirAsync: function(QString){},
-        browseDirAsync: function(QString,QString){},
-        browseDirChanged: function(QString){},
-        checkVersion: function(){},
-        closeMessageBox: function(int){},
-        confirm: function(){},
-        confirm: function(QString){},
-        connectionAdded: function(QString){},
-        connectionError: function(QString){},
-        copyToClipboard: function(QString){},
-        destroyed: function(){},
-        destroyed: function(QObject*){},
-        displayAnnouncement: function(QString){},
-        domainChanged: function(QString){},
-        domainConnectionRefused: function(QString,int,QString){},
-        geometryChanged: function(QRect){},
-        getDeviceSize: function(){},
-        hasFocus: function(){},
-        isPhysicsEnabled: function(){},
-        isPointOnDesktopWindow: function(QVariant){},
-        makeConnection: function(bool,QString){},
-        messageBoxClosed: function(int,int){},
-        objectNameChanged: function(QString){},
-        openFileChanged: function(QString){},
-        openMessageBox: function(QString,QString,int,int){},
-        processingGifCompleted: function(QString){},
-        processingGifStarted: function(QString){},
-        prompt: function(QString,QString){},
-        promptAsync: function(){},
-        promptAsync: function(QString){},
-        promptAsync: function(QString,QString){},
-        promptTextChanged: function(QString){},
-        protocolSignature: function(){},
-        raiseMainWindow: function(){},
-        save: function(){},
-        save: function(QString){},
-        save: function(QString,QString){},
-        save: function(QString,QString,QString){},
-        saveAsync: function(){},
-        saveAsync: function(QString){},
-        saveAsync: function(QString,QString){},
-        saveAsync: function(QString,QString,QString){},
-        saveFileChanged: function(QString){},
-        setDisplayTexture: function(QString){},
-        setFocus: function(){},
-        shareSnapshot: function(QString){},
-        shareSnapshot: function(QString,QUrl){},
-        showAssetServer: function(){},
-        showAssetServer: function(QString){},
-        snapshotShared: function(bool,QString){},
-        stillSnapshotTaken: function(QString,bool){},
-        svoImportRequested: function(QString){},
-        takeSecondaryCameraSnapshot: function(){},
-        takeSecondaryCameraSnapshot: function(QString){},
-        takeSnapshot: function(){},
-        takeSnapshot: function(bool){},
-        takeSnapshot: function(bool,bool){},
-        takeSnapshot: function(bool,bool,float){},
-        takeSnapshot: function(bool,bool,float,QString){},
-        updateMessageBox: function(int,QString,QString,int,int){},
-        innerHeight: 0,
-        innerWidth: 0,
+        left:
+        {},
+        localElements: 0,
+        localElementsChanged: function(){ return null; },
+        localInternal: 0,
+        localInternalChanged: function(){ return null; },
+        localLeaves: 0,
+        localLeavesChanged: function(){ return null; },
+        lodStatus: "",
+        lodStatusChanged: function(){ return null; },
+        longframes: 0,
+        longframesChanged: function(){ return null; },
+        longrenders: 0,
+        longrendersChanged: function(){ return null; },
+        longsubmits: 0,
+        longsubmitsChanged: function(){ return null; },
+        mapFromGlobal: function(QQmlV4Function_){ return null; },
+        mapFromItem: function(QQmlV4Function_){ return null; },
+        mapToGlobal: function(QQmlV4Function_){ return null; },
+        mapToItem: function(QQmlV4Function_){ return null; },
+        materialSwitches: 107,
+        materialSwitchesChanged: function(){ return null; },
+        mbpsIn: 0,
+        mbpsInChanged: function(){ return null; },
+        mbpsOut: 0,
+        mbpsOutChanged: function(){ return null; },
+        messagePing: 0,
+        messagePingChanged: function(){ return null; },
+        monospaceFont: "Courier New",
+        myAvatarSendRate: 0,
+        myAvatarSendRateChanged: function(){ return null; },
+        nextItemInFocusChain: function(){ return null; },
+        nextItemInFocusChain__dupe: function(bool){ return null; },
+        notUpdatedAvatarCount: 0,
+        notUpdatedAvatarCountChanged: function(){ return null; },
+        objectName: "Stats",
+        objectNameChanged: function(QString){ return null; },
+        opacity: 1,
+        opacityChanged: function(){ return null; },
+        packetInCount: 0,
+        packetInCountChanged: function(){ return null; },
+        packetOutCount: 0,
+        packetOutCountChanged: function(){ return null; },
+        packetStats: "",
+        packetStatsChanged: function(){ return null; },
+        position:
+        {},
+        positionChanged: function(){ return null; },
+        presentdroprate: 0,
+        presentdroprateChanged: function(){ return null; },
+        presentnewrate: 0,
+        presentnewrateChanged: function(){ return null; },
+        presentrate: 0,
+        presentrateChanged: function(){ return null; },
+        processing: 0,
+        processingChanged: function(){ return null; },
+        processingPending: 0,
+        processingPendingChanged: function(){ return null; },
+        qmlTextureMemory: 0,
+        qmlTextureMemoryChanged: function(){ return null; },
+        quads: 0,
+        quadsChanged: function(){ return null; },
+        rectifiedTextureCount: 0,
+        rectifiedTextureCountChanged: function(){ return null; },
+        renderrate: 0,
+        renderrateChanged: function(){ return null; },
+        resources:
+        {},
+        right:
+        {},
+        rotation: 0,
+        rotationChanged: function(){ return null; },
+        scale: 1,
+        scaleChanged: function(){ return null; },
+        sendingMode: "",
+        sendingModeChanged: function(){ return null; },
+        serverCount: 0,
+        serverCountChanged: function(){ return null; },
+        serverElements: 0,
+        serverElementsChanged: function(){ return null; },
+        serverInternal: 0,
+        serverInternalChanged: function(){ return null; },
+        serverLeaves: 0,
+        serverLeavesChanged: function(){ return null; },
+        shadowConsidered: 0,
+        shadowConsideredChanged: function(){ return null; },
+        shadowOutOfView: 0,
+        shadowOutOfViewChanged: function(){ return null; },
+        shadowRendered: 0,
+        shadowRenderedChanged: function(){ return null; },
+        shadowTooSmall: 0,
+        shadowTooSmallChanged: function(){ return null; },
+        smooth: true,
+        smoothChanged: function(bool){ return null; },
+        speed: 0,
+        speedChanged: function(){ return null; },
+        state: "",
+        stateChanged: function(QString){ return null; },
+        states:
+        {},
+        stutterrate: 0,
+        stutterrateChanged: function(){ return null; },
+        texturePendingTransfers: 0,
+        texturePendingTransfersChanged: function(){ return null; },
+        timingExpanded: false,
+        timingExpandedChanged: function(){ return null; },
+        timingStats: "",
+        timingStatsChanged: function(){ return null; },
+        top:
+        {},
+        transform:
+        {},
+        transformOrigin: 4,
+        transformOriginChanged: function(TransformOrigin){ return null; },
+        transformOriginPoint:
+        {},
+        transitions:
+        {},
+        triangles: 64128,
+        trianglesChanged: function(){ return null; },
+        update: function(){ return null; },
+        updatedAvatarCount: 0,
+        updatedAvatarCountChanged: function(){ return null; },
+        verticalCenter:
+        {},
+        visible: false,
+        visibleChanged: function(){ return null; },
+        visibleChildren:
+        {},
+        visibleChildrenChanged: function(){ return null; },
+        width: 671,
+        widthChanged: function(){ return null; },
+        windowChanged: function(QQuickWindow_){ return null; },
         x: 0,
+        xChanged: function(){ return null; },
         y: 0,
-        location: function(){
-            return {
-                isConnected: true,
-                copyAddress: function(){},
-                copyPath: function(){},
-                deleteLater: function(){},
-                destroyed: function(){},
-                destroyed: function(QObject*){},
-                goBack: function(){},
-                goBackPossible: function(bool){},
-                goForward: function(){},
-                goForwardPossible: function(bool){},
-                goToEntry: function(){},
-                goToEntry: function(LookupTrigger){},
-                goToLocalSandbox: function(){},
-                goToLocalSandbox: function(QString){},
-                goToLocalSandbox: function(QString,LookupTrigger){},
-                goToUser: function(QString){},
-                goToUser: function(QString,bool){},
-                goToViewpointForPath: function(QString,QString){},
-                handleLookupString: function(QString){},
-                handleLookupString: function(QString,bool){},
-                hostChanged: function(QString){},
-                locationChangeRequired: function(glm::vec3,bool,glm::quat,bool){},
-                lookupResultIsNotFound: function(){},
-                lookupResultIsOffline: function(){},
-                lookupResultsFinished: function(){},
-                lookupShareableNameForDomainID: function(QUuid){},
-                objectNameChanged: function(QString){},
-                pathChangeRequired: function(QString){},
-                possibleDomainChangeRequired: function(QString,ushort,QUuid){},
-                possibleDomainChangeRequiredViaICEForID: function(QString,QUuid){},
-                protocolVersion: function(){},
-                refreshPreviousLookup: function(){},
-                storeCurrentAddress: function(){},
-                domainID: '',
-                domainId: '',
-                hostname: '',
-                href: '',
-                objectName: '',
-                pathname: '',
-                placename: '',
-                protocol: ''
-            };
+        yChanged: function(){ return null; },
+        yaw: 0,
+        yawChanged: function(){ return null; },
+        z: 0,
+        zChanged: function()
+        {
+            return null;
+        }
+    },
+    Steam:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        isRunning: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        openInviteOverlay: function(){ return null; },
+        running: true
+    },
+    TREE_SCALE:
+    {},
+    Tablet:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getTablet: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        playSound: function(TabletAudioEvents){ return null; },
+        tabletNotification: function()
+        {
+            return null;
+        }
+    },
+    TextureCache:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        dirty: function(){ return null; },
+        getResource: function(QUrl){ return null; },
+        getResource__dupe: function(QUrl, QUrl){ return null; },
+        getResource__dupe__dupe: function(QUrl, QUrl, void_){ return null; },
+        getResourceList: function(){ return null; },
+        numCached: 0,
+        numTotal: 0,
+        objectName: "TextureCache",
+        objectNameChanged: function(QString){ return null; },
+        prefetch: function(QUrl){ return null; },
+        prefetch__dupe: function(QUrl, int){ return null; },
+        prefetch__dupe__dupe: function(QUrl, int, int){ return null; },
+        prefetch__dupe__dupe__dupe: function(QUrl, void_){ return null; },
+        sizeCached: 0,
+        sizeTotal: 366040326,
+        spectatorCameraFramebufferReset: function(){ return null; },
+        updateTotalSize: function(qlonglong)
+        {
+            return null;
+        }
+    },
+    Toolbars:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getToolbar: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString)
+        {
+            return null;
+        }
+    },
+    Uint16Arra: function(){ return null; },
+    Uint32Arra: function(){ return null; },
+    Uint8Arra: function(){ return null; },
+    Uint8ClampedArra: function(){ return null; },
+    UndoStack:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        pushCommand: function(QScriptValue, QScriptValue, QScriptValue, QScriptValue)
+        {
+            return null;
+        }
+    },
+    UserActivityLogger:
+    {
+        bubbleActivated: function(){ return null; },
+        bubbleToggled: function(bool){ return null; },
+        closedTablet: function(){ return null; },
+        commerceEntityRezzed: function(QString, QString, QString){ return null; },
+        commercePassphraseAuthenticationStatus: function(QString){ return null; },
+        commercePassphraseEntry: function(QString){ return null; },
+        commercePurchaseFailure: function(QString, QString, int, bool, QString){ return null; },
+        commercePurchaseSuccess: function(QString, QString, int, bool){ return null; },
+        commerceWalletSetupFinished: function(int, QString, int){ return null; },
+        commerceWalletSetupProgress: function(int, QString, int, int, QString){ return null; },
+        commerceWalletSetupStarted: function(int, QString, int, QString, QString){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        enabledEdit: function(){ return null; },
+        logAction: function(QString){ return null; },
+        logAction__dupe: function(QString, QVariantMap){ return null; },
+        makeUserConnection: function(QString, bool){ return null; },
+        makeUserConnection__dupe: function(QString, bool, QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        openedMarketplace: function(){ return null; },
+        openedTablet: function(bool){ return null; },
+        palAction: function(QString, QString){ return null; },
+        palOpened: function(float){ return null; },
+        toggledAway: function(bool){ return null; },
+        tutorialProgress: function(QString, int, float, float){ return null; },
+        tutorialProgress__dupe: function(QString, int, float, float, QString){ return null; },
+        tutorialProgress__dupe__dupe: function(QString, int, float, float, QString, int){ return null; },
+        tutorialProgress__dupe__dupe__dupe: function(QString, int, float, float, QString, int, QString)
+        {
+            return null;
+        }
+    },
+    Users:
+    {
+        avatarDisconnected: function(QUuid){ return null; },
+        canKick: true,
+        canKickChanged: function(bool){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        disableIgnoreRadius: function(){ return null; },
+        enableIgnoreRadius: function(){ return null; },
+        enteredIgnoreRadius: function(){ return null; },
+        getAvatarGain: function(QUuid){ return null; },
+        getCanKick: function(){ return null; },
+        getIgnoreRadiusEnabled: function(){ return null; },
+        getIgnoreStatus: function(QUuid){ return null; },
+        getPersonalMuteStatus: function(QUuid){ return null; },
+        ignore: function(QUuid){ return null; },
+        ignore__dupe: function(QUuid, bool){ return null; },
+        ignoreRadiusEnabledChanged: function(bool){ return null; },
+        kick: function(QUuid){ return null; },
+        mute: function(QUuid){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        personalMute: function(QUuid){ return null; },
+        personalMute__dupe: function(QUuid, bool){ return null; },
+        requestUsernameFromID: function(QUuid){ return null; },
+        requestsDomainListData: false,
+        setAvatarGain: function(QUuid, float){ return null; },
+        toggleIgnoreRadius: function(){ return null; },
+        usernameFromIDReply: function(QString, QString, QString, bool)
+        {
+            return null;
+        }
+    },
+    Uuid:
+    {
+        NULL: "{00000000-0000-0000-0000-000000000000}",
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        fromString: function(QString){ return null; },
+        generate: function(){ return null; },
+        isEqual: function(QUuid, QUuid){ return null; },
+        isNull: function(QUuid){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        print: function(QString, QUuid){ return null; },
+        toString: function(QUuid)
+        {
+            return null;
+        }
+    },
+    Vec3:
+    {
+        FLOAT_MAX:
+        {
+            x: 3.4028234663852886e+38,
+            y: 3.4028234663852886e+38,
+            z: 3.4028234663852886e+38
         },
-        objectName: ''
-        };
+        FLOAT_MIN:
+        {
+            x: -3.4028234663852886e+38,
+            y: -3.4028234663852886e+38,
+            z: -3.4028234663852886e+38
+        },
+        FRONT:
+        {
+            x: 0,
+            y: 0,
+            z: -1
+        },
+        HALF:
+        {
+            x: 0.5,
+            y: 0.5,
+            z: 0.5
+        },
+        ONE:
+        {
+            x: 1,
+            y: 1,
+            z: 1
+        },
+        RIGHT:
+        {
+            x: 1,
+            y: 0,
+            z: 0
+        },
+        TWO:
+        {
+            x: 2,
+            y: 2,
+            z: 2
+        },
+        UNIT_NEG_X:
+        {
+            x: -1,
+            y: 0,
+            z: 0
+        },
+        UNIT_NEG_Y:
+        {
+            x: 0,
+            y: -1,
+            z: 0
+        },
+        UNIT_NEG_Z:
+        {
+            x: 0,
+            y: 0,
+            z: -1
+        },
+        UNIT_X:
+        {
+            x: 1,
+            y: 0,
+            z: 0
+        },
+        UNIT_XY:
+        {
+            x: 0.7071067690849304,
+            y: 0.7071067690849304,
+            z: 0
+        },
+        UNIT_XYZ:
+        {
+            x: 0.5773502588272095,
+            y: 0.5773502588272095,
+            z: 0.5773502588272095
+        },
+        UNIT_XZ:
+        {
+            x: 0.7071067690849304,
+            y: 0,
+            z: 0.7071067690849304
+        },
+        UNIT_Y:
+        {
+            x: 0,
+            y: 1,
+            z: 0
+        },
+        UNIT_YZ:
+        {
+            x: 0,
+            y: 0.7071067690849304,
+            z: 0.7071067690849304
+        },
+        UNIT_Z:
+        {
+            x: 0,
+            y: 0,
+            z: 1
+        },
+        UP:
+        {
+            x: 0,
+            y: 1,
+            z: 0
+        },
+        ZERO:
+        {
+            x: 0,
+            y: 0,
+            z: 0
+        },
+        cross: function(glm__vec3, glm__vec3){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        distance: function(glm__vec3, glm__vec3){ return null; },
+        dot: function(glm__vec3, glm__vec3){ return null; },
+        equal: function(glm__vec3, glm__vec3){ return null; },
+        fromPolar: function(float, float){ return null; },
+        fromPolar__dupe: function(glm__vec3){ return null; },
+        getAngle: function(glm__vec3, glm__vec3){ return null; },
+        length: function(glm__vec3){ return null; },
+        mix: function(glm__vec3, glm__vec3, float){ return null; },
+        multiply: function(float, glm__vec3){ return null; },
+        multiply__dupe: function(glm__vec3, float){ return null; },
+        multiplyQbyV: function(glm__quat, glm__vec3){ return null; },
+        multiplyVbyV: function(glm__vec3, glm__vec3){ return null; },
+        normalize: function(glm__vec3){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        orientedAngle: function(glm__vec3, glm__vec3, glm__vec3){ return null; },
+        print: function(QString, glm__vec3){ return null; },
+        reflect: function(glm__vec3, glm__vec3){ return null; },
+        subtract: function(glm__vec3, glm__vec3){ return null; },
+        sum: function(glm__vec3, glm__vec3){ return null; },
+        toPolar: function(glm__vec3){ return null; },
+        withinEpsilon: function(glm__vec3, glm__vec3, float)
+        {
+            return null;
+        }
+    },
+    Wallet:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getWalletStatus: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        ownershipVerificationFailed: function(QUuid){ return null; },
+        ownershipVerificationSuccess: function(QUuid){ return null; },
+        proveAvatarEntityOwnershipVerification: function(QUuid){ return null; },
+        refreshWalletStatus: function(){ return null; },
+        walletNotSetup: function(){ return null; },
+        walletStatus: 4,
+        walletStatusChanged: function()
+        {
+            return null;
+        }
+    },
+    WebSocke: function(){ return null; },
+    Window:
+    {
+        alert: function(){ return null; },
+        alert__dupe: function(QString){ return null; },
+        announcement: function(QString){ return null; },
+        assetsDirChanged: function(QString){ return null; },
+        browse: function(){ return null; },
+        browse__dupe: function(QString){ return null; },
+        browse__dupe__dupe: function(QString, QString){ return null; },
+        browse__dupe__dupe__dupe: function(QString, QString, QString){ return null; },
+        browseAssets: function(){ return null; },
+        browseAssets__dupe: function(QString){ return null; },
+        browseAssets__dupe__dupe: function(QString, QString){ return null; },
+        browseAssets__dupe__dupe__dupe: function(QString, QString, QString){ return null; },
+        browseAssetsAsync: function(){ return null; },
+        browseAssetsAsync__dupe: function(QString){ return null; },
+        browseAssetsAsync__dupe__dupe: function(QString, QString){ return null; },
+        browseAssetsAsync__dupe__dupe__dupe: function(QString, QString, QString){ return null; },
+        browseAsync: function(){ return null; },
+        browseAsync__dupe: function(QString){ return null; },
+        browseAsync__dupe__dupe: function(QString, QString){ return null; },
+        browseAsync__dupe__dupe__dupe: function(QString, QString, QString){ return null; },
+        browseChanged: function(QString){ return null; },
+        browseDir: function(){ return null; },
+        browseDir__dupe: function(QString){ return null; },
+        browseDir__dupe__dupe: function(QString, QString){ return null; },
+        browseDirAsync: function(){ return null; },
+        browseDirAsync__dupe: function(QString){ return null; },
+        browseDirAsync__dupe__dupe: function(QString, QString){ return null; },
+        browseDirChanged: function(QString){ return null; },
+        checkVersion: function(){ return null; },
+        closeMessageBox: function(int){ return null; },
+        confirm: function(){ return null; },
+        confirm__dupe: function(QString){ return null; },
+        connectionAdded: function(QString){ return null; },
+        connectionError: function(QString){ return null; },
+        copyToClipboard: function(QString){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        displayAnnouncement: function(QString){ return null; },
+        domainChanged: function(QString){ return null; },
+        domainConnectionRefused: function(QString, int, QString){ return null; },
+        geometryChanged: function(QRect){ return null; },
+        getDeviceSize: function(){ return null; },
+        hasFocus: function(){ return null; },
+        innerHeight: 996,
+        innerWidth: 1920,
+        isPhysicsEnabled: function(){ return null; },
+        isPointOnDesktopWindow: function(QVariant){ return null; },
+        location:
+        {
+            copyAddress: function(){ return null; },
+            copyPath: function(){ return null; },
+            deleteLater: function(){ return null; },
+            destroyed: function(){ return null; },
+            destroyed__dupe: function(QObject_){ return null; },
+            domainID: "{fc0dfc98-8e6e-49ba-a0e5-37e86b8431e7}",
+            domainId: "{fc0dfc98-8e6e-49ba-a0e5-37e86b8431e7}",
+            goBack: function(){ return null; },
+            goBackPossible: function(bool){ return null; },
+            goForward: function(){ return null; },
+            goForwardPossible: function(bool){ return null; },
+            goToEntry: function(){ return null; },
+            goToEntry__dupe: function(LookupTrigger){ return null; },
+            goToLocalSandbox: function(){ return null; },
+            goToLocalSandbox__dupe: function(QString){ return null; },
+            goToLocalSandbox__dupe__dupe: function(QString, LookupTrigger){ return null; },
+            goToUser: function(QString){ return null; },
+            goToUser__dupe: function(QString, bool){ return null; },
+            goToViewpointForPath: function(QString, QString){ return null; },
+            handleLookupString: function(QString){ return null; },
+            handleLookupString__dupe: function(QString, bool){ return null; },
+            hostChanged: function(QString){ return null; },
+            hostname: "localhost",
+            href: "hifi://teal-sensor-7324/504.145,1.0619,-490.236/0,0.879439,0,0.476012",
+            isConnected: true,
+            locationChangeRequired: function(glm__vec3, bool, glm__quat, bool){ return null; },
+            lookupResultIsNotFound: function(){ return null; },
+            lookupResultIsOffline: function(){ return null; },
+            lookupResultsFinished: function(){ return null; },
+            lookupShareableNameForDomainID: function(QUuid){ return null; },
+            objectName: "",
+            objectNameChanged: function(QString){ return null; },
+            pathChangeRequired: function(QString){ return null; },
+            pathname: "/504.145,1.0619,-490.236/0,0.879439,0,0.476012",
+            placename: "teal-sensor-7324",
+            possibleDomainChangeRequired: function(QString, ushort, QUuid){ return null; },
+            possibleDomainChangeRequiredViaICEForID: function(QString, QUuid){ return null; },
+            protocol: "hifi",
+            protocolVersion: function(){ return null; },
+            refreshPreviousLookup: function(){ return null; },
+            storeCurrentAddress: function()
+            {
+                return null;
+            }
+        },
+        makeConnection: function(bool, QString){ return null; },
+        messageBoxClosed: function(int, int){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        openFileChanged: function(QString){ return null; },
+        openMessageBox: function(QString, QString, int, int){ return null; },
+        processingGifCompleted: function(QString){ return null; },
+        processingGifStarted: function(QString){ return null; },
+        prompt: function(QString, QString){ return null; },
+        promptAsync: function(){ return null; },
+        promptAsync__dupe: function(QString){ return null; },
+        promptAsync__dupe__dupe: function(QString, QString){ return null; },
+        promptTextChanged: function(QString){ return null; },
+        protocolSignature: function(){ return null; },
+        raiseMainWindow: function(){ return null; },
+        save: function(){ return null; },
+        save__dupe: function(QString){ return null; },
+        save__dupe__dupe: function(QString, QString){ return null; },
+        save__dupe__dupe__dupe: function(QString, QString, QString){ return null; },
+        saveAsync: function(){ return null; },
+        saveAsync__dupe: function(QString){ return null; },
+        saveAsync__dupe__dupe: function(QString, QString){ return null; },
+        saveAsync__dupe__dupe__dupe: function(QString, QString, QString){ return null; },
+        saveFileChanged: function(QString){ return null; },
+        setDisplayTexture: function(QString){ return null; },
+        setFocus: function(){ return null; },
+        shareSnapshot: function(QString){ return null; },
+        shareSnapshot__dupe: function(QString, QUrl){ return null; },
+        showAssetServer: function(){ return null; },
+        showAssetServer__dupe: function(QString){ return null; },
+        snapshotShared: function(bool, QString){ return null; },
+        stillSnapshotTaken: function(QString, bool){ return null; },
+        svoImportRequested: function(QString){ return null; },
+        takeSecondaryCameraSnapshot: function(){ return null; },
+        takeSecondaryCameraSnapshot__dupe: function(QString){ return null; },
+        takeSnapshot: function(){ return null; },
+        takeSnapshot__dupe: function(bool){ return null; },
+        takeSnapshot__dupe__dupe: function(bool, bool){ return null; },
+        takeSnapshot__dupe__dupe__dupe: function(bool, bool, float){ return null; },
+        takeSnapshot__dupe__dupe__dupe__dupe: function(bool, bool, float, QString){ return null; },
+        updateMessageBox: function(int, QString, QString, int, int){ return null; },
+        x: -8,
+        y: -8
+    },
+    XMLHttpReques: function(){ return null; },
+    console:
+    {
+        asser: function(){ return null; },
+        clear: function(){ return null; },
+        debu: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        erro: function(){ return null; },
+        exceptio: function(){ return null; },
+        grou: function(){ return null; },
+        groupCollapse: function(){ return null; },
+        groupEn: function(){ return null; },
+        inf: function(){ return null; },
+        lo: function(){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        time: function(QString){ return null; },
+        timeEnd: function(QString){ return null; },
+        trace: function(){ return null; },
+        war: function()
+        {
+            return null;
+        }
+    },
+    dumpOb: function(){ return null; },
+    dumpObjSt: function(){ return null; },
+    filterUniqu: function(){ return null; },
+    g: function(){ return null; },
+    location:
+    {
+        copyAddress: function(){ return null; },
+        copyPath: function(){ return null; },
+        deleteLater: function(){ return null; },
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        domainID: "{fc0dfc98-8e6e-49ba-a0e5-37e86b8431e7}",
+        domainId: "{fc0dfc98-8e6e-49ba-a0e5-37e86b8431e7}",
+        goBack: function(){ return null; },
+        goBackPossible: function(bool){ return null; },
+        goForward: function(){ return null; },
+        goForwardPossible: function(bool){ return null; },
+        goToEntry: function(){ return null; },
+        goToEntry__dupe: function(LookupTrigger){ return null; },
+        goToLocalSandbox: function(){ return null; },
+        goToLocalSandbox__dupe: function(QString){ return null; },
+        goToLocalSandbox__dupe__dupe: function(QString, LookupTrigger){ return null; },
+        goToUser: function(QString){ return null; },
+        goToUser__dupe: function(QString, bool){ return null; },
+        goToViewpointForPath: function(QString, QString){ return null; },
+        handleLookupString: function(QString){ return null; },
+        handleLookupString__dupe: function(QString, bool){ return null; },
+        hostChanged: function(QString){ return null; },
+        hostname: "localhost",
+        href: "hifi://teal-sensor-7324/504.145,1.0619,-490.236/0,0.879439,0,0.476012",
+        isConnected: true,
+        locationChangeRequired: function(glm__vec3, bool, glm__quat, bool){ return null; },
+        lookupResultIsNotFound: function(){ return null; },
+        lookupResultIsOffline: function(){ return null; },
+        lookupResultsFinished: function(){ return null; },
+        lookupShareableNameForDomainID: function(QUuid){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        pathChangeRequired: function(QString){ return null; },
+        pathname: "/504.145,1.0619,-490.236/0,0.879439,0,0.476012",
+        placename: "teal-sensor-7324",
+        possibleDomainChangeRequired: function(QString, ushort, QUuid){ return null; },
+        possibleDomainChangeRequiredViaICEForID: function(QString, QUuid){ return null; },
+        protocol: "hifi",
+        protocolVersion: function(){ return null; },
+        refreshPreviousLookup: function(){ return null; },
+        storeCurrentAddress: function()
+        {
+            return null;
+        }
+    },
+    prin: function(){ return null; },
+    tabletInterface:
+    {
+        destroyed: function(){ return null; },
+        destroyed__dupe: function(QObject_){ return null; },
+        getTablet: function(QString){ return null; },
+        objectName: "",
+        objectNameChanged: function(QString){ return null; },
+        playSound: function(TabletAudioEvents){ return null; },
+        tabletNotification: function()
+        {
+            return null;
+        }
+    },
+    types:
+    {},
+    versio: function()
+    {
+        return null;
     }
-
+}
