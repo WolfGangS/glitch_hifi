@@ -50,7 +50,8 @@
     y: 0,
     z: 0
   };
-
+  
+  showCursor();
 
   var mode = MODE_NONE;
 
@@ -61,9 +62,9 @@
 
   var cameraTarget = null;
 
-  var startPosition, startOrientation, startTime, easedIn;
-  var currentCameraState = null;//Position, currentOrientation;
-  var nextCameraState = null;//Position, nextOrientation;
+  var startCameraState, startTime, easedIn;
+  var currentCameraState = null;
+  var nextCameraState = null;
 
   var easeInDivider = 0.01;
 
@@ -73,14 +74,23 @@
   
   var oldCursorPosition = null;
 
-  var RayPickID = Picks.createPick(PickType.Ray, {
+  var EntityRayPickID = Picks.createPick(PickType.Ray, {
     joint: 'Mouse',
     filter: Picks.PICK_ENTITIES | Picks.PICK_AVATARS | Picks.PICK_INCLUDE_NONCOLLIDABLE,
     enabled: true,
   });
+  
+  var AvatarRayPickID = Picks.createPick(PickType.Ray, {
+    joint: 'Mouse',
+    filter: Picks.PICK_AVATARS | Picks.PICK_COARSE,
+    enabled: true,
+  });
 
   function scriptEnding() {
-    Picks.removePick(RayPickID);
+    Picks.removePick(EntityRayPickID);
+    Picks.removePick(AvatarRayPickID);
+    
+    restoreCameraState();
     
     showCursor();
     clearMarker();
@@ -95,19 +105,22 @@
 
   function mousePressEvent(event) {
     calculateModeFromEvent(event);
-    if(!cameraActive){
-       if (mode !== MODE_NONE) {
-        activate();
-       } else {
-         return;
-       }
+    if(mode !== MODE_NONE) {
+        if(!cameraActive){
+          activate();
+        }
+    } else {
+      return;
     }
+    controlActive = true;
     
     easedIn = false;
-    startPosition = Camera.getPosition();
-    startOrientation = Camera.getOrientation();
+    startCameraState = {
+      position: Camera.getPosition(),
+      orientation: Camera.getOrientation()
+    };
     startTime = Date.now();
-    var pickRay = Picks.getPrevPickResult(RayPickID);
+    var pickRay = Picks.getPrevPickResult(EntityRayPickID);
     if (pickRay.intersects) {
       var offset = {
         x: 0,
@@ -133,7 +146,7 @@
           }
           break;
       }
-      var direction = Vec3.subtract(startPosition, center);
+      var direction = Vec3.subtract(startCameraState.position , center);
       var radius = Vec3.length(direction);
       cameraTarget = {
         id: pickRay.objectID,
@@ -145,10 +158,11 @@
         azimuth: Math.atan2(direction.z, direction.x),
         altitude: Math.asin(direction.y / radius)
       }
-      setMarker(center);
-      hideCursor();
       nextCameraState = calculateNextCameraState(oldCursorPosition);
+      oldCursorPosition = {x:event.x,y:event.y};
       currentCameraState = nextCameraState;
+      hideCursor();
+      setMarker(cameraTarget.center,cameraTarget.radius);
     }
   }
 
@@ -160,6 +174,7 @@
         y: Window.innerHeight
       }));
       showCursor();
+      clearMarker();
       console.log("Inspect Camera: Control loss");
       controlActive = false;
     }
@@ -258,40 +273,41 @@
     cameraTarget.center = Vec3.sum(cameraTarget.center, dv);
     
     return {
-      position: Vec3.sum(cameraTarget.center,dv),
+      position: Vec3.sum(cameraTarget.center,cameraTarget.direction),
       orientation: currentCameraState.orientation
     };
   }
   
 
   function update() {
-    if(!easeIn()){
+    if(!cameraActive)return;
+    console.log(mode);
+    if(!easeIn() && controlActive){
       setCameraState(nextCameraState);
       currentCameraState = nextCameraState;
+      setMarker(cameraTarget.center,cameraTarget.radius);
     }
   }
 
   function easeIn() {
-    if (easedIn) return;
+    if (easedIn) return false;
     var delta = (Date.now() - startTime) * easeInDivider;
+    //console.log(delta);
     if (delta >= 1) {
-      setCameraState({position: nextCameraState.position, orientation: nextCameraState.orientation});
+      return false;
       easedIn = true;
     } else {
-      setCameraState({position: vLerp(startPosition, nextCameraState.position, delta),  orientation: qLerp(startOrientation, nextCameraState.orientation, delta)});
+      setCameraState({position: vLerp(startCameraState.position, nextCameraState.position, delta),  orientation: qLerp(startCameraState.orientation, nextCameraState.orientation, delta)});
     }
+    return true;
   }
 
   function hideCursor() {
-    if (!cursorHidden){
-      Reticle.scale = 0;
-    }
+    Reticle.scale = 0;
   }
 
   function showCursor() {
-    if (cursorHidden){
-      Reticle.scale = 1;
-    }
+    Reticle.scale = 1;
   }
 
   function setMarker(position, radius) {
@@ -299,9 +315,9 @@
       markerID = Overlays.addOverlay("sphere", {
         position: position,
         dimensions: Vec3.multiply(radius, {
-          x: 0.1,
-          y: 0.1,
-          z: 0.1
+          x: 0.01,
+          y: 0.01,
+          z: 0.01
         })
       });
     } else {
@@ -325,6 +341,7 @@
 
   function setCameraState(state) {
     if (!cameraActive) return;
+    console.log(".\n" + JSON.stringify(state) + "\n" + JSON.stringify(nextCameraState));
     Camera.setPosition(state.position);
     Camera.setOrientation(state.orientation);
   }
@@ -338,11 +355,8 @@
     saveCameraState();
     oldCursorPosition = {x:0,y:0};
     Camera.mode = "independent";
-    nextCameraState = {
-      positon: oldCameraState.position,
-      orientation: oldCameraState.orientation
-    };
-    setCameraState(nextCameraState.position, nextCameraState.orientation);
+    setCameraState(oldCameraState);
+    currentCameraState = oldCameraState;
   }
 
   function deactivate() {
