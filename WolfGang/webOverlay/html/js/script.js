@@ -13,7 +13,7 @@
     msg = JSON.parse(msg);
     switch(msg.type){
       case "avatar-position":
-        document.querySelectorAll("#text").textContent = msg.data.x + ", " + msg.data.y + ", " + msg.data.z;
+        document.querySelector("#text").textContent = msg.data.x.toFixed(2) + ", " + msg.data.y.toFixed(2) + ", " + msg.data.z.toFixed(2);
         break;
     }
   }
