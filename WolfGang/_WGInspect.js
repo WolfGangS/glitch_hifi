@@ -29,7 +29,7 @@
 //  - Make camera move on first click
 //
 /* globals Camera, Picks, PickType, Quat, Vec3, MyAvatar, AvatarList, Entities, Overlays, Script, Reticle, Controller */
-var EntityRayPickID = Picks.createPick(PickType.Ray, {
+var RayPickID = Picks.createPick(PickType.Ray, {
     joint: 'Mouse',
     filter: Picks.PICK_ENTITIES | Picks.PICK_AVATARS | Picks.PICK_INCLUDE_NONCOLLIDABLE,
     enabled: true,
