@@ -57,18 +57,18 @@
     //Print to the console a message showing the object was clicked
     print("I was clicked!");
 
+    //Check if a timeout is already running, if it is let's stop and not do anything
+    if (timer !== null) {
+      return;
+    }
+    
     //Call the move up function for the entity clicked
     moveUp(entityID, 1);
 
-    //Check if a timeout is already running, if it is clear it
-    if (timer !== null) {
-      Script.clearTimeout(timer);
-      timer = null;
-    }
-
     //set a timeout to move the entity back down by 1 in 15 seconds
     timer = Script.setTimeout(function() {
+      timer = null;
       moveDown(entityID, 1);
-    }, 15000);
+    }, 15 * 1000);
   }
 })
