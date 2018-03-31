@@ -1,12 +1,13 @@
 
-
 /* globals Script */
 
 (function() {
-
-  var 
+  
+  var svg = Script.require("../lib/svg.js");
   
   Script.scriptEnding.connect(scriptEnding);
+  
+  console.log(svg);
   
   function scriptEnding(){
     
