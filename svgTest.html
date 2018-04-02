@@ -1,0 +1,82 @@
+<html>
+
+    <head>
+        <title>SVG</title>
+        <script>
+        function compass2(col) {
+            return '<svg xmlns="http://www.w3.org/2000/svg" width="720" height="30">' +
+                '<rect x="0" y="0" width="720" height="30" fill="grey" opacity="0.5" />' +
+                '<line x1="0" x2="720" y1="29" y2="29" stroke-width="2" stroke="' + col + '" />' +
+
+                '<line x1="0" x2="0" y1="28" y2="10" stroke-width="2" stroke="' + col + '" />' +
+                '<text x="2" y="20" fill="' + col + '" font-family="monospace" font-weight="bold">0</text>' +
+                '<line x1="45" x2="45" y1="28" y2="23" stroke-width="2" stroke="' + col + '" />' +
+
+                '<line x1="90" x2="90" y1="28" y2="10" stroke-width="2" stroke="' + col + '" />' +
+                '<text x="92" y="20" fill="' + col + '" font-family="monospace" font-weight="bold">90</text>' +
+                '<line x1="135" x2="135" y1="28" y2="23" stroke-width="2" stroke="' + col + '" />' +
+
+                '<line x1="180" x2="180" y1="28" y2="10" stroke-width="2" stroke="' + col + '" />' +
+                '<text x="182" y="20" fill="' + col + '" font-family="monospace" font-weight="bold">180</text>' +
+                '<line x1="225" x2="225" y1="28" y2="23" stroke-width="2" stroke="' + col + '" />' +
+
+                '<line x1="270" x2="270" y1="28" y2="10" stroke-width="2" stroke="' + col + '" />' +
+                '<text x="272" y="20" fill="' + col + '" font-family="monospace" font-weight="bold">270</text>' +
+                '<line x1="315" x2="315" y1="28" y2="23" stroke-width="2" stroke="' + col + '" />' +
+
+                '<line x1="360" x2="360" y1="28" y2="10" stroke-width="2" stroke="' + col + '" />' +
+                '<text x="362" y="20" fill="' + col + '" font-family="monospace" font-weight="bold">0</text>' +
+                '<line x1="405" x2="405" y1="28" y2="23" stroke-width="2" stroke="' + col + '" />' +
+
+                '<line x1="450" x2="450" y1="28" y2="10" stroke-width="2" stroke="' + col + '" />' +
+                '<text x="452" y="20" fill="' + col + '" font-family="monospace" font-weight="bold">90</text>' +
+                '<line x1="495" x2="495" y1="28" y2="23" stroke-width="2" stroke="' + col + '" />' +
+
+                '<line x1="540" x2="540" y1="28" y2="10" stroke-width="2" stroke="' + col + '" />' +
+                '<text x="542" y="20" fill="' + col + '" font-family="monospace" font-weight="bold">180</text>' +
+                '<line x1="585" x2="585" y1="28" y2="23" stroke-width="2" stroke="' + col + '" />' +
+
+                '<line x1="630" x2="630" y1="28" y2="10" stroke-width="2" stroke="' + col + '" />' +
+                '<text x="632" y="20" fill="' + col + '" font-family="monospace" font-weight="bold">270</text>' +
+                '<line x1="675" x2="675" y1="28" y2="23" stroke-width="2" stroke="' + col + '" />' +
+
+                '<line x1="720" x2="720" y1="28" y2="10" stroke-width="2" stroke="' + col + '" />' +
+                '<text x="722" y="20" fill="' + col + '" font-family="monospace" font-weight="bold">0</text>' +
+                '<line x1="765" x2="765" y1="28" y2="23" stroke-width="2" stroke="' + col + '" />' +
+                '</svg>';
+        }
+        window.setTimeout(function() {
+            document.querySelector("#comp").innerHTML = compass2("green");
+        }, 500);
+        </script>
+    </head>
+
+    <body>
+      <div id="comp">
+        
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="720" height="30">
+    <path fill="gray" d="M0 0h720v30H0z" opacity=".5" />
+    <path stroke="green" stroke-width="2" d="M0 29h720M0 28V10" />
+    <text x="2" y="20" fill="green" font-family="monospace" font-weight="bold">0</text>
+    <path stroke="green" stroke-width="2" d="M45 28v-5M90 28V10" />
+    <text x="92" y="20" fill="green" font-family="monospace" font-weight="bold">90</text>
+    <path stroke="green" stroke-width="2" d="M135 28v-5M180 28V10" />
+    <text x="182" y="20" fill="green" font-family="monospace" font-weight="bold">180</text>
+    <path stroke="green" stroke-width="2" d="M225 28v-5M270 28V10" />
+    <text x="272" y="20" fill="green" font-family="monospace" font-weight="bold">270</text>
+    <path stroke="green" stroke-width="2" d="M315 28v-5M360 28V10" />
+    <text x="362" y="20" fill="green" font-family="monospace" font-weight="bold">0</text>
+    <path stroke="green" stroke-width="2" d="M405 28v-5M450 28V10" />
+    <text x="452" y="20" fill="green" font-family="monospace" font-weight="bold">90</text>
+    <path stroke="green" stroke-width="2" d="M495 28v-5M540 28V10" />
+    <text x="542" y="20" fill="green" font-family="monospace" font-weight="bold">180</text>
+    <path stroke="green" stroke-width="2" d="M585 28v-5M630 28V10" />
+    <text x="632" y="20" fill="green" font-family="monospace" font-weight="bold">270</text>
+    <path stroke="green" stroke-width="2" d="M675 28v-5M720 28V10" />
+    <text x="722" y="20" fill="green" font-family="monospace" font-weight="bold">0</text>
+    <path stroke="green" stroke-width="2" d="M765 28v-5" />
+</svg>
+    </body>
+
+</html>
