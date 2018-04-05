@@ -16,6 +16,7 @@
   Controller.mousePressEvent.connect(mousePressEvent);
   Controller.mouseReleaseEvent.connect(mouseReleaseEvent);
   Controller.mouseMoveEvent.connect(mouseMoveEvent);
+  Controller.wheelEvent.connect(mouseWheelEvent);
 
   Controller.keyPressEvent.connect(keyPressEvent);
   //Controller.keyReleaseEvent.connect(keyReleaseEvent);
@@ -93,13 +94,25 @@
     Controller.mousePressEvent.disconnect(mousePressEvent);
     Controller.mouseReleaseEvent.disconnect(mouseReleaseEvent);
     Controller.mouseMoveEvent.disconnect(mouseMoveEvent);
+    
+    Controller.wheelEvent.disconnect(mouseWheelEvent);
+    
   }
 
-var intersects = ["INTERSECTED_NONE","INTERSECTED_ENTITY","INTERSECTED_OVERLAY","INTERSECTED_AVATAR","INTERSECTED_HUD"];
-function getIntersectType(t){return intersects[t];}
+  var intersects = ["INTERSECTED_NONE","INTERSECTED_ENTITY","INTERSECTED_OVERLAY","INTERSECTED_AVATAR","INTERSECTED_HUD"];
+  function getIntersectType(t){return intersects[t];}
   
+  function mouseWheelEvent(event){
+    if(!cameraActive){
+      return;
+    }
+    cameraTarget.radius += cameraTarget.radius * ( event.delta * -0.1 ) * RADIUS_RATE;// * RADIUS_RATE;
+    nextCameraState = standardCameraCalc();
+    console.log(JSON.stringify(event));
+  }
   
   function mousePressEvent(event) {
+    if(!event.isLeftButton)return;
     calculateModeFromEvent(event);
     var pickRay = Picks.getPrevPickResult(EntityRayPickID);
     if(pickRay.type == Picks.INTERSECTED_OVERLAY)return;
@@ -211,8 +224,8 @@ function getIntersectType(t){return intersects[t];}
   }
   
   function clampCameraTarget(){
-    if(cameraTarget.radius < 1){
-      cameraTarget.radius = 1;
+    if(cameraTarget.radius < 0.25){
+      cameraTarget.radius = 0.25;
     }
     if(cameraTarget.altitude > HALF_PI){
       cameraTarget.altitude = HALF_PI;
@@ -225,26 +238,18 @@ function getIntersectType(t){return intersects[t];}
     cameraTarget.azimuth += move.x / AZIMUTH_RATE;
     cameraTarget.radius += cameraTarget.radius * move.y * RADIUS_RATE;
     
-    clampCameraTarget();
-    
-    cameraTarget.direction = {
-      x: (Math.cos(cameraTarget.altitude) * Math.cos(cameraTarget.azimuth)) * cameraTarget.radius,
-      y: Math.sin(cameraTarget.altitude) * cameraTarget.radius,
-      z: (Math.cos(cameraTarget.altitude) * Math.sin(cameraTarget.azimuth)) * cameraTarget.radius
-    };
-    
-    return {
-      position: Vec3.sum(cameraTarget.center,cameraTarget.direction),
-      orientation: orientationOf(cameraTarget.direction)
-    };
+    return standardCameraCalc();
   }
   
   function calculateOrbitMovement(move,state,target){
     cameraTarget.azimuth += move.x / AZIMUTH_RATE;
     cameraTarget.altitude += move.y / ALTITUDE_RATE;
     
+    return standardCameraCalc();
+  }
+  
+  function standardCameraCalc(){
     clampCameraTarget();
-    
     cameraTarget.direction = {
       x: (Math.cos(cameraTarget.altitude) * Math.cos(cameraTarget.azimuth)) * cameraTarget.radius,
       y: Math.sin(cameraTarget.altitude) * cameraTarget.radius,
@@ -278,10 +283,14 @@ function getIntersectType(t){return intersects[t];}
 
   function update() {
     if(!cameraActive)return;
-    if(!easeIn() && controlActive){
+    if(!easeIn() ){//&& controlActive){
       setCameraState(nextCameraState);
       currentCameraState = nextCameraState;
-      setMarker(cameraTarget.center,cameraTarget.radius);
+      if(controlActive){
+        setMarker(cameraTarget.center,cameraTarget.radius);
+      } else {
+        clearMarker();
+      }
     }
   }
 
