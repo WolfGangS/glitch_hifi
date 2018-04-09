@@ -1,48 +1,65 @@
 /* globals Overlays Script Controller Picks PickType*/
+var debugging = true;
+
+function debug(a,b,c){
+  if(debugging)console.log(a,b,c);
+}
+
 //Hook all the overlay mouse events, to function that just console.log the name of the event and the type of overlay clicked
 Overlays.hoverEnterOverlay.connect(hoverEnterOverlay);
 function hoverEnterOverlay(OverlayID, PointerEvent) {
-  console.log("hoverEnterOverlay", Overlays.getOverlayType(OverlayID));
+  if(overlays.indexOf(OverlayID) < 0)return;
+  debug("hoverEnterOverlay", Overlays.getOverlayType(OverlayID));
+  Overlays.editOverlay(OverlayID,{color:{red:255,green:0,blue:0}});
 }
 
 Overlays.hoverLeaveOverlay.connect(hoverLeaveOverlay);
 function hoverLeaveOverlay(OverlayID, PointerEvent) {
-  console.log("hoverLeaveOverlay", Overlays.getOverlayType(OverlayID));
+  if(overlays.indexOf(OverlayID) < 0)return;
+  debug("hoverLeaveOverlay", Overlays.getOverlayType(OverlayID));
+  Overlays.editOverlay(OverlayID,{color:{red:0,green:0,blue:0}});
 }
 
 Overlays.hoverOverOverlay.connect(hoverOverOverlay);
 function hoverOverOverlay(OverlayID, PointerEvent) {
-  console.log("hoverOverOverlay", Overlays.getOverlayType(OverlayID));
+  if(overlays.indexOf(OverlayID) < 0)return;
+  debug("hoverOverOverlay", Overlays.getOverlayType(OverlayID));
 }
 
 Overlays.mouseDoublePressOffOverlay.connect(mouseDoublePressOffOverlay);
 function mouseDoublePressOffOverlay() {
-  console.log("mouseDoublePressOffOverlay");
+  debug("mouseDoublePressOffOverlay");
 }
 
 Overlays.mouseDoublePressOnOverlay.connect(mouseDoublePressOnOverlay);
 function mouseDoublePressOnOverlay(OverlayID, PointerEvent) {
-  console.log("mouseDoublePressOnOverlay", Overlays.getOverlayType(OverlayID));
+  if(overlays.indexOf(OverlayID) < 0)return;
+  debug("mouseDoublePressOnOverlay", Overlays.getOverlayType(OverlayID));
 }
 
 Overlays.mouseMoveOnOverlay.connect(mouseMoveOnOverlay);
 function mouseMoveOnOverlay(OverlayID, PointerEvent) {
-  console.log("mouseMoveOnOverlay", Overlays.getOverlayType(OverlayID));
+  if(overlays.indexOf(OverlayID) < 0)return;
+  debug("mouseMoveOnOverlay", Overlays.getOverlayType(OverlayID));
 }
 
 Overlays.mousePressOffOverlay.connect(mousePressOffOverlay);
 function mousePressOffOverlay() {
-  console.log("mousePressOffOverlay");
+  debug("mousePressOffOverlay");
 }
 
 Overlays.mousePressOnOverlay.connect(mousePressOnOverlay);
 function mousePressOnOverlay(OverlayID, PointerEvent) {
-  console.log("mousePressOnOverlay", Overlays.getOverlayType(OverlayID));
+  if(overlays.indexOf(OverlayID) < 0)return;
+  debug("mousePressOnOverlay", Overlays.getOverlayType(OverlayID),JSON.stringify(PointerEvent));
+  Overlays.editOverlay(OverlayID,{color:{red:0,green:255,blue:0}});
 }
 
 Overlays.mouseReleaseOnOverlay.connect(mouseReleaseOnOverlay);
 function mouseReleaseOnOverlay(OverlayID, PointerEvent) {
-  console.log("mouseReleaseOnOverlay", Overlays.getOverlayType(OverlayID));
+  if(overlays.indexOf(OverlayID) < 0)return;
+  debug("mouseReleaseOnOverlay", Overlays.getOverlayType(OverlayID));
+  Overlays.editOverlay(OverlayID,{color:{red:255,green:0,blue:0}});
 }
 
 
@@ -69,31 +86,7 @@ var text = Overlays.addOverlay("text", {
   visible: true
 });
 
-//Hook the standard mousepress event
-Controller.mousePressEvent.connect(mousePressEvent);
-//Setup our Picks raycaster
-var pickID = Picks.createPick(PickType.Ray, {
-    joint: 'Mouse',
-    filter: Picks.PICK_OVERLAYS,
-    enabled: true,
-  });
-
-//Helper function to get the text for an intersection type
-var intersects = ["INTERSECTED_NONE","INTERSECTED_ENTITY","INTERSECTED_OVERLAY","INTERSECTED_AVATAR","INTERSECTED_HUD"];
-function getIntersectType(t){return intersects[t];}
-
-//When the mouse is clicked, perform out 2 raycast methods (new Picks api and old findRayIntersection
-function mousePressEvent(event){
-  var pickRay = Picks.getPrevPickResult(pickID);
-  var oldPickRay = Camera.computePickRay(event.x, event.y);
-  var opick = Overlays.findRayIntersection(oldPickRay);
-  
-  //Log the intersection type of the picks raycast
-  console.log("PICKS RAY: " + getIntersectType(pickRay.type));
-  //log if our old style findRayIntersect method got an intersection
-  console.log("Overlay intersect: " + JSON.stringify(opick.intersects));
-}
-
+var overlays = [rect,image,text];
 
 //Clean up
 Script.scriptEnding.connect(scriptEnding);
@@ -103,8 +96,6 @@ function scriptEnding() {
   Overlays.deleteOverlay(image);
   Overlays.deleteOverlay(text);
   
-  Picks.removePick(pickID);
-
   Overlays.hoverEnterOverlay.disconnect(hoverEnterOverlay);
   Overlays.hoverLeaveOverlay.disconnect(hoverLeaveOverlay);
   Overlays.hoverOverOverlay.disconnect(hoverOverOverlay);
@@ -114,6 +105,4 @@ function scriptEnding() {
   Overlays.mousePressOffOverlay.disconnect(mousePressOffOverlay);
   Overlays.mousePressOnOverlay.disconnect(mousePressOnOverlay);
   Overlays.mouseReleaseOnOverlay.disconnect(mouseReleaseOnOverlay);
-  
-  Controller.mousePressEvent.disconnect(mousePressEvent);
 }
