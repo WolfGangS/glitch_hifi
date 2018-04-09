@@ -13,7 +13,7 @@
   var RAD_TO_DEG = 180.0 / PI;
   
   
-  var s = new SVG({width: 256, height: 256});
+  /*var s = new SVG({width: 256, height: 256});
   var g = new SVGGroup();
   var rect = new SVGRect({width:10,height:10},{x:20,y:20});
   rect.style.setStyle("fill","red");
@@ -22,7 +22,7 @@
   back.style.setStyle("opacity","0.5");
   s.addChild(back);
   g.addChild(rect);
-  s.addChild(g);
+  s.addChild(g);*/
   
   /*
   var svgOverlay = Overlays.addOverlay("image", {
@@ -34,12 +34,28 @@
     });
     */
   var lastCompass = 0;
+  //console.log(compas("green",0));
+  
+  //console.log(s.serialize());
+  
+  
+  Script.scriptEnding.connect(scriptEnding);
+  function scriptEnding(){
+    //Overlays.deleteOverlay(svgOverlay);
+    Overlays.deleteOverlay(compassOverlay);
+    Overlays.deleteOverlay(markerOverlay);
+    
+    
+    Script.clearInterval(tickVar);
+  }
+  
+  
   var compassOverlay = Overlays.addOverlay("image",{
     x: (Window.innerWidth * 0.5) - 180,
     y: Window.innerHeight - 40,
     width: 360,
     height: 30,
-    subImage: { x: 90, y: 0, width: 360, height: 30},
+    subImage: { x: 0, y: 0, width: 360, height: 30},
     imageURL: compass("green",0),
     visible: true,
     color: {
@@ -48,11 +64,21 @@
       blue: 0
     },
   });
-  //console.log(compas("green",0));
+  var markerOverlay = Overlays.addOverlay("image",{
+    x: (Window.innerWidth * 0.5) - 4,
+    y: Window.innerHeight - 48,
+    width: 8,
+    height: 8,
+    imageURL: marker(),
+    visible: true,
+    color: {
+      red: 0,
+      green: 255,
+      blue: 0
+    },
+  });
+  console.log("Compass OverlayID: " + compassOverlay);
   
-  //console.log(s.serialize());
-  
-  Script.scriptEnding.connect(scriptEnding);
   var tickVar = Script.setInterval(tick,25);
   
   function tick(){
@@ -68,20 +94,22 @@
       Overlays.editOverlay(compassOverlay,{subImage: { x: f, y: 0, width: 360, height: 30}});
       
     }*/
-    ++lastCompass;
-    if(lastCompass > 255)lastCompass = 0;
-    var set = {subImage: { x: lastCompass, y: 0, width: 360, height: 30},color:{red: lastCompass,green: 255,blue: 0}};
-    //console.log(JSON.stringify(set));
-    Overlays.editOverlay(compassOverlay,set);
+    if(f < 0) f += 360;
+    if(f != lastCompass){
+      lastCompass = f;
+      //console.log(f);
+      Overlays.editOverlay(compassOverlay,{subImage: { x: lastCompass}});
+    }
     //console.log(JSON.stringify(Overlays.getProperty(compassOverlay,"imageURL")));
   }
   
-  function scriptEnding(){
-    //Overlays.deleteOverlay(svgOverlay);
-    Overlays.deleteOverlay(compassOverlay);
-    Script.clearInterval(tickVar);
-  }
   
+  function marker() {
+    return 'data:image/svg+xml;xml,' + 
+    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">' +
+    '<polygon points="0,0 15,0 8,15" style="fill:white" />' +
+    '</svg>';
+  }
   function compass() {
     return 'data:image/svg+xml;xml,<svg xmlns="http://www.w3.org/2000/svg" width="720" height="30">' + 
       '<path fill="gray" d="M0 0h720v30H0z" opacity=".5" />' +
@@ -106,54 +134,5 @@
       '<path stroke="white" stroke-width="2" d="M765 28v-5" />' +
       '</svg>';
     }
-  
-  function compas(col,off){
-    var t = 0 + (off > 0 ? (360 - off) : off * -1);
-    return 'data:image/svg+xml;xml,' + 
-    '<svg xmlns="http://www.w3.org/2000/svg" width="360" height="30">' +
-      '<rect x="0" y="0" width="360" height="30" fill="grey" opacity="0.5" />' +
-      '<line x1="0" x2="360" y1="29" y2="29" stroke-width="2" stroke="' + col + '"/>' +
-      '<line x1="180" x2="180" y1="8" y2="0" stroke-width="2" stroke="' + col + '"/>' +
-      '<text font-family="monospace" font-weight="bold" x="182" y="8" fill="' + col + '">' + t + '</text>' +
-      '<g transform="translate(' + off + ')">' +
-        '<line x1="-180" x2="-180" y1="28" y2="10" stroke-width="2" stroke="' + col + '"/>' +
-        '<text font-family="monospace" font-weight="bold" x="-178" y="20" fill="' + col + '">0</text>' +
-        '<line x1="-135" x2="-135" y1="28" y2="23" stroke-width="2" stroke="' + col + '"/>' +
-        
-        '<line x1="-90" x2="-90" y1="28" y2="10" stroke-width="2" stroke="' + col + '"/>' +
-        '<text font-family="monospace" font-weight="bold" x="-88" y="20" fill="' + col + '">90</text>' +
-        '<line x1="-45" x2="-45" y1="28" y2="23" stroke-width="2" stroke="' + col + '"/>' +
-        
-        '<line x1="0" x2="0" y1="28" y2="10" stroke-width="2" stroke="' + col + '"/>' +
-        '<text font-family="monospace" font-weight="bold" x="2" y="20" fill="' + col + '">180</text>' +
-        '<line x1="45" x2="45" y1="28" y2="23" stroke-width="2" stroke="' + col + '"/>' +
-        
-        '<line x1="90" x2="90" y1="28" y2="10" stroke-width="2" stroke="' + col + '"/>' +
-        '<text font-family="monospace" font-weight="bold" x="92" y="20" fill="' + col + '">270</text>' +
-        '<line x1="135" x2="135" y1="28" y2="23" stroke-width="2" stroke="' + col + '"/>' +
-        
-        '<line x1="180" x2="180" y1="28" y2="10" stroke-width="2" stroke="' + col + '"/>' +
-        '<text font-family="monospace" font-weight="bold" x="182" y="20" fill="' + col + '">0</text>' +
-        '<line x1="225" x2="225" y1="28" y2="23" stroke-width="2" stroke="' + col + '"/>' +
-        
-        '<line x1="270" x2="270" y1="28" y2="10" stroke-width="2" stroke="' + col + '"/>' +
-        '<text font-family="monospace" font-weight="bold" x="272" y="20" fill="' + col + '">90</text>' +
-        '<line x1="315" x2="315" y1="28" y2="23" stroke-width="2" stroke="' + col + '"/>' +
-        
-        '<line x1="360" x2="360" y1="28" y2="10" stroke-width="2" stroke="' + col + '"/>' +
-        '<text font-family="monospace" font-weight="bold" x="362" y="20" fill="' + col + '">180</text>' +
-        '<line x1="405" x2="405" y1="28" y2="23" stroke-width="2" stroke="' + col + '"/>' +
-        
-        '<line x1="450" x2="450" y1="28" y2="10" stroke-width="2" stroke="' + col + '"/>' +
-        '<text font-family="monospace" font-weight="bold" x="452" y="20" fill="' + col + '">270</text>' +
-        '<line x1="495" x2="495" y1="28" y2="23" stroke-width="2" stroke="' + col + '"/>' +
-        
-        '<line x1="540" x2="540" y1="28" y2="10" stroke-width="2" stroke="' + col + '"/>' +
-        '<text font-family="monospace" font-weight="bold" x="542" y="20" fill="' + col + '">0</text>' +
-        '<line x1="585" x2="585" y1="28" y2="23" stroke-width="2" stroke="' + col + '"/>' +
-      '</g>' +
-    '</svg>';
-  }
-  
   
 })();

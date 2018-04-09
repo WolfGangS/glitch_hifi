@@ -17,9 +17,8 @@ Script.setInterval(tick,250);
 
 function tick(){
   offset = !offset;
-  var overs = {};
-  var set = {subImage:{ x: 500 * offset, y: 500 * offset, width: 400, height: 400}};
-  overs[over] = set;
+  var overs = {}; var set = {subImage:{ x: 500 * offset, y: 500 * offset, width: 400, height: 400}};
+        overs[over] = set;
   
   //call one of the overlay edit functions
   Overlays.editOverlay(over,set);
